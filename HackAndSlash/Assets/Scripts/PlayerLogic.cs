@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerLogic : MonoBehaviour
 {
+    [Header("Level")]
+    public int maxLevel;
+
     [Header("Input")]
     [SerializeField] private string horizontalMovementAxis;
     [SerializeField] private string verticalMovementAxis;
@@ -26,7 +29,7 @@ public class PlayerLogic : MonoBehaviour
         ClassData currentClass = (ClassData)playerStats.stats;
         playerStats.level++;
         playerStats.exp = 0;
-        playerStats.expNeeded *= 3;
+        playerStats.expNeeded *= 2;
 
         //Increment stats
         playerStats.vigor += currentClass.incrementVigor;
@@ -43,8 +46,16 @@ public class PlayerLogic : MonoBehaviour
     }
 
     private void OnGUI() {
-        if(GUI.Button(new Rect(0, 0, 100, 20), "Level up")) {
-            LevelUp();
+        if (GUI.Button(new Rect(0, 0, 100, 20), "Inizialize")) {
+            playerStats.InitializeCharacter();
+        }
+        if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
+            if(playerStats.level < maxLevel) {
+                LevelUp();
+            }
+        }
+        if (GUI.Button(new Rect(0, 40, 100, 20), "Attack")) {
+
         }
     }
 }

@@ -29,13 +29,15 @@ public class CharacterStats : MonoBehaviour
 
     public void InitializeCharacter() {
         vigor = stats.baseVigor;
-        strength = stats.baseVigor;
-        dexterity = stats.baseVigor;
-        intelligence = stats.baseVigor;
+        strength = stats.baseStrength;
+        dexterity = stats.baseDexterity;
+        intelligence = stats.baseIntelligence;
         level = 1;
         exp = 0;
         expNeeded = 20;
         CalculateStats();
+        hp = maxHp;
+        mana = maxMana;
     }
 
     public void CalculateStats() {

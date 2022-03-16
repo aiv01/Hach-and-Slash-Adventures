@@ -1499,6 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700f7f8e9c0055545813151c252a5070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLevel: 25
   horizontalMovementAxis: HorizontalMovement
   verticalMovementAxis: VerticalMovement
   horizontalLookAxis: HorizontalDirection
