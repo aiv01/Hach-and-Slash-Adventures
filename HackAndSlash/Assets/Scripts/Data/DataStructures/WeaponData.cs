@@ -11,7 +11,7 @@ public enum WeaponType {
 [CreateAssetMenu(fileName = "newWeapon", menuName = "Data/Weapon")]
 public class WeaponData : ScriptableObject
 {
-    public string name;
+    public string weaponName;
     public WeaponType type;
     public bool usingDex;
     public int baseDamage;

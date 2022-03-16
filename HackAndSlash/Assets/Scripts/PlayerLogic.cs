@@ -55,7 +55,7 @@ public class PlayerLogic : MonoBehaviour
             }
         }
         if (GUI.Button(new Rect(0, 40, 100, 20), "Attack")) {
-            Debug.Log("Dealt " + playerStats.damage + " damage with " + playerStats.equippedWeapon.name);
+            Debug.Log("Dealt " + playerStats.damage + " damage with " + playerStats.equippedWeapon.weaponName);
         }
     }
 }
