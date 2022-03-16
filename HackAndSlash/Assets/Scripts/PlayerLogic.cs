@@ -21,7 +21,30 @@ public class PlayerLogic : MonoBehaviour
     [Header("References")]
     [SerializeField] private CharacterStats playerStats;
 
-    private void LevelUp() {
+    public void LevelUp() {
+        //Get class and increment level
+        ClassData currentClass = (ClassData)playerStats.stats;
+        playerStats.level++;
+        playerStats.exp = 0;
+        playerStats.expNeeded *= 3;
 
+        //Increment stats
+        playerStats.vigor += currentClass.incrementVigor;
+        playerStats.strength += currentClass.incrementStrength;
+        playerStats.dexterity += currentClass.incrementDexterity;
+        playerStats.intelligence += currentClass.incrementIntelligence;
+
+        //Calculate new stats
+        int oldMaxHp = playerStats.MaxHp;
+        int oldMaxMana = playerStats.MaxMana;
+        playerStats.CalculateStats();
+        playerStats.hp += playerStats.MaxHp - oldMaxHp;
+        playerStats.mana += playerStats.MaxMana - oldMaxMana;
+    }
+
+    private void OnGUI() {
+        if(GUI.Button(new Rect(0, 0, 100, 20), "Level up")) {
+            LevelUp();
+        }
     }
 }

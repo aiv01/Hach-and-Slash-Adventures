@@ -206,7 +206,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 989900564}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 38.403, y: 45, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -429,12 +429,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882671748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 989900564}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &882671750
@@ -1218,11 +1218,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 882671749}
   - {fileID: 330585546}
   - {fileID: 2077959148}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073442185
 GameObject:
@@ -1354,7 +1353,7 @@ Transform:
   - {fileID: 832575519}
   - {fileID: 1617762525}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1617762524
 GameObject:
@@ -1486,7 +1485,7 @@ Transform:
   m_Children:
   - {fileID: 1073442186}
   m_Father: {fileID: 989900564}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2077959149
 MonoBehaviour:
@@ -1511,7 +1510,7 @@ MonoBehaviour:
   skill2key: Skill2
   skill3key: Skill3
   skill4key: Skill4
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 2077959150}
 --- !u!114 &2077959150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,5 +1534,6 @@ MonoBehaviour:
   damage: 0
   defence: 0
   mdefence: 0
+  expNeeded: 0
   level: 0
   exp: 0
