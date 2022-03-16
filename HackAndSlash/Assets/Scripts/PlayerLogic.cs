@@ -77,11 +77,7 @@ public class PlayerLogic : MonoBehaviour
 
     private void Update() {
         if (usingMouse) {
-            Vector3 mouseScreenPos = Input.mousePosition;
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, movement.transform.position.y, mouseScreenPos.y));
-            Debug.Log(mousePos.x + " " + mousePos.y + " " + mousePos.z);
-            Vector3 rotationDirection = mousePos - movement.transform.position;
-            movement.transform.rotation = Quaternion.LookRotation(rotationDirection, Vector3.up);
+            movement.LookAtMouse();
         }
         Vector3 moveInput = new Vector3(input.GetAxis(horizontalMovementAxis) * speed, 0, input.GetAxis(verticalMovementAxis) * speed);
         movement.Move(moveInput);
