@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db4c0fcc5edd214886a4f6a2f4f821e, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: 
+  baseVigor: 4
+  baseStrength: 3
+  baseDexterity: 2
+  baseIntelligence: 1
+  className: Warrior
+  incrementVigor: 3
+  incrementStrength: 2
+  incrementDexterity: 1
+  incrementIntelligence: 1
