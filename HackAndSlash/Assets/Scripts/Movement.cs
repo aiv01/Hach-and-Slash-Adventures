@@ -8,14 +8,25 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private LayerMask rayLayer;
-    Ray mouseRay;
+    [SerializeField] private LayerMask moveLayers;
+    [SerializeField] private CapsuleCollider capsuleCollider;
+    private Ray mouseRay;
 
     public void Move(Vector3 velocity) {
-        animator.SetFloat(speedParameter, velocity.z);
+        Debug.Log(CanMove(velocity.normalized));
+        if (CanMove(velocity.normalized)) {
+            animator.SetFloat(speedParameter, velocity.magnitude);
+        }
+        else {
+            animator.SetFloat(speedParameter, 0);
+        }
+        if(velocity.magnitude != 0) {
+            transform.rotation = Quaternion.LookRotation(velocity.normalized, Vector3.up);
+        }
     }
 
-    public void Rotate(Vector3 rotation) {
-
+    public void Rotate(Vector3 direction) {
+        transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 
     public void LookAtMouse() {
@@ -31,5 +42,16 @@ public class Movement : MonoBehaviour
 
     private void OnDrawGizmos() {
         Gizmos.DrawRay(mouseRay);
+    }
+
+    private bool CanMove(Vector3 direction) {
+        Debug.DrawLine(capsuleCollider.center + transform.position, transform.position + direction);
+        return !Physics.CapsuleCast(
+            transform.TransformPoint(capsuleCollider.center + Vector3.up * (capsuleCollider.height * 0.5f - capsuleCollider.radius)),
+            transform.TransformPoint(capsuleCollider.center - Vector3.up * (capsuleCollider.height * 0.5f - capsuleCollider.radius - 0.25f)),
+            capsuleCollider.radius,
+            direction,
+            0.5f,
+            moveLayers);
     }
 }

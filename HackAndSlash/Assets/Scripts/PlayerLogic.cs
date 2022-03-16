@@ -12,13 +12,14 @@ public class PlayerLogic : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
+    private Vector3 currentDirection;
 
     [Header("Input")]
     //Rewired
     private Player input;
 
     //Rotation
-    private bool usingMouse = true;
+    private bool usingMouse;
 
     //Input strings
     [SerializeField] private string horizontalMovementAxis;
@@ -79,7 +80,17 @@ public class PlayerLogic : MonoBehaviour
         if (usingMouse) {
             movement.LookAtMouse();
         }
-        Vector3 moveInput = new Vector3(input.GetAxis(horizontalMovementAxis) * speed, 0, input.GetAxis(verticalMovementAxis) * speed);
+        else {
+            Vector3 lookInput = new Vector3(input.GetAxis(horizontalLookAxis),
+                        0,
+                        input.GetAxis(verticalLookAxis));
+            if(lookInput != Vector3.zero) {
+                movement.Rotate(lookInput);
+            }
+        }
+        Vector3 moveInput = new Vector3(input.GetAxis(horizontalMovementAxis) * speed, 
+            0, 
+            input.GetAxis(verticalMovementAxis) * speed);
         movement.Move(moveInput);
     }
 }
