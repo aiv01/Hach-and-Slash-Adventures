@@ -1525,11 +1525,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: a96a8f9b946b94046b01369b59530f3c, type: 2}
+  equippedWeapon: {fileID: 11400000, guid: 8607dd371ddd5f842a909983d04736f1, type: 2}
   vigor: 0
   strength: 0
   dexterity: 0
   intelligence: 0
-  usingDex: 0
   hp: 0
   mana: 0
   damage: 0

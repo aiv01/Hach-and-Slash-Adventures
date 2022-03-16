@@ -6,13 +6,13 @@ public class CharacterStats : MonoBehaviour
 {
     [Header("Stats")]
     public StatData stats;
+    public WeaponData equippedWeapon;
     [Header("Primary Stats")]
     public int vigor;
     public int strength;
     public int dexterity;
     public int intelligence;
     [Header("Secondary Stats")]
-    public bool usingDex; //Temporary until we add weapons
     private int maxHp;
     public int MaxHp { get { return maxHp; } }
     private int maxMana;
@@ -41,10 +41,14 @@ public class CharacterStats : MonoBehaviour
     }
 
     public void CalculateStats() {
-        damage = usingDex ? dexterity : strength;
+        damage = equippedWeapon.baseDamage + (equippedWeapon.usingDex ? dexterity : strength);
         defence = vigor;
         mdefence = intelligence;
         maxHp = vigor * 10;
         maxMana = intelligence * 10;
+    }
+
+    private void Update() {
+        damage = equippedWeapon.baseDamage + (equippedWeapon.usingDex ? dexterity : strength); //Temporary until real equip logic
     }
 }
