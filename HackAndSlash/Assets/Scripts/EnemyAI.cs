@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public bool playerInDetectionRange = false;
+    private bool isAttacking;
+    [SerializeField] private string attackStateName;
     public Transform playerTarget;
     NavMeshAgent enemyNavMesh;
     Animator anim;
@@ -22,11 +24,20 @@ public class EnemyAI : MonoBehaviour
     {
         if(playerInDetectionRange == true)
         {
-            enemyNavMesh.transform.LookAt(playerTarget);
-            enemyNavMesh.SetDestination(playerTarget.position + new Vector3(0, 0, 0.099f));
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackStateName)) {
+                isAttacking = true;
+            }
+            else {
+                isAttacking = false;
+            }
+            if (!isAttacking) {
+                enemyNavMesh.transform.LookAt(playerTarget);
+                enemyNavMesh.SetDestination(playerTarget.position + new Vector3(0, 0, 0.099f));
+            }
+            Run();
         }
         else {
-            anim.SetTrigger("Idle");
+            Idle();
         }
     }
 
@@ -39,5 +50,9 @@ public class EnemyAI : MonoBehaviour
     public void Attack()
     {
         anim.SetTrigger("Attack");
+    }
+
+    public void Idle() {
+        anim.SetTrigger("Idle");
     }
 }

@@ -22,8 +22,13 @@ public class DetectionRange : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            enemy.Run();
             enemy.playerInDetectionRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.tag == "Player") {
+            enemy.playerInDetectionRange = false;
         }
     }
 }
