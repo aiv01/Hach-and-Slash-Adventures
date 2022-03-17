@@ -66,17 +66,6 @@ public class PlayerLogic : MonoBehaviour
         playerStats.mana += playerStats.MaxMana - oldMaxMana;
     }
 
-    private void OnGUI() {
-        if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
-            playerStats.InitializeCharacter();
-        }
-        if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
-            if(playerStats.level < maxLevel) {
-                LevelUp();
-            }
-        }
-    }
-
     private void Update() {
         ManageInput();
     }
@@ -108,8 +97,33 @@ public class PlayerLogic : MonoBehaviour
     }
 
     public void DealDamage(CharacterStats target, DamageType type) {
-        //target.hp -= playerStats.damage - (type == DamageType.physical ? target.defence : target.mdefence);
+        target.hp -= playerStats.damage - (type == DamageType.physical ? target.defence : target.mdefence);
         Vector3 knockbackDirection = (target.transform.position - transform.position).normalized;
         target.transform.Translate(knockbackDirection * playerStats.equippedWeapon.knockback);
+    }
+
+    //Debug stuff
+    private void OnGUI() {
+        GUI.Label(new Rect(0, 40, 150, 500),
+            "Level: " + playerStats.level + "\n" +
+            "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
+            "Mana: " + playerStats.mana + "/" + playerStats.MaxHp + "\n" +
+            "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
+            "Vigor: " + playerStats.vigor + "\n" +
+            "Strength: " + playerStats.strength + "\n" +
+            "Dexterity: " + playerStats.dexterity + "\n" +
+            "Intelligence: " + playerStats.intelligence + "\n\n" +
+            "Damage: " + playerStats.damage + "\n" +
+            "Defence: " + playerStats.defence + "\n" +
+            "Magic Defence: " + playerStats.mdefence + "\n"
+            );
+        if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
+            playerStats.InitializeCharacter();
+        }
+        if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
+            if (playerStats.level < maxLevel) {
+                LevelUp();
+            }
+        }
     }
 }

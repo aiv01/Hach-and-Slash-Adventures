@@ -53,10 +53,12 @@ public class CharacterStats : MonoBehaviour
         maxMana = intelligence * 10;
     }
 
-    public void DealDamage(CharacterStats target, DamageType type) {
-        //target.hp -= damage - (type == DamageType.physical ? target.defence : target.mdefence);
+    public int DealDamage(CharacterStats target, DamageType type) {
+        int totalDamage = Mathf.Max(0, damage - (type == DamageType.physical ? target.defence : target.mdefence));
+        target.hp -= totalDamage;
         Vector3 knockbackDirection = (new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z) - transform.position).normalized;
         target.transform.Translate(knockbackDirection * equippedWeapon.knockback);
+        return totalDamage;
     }
 
     private void Update() {

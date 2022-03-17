@@ -16,4 +16,4 @@ MonoBehaviour:
   type: 0
   usingDex: 1
   baseDamage: 5
-  knockback: 1
+  knockback: 0.6
