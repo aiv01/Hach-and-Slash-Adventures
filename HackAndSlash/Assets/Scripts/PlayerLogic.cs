@@ -77,6 +77,11 @@ public class PlayerLogic : MonoBehaviour
     }
 
     private void Update() {
+        ManageInput();
+    }
+
+    private void ManageInput() {
+        //Character Rotation
         if (usingMouse) {
             movement.LookAtMouse();
         }
@@ -84,13 +89,20 @@ public class PlayerLogic : MonoBehaviour
             Vector3 lookInput = new Vector3(input.GetAxis(horizontalLookAxis),
                         0,
                         input.GetAxis(verticalLookAxis));
-            if(lookInput != Vector3.zero) {
+            if (lookInput != Vector3.zero) {
                 movement.Rotate(lookInput);
             }
         }
-        Vector3 moveInput = new Vector3(input.GetAxis(horizontalMovementAxis) * speed, 
-            0, 
+
+        //Character movement
+        Vector3 moveInput = new Vector3(input.GetAxis(horizontalMovementAxis) * speed,
+            0,
             input.GetAxis(verticalMovementAxis) * speed);
         movement.Move(moveInput);
+
+        //Character attack
+        if (input.GetButtonDown(attackButton)) {
+            movement.Attack();
+        }
     }
 }

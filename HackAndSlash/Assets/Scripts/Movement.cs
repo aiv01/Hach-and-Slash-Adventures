@@ -54,4 +54,8 @@ public class Movement : MonoBehaviour
             0.5f,
             moveLayers);
     }
+
+    public void Attack() {
+        animator.SetTrigger("Attack");
+    }
 }
