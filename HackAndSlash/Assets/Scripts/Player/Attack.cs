@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private CapsuleCollider capsuleCollider;
+    [SerializeField] private Collider hitbox;
+    public bool hasHit;
 
     public void MeleeAttackStart() {
-        Debug.Log("Attack start");
+        hitbox.gameObject.SetActive(true);
     }
 
     public void MeleeAttackEnd() {
-        Debug.Log("Attack end");
+        hitbox.gameObject.SetActive(false);
     }
 }

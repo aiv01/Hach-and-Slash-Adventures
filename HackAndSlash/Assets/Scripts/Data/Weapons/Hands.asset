@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebac6663f861fd4a8fb05e878dc330e, type: 3}
   m_Name: Hands
   m_EditorClassIdentifier: 
-  name: Bare hands
+  weaponName: 
   type: 0
   usingDex: 0
   baseDamage: 0
+  knockback: 0.1

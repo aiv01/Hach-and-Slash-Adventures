@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 
-
 public class PlayerLogic : MonoBehaviour
 {
     [Header("Level")]
@@ -38,7 +37,12 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private CharacterStats playerStats;
     [SerializeField] private Movement movement;
 
+    //Singleton
+    private static PlayerLogic instance;
+    public static PlayerLogic Instance { get { return instance; } }
+
     private void Awake() {
+        instance = this;
         input = ReInput.players.GetPlayer(0);
     }
     public void LevelUp() {
@@ -63,7 +67,7 @@ public class PlayerLogic : MonoBehaviour
     }
 
     private void OnGUI() {
-        if (GUI.Button(new Rect(0, 0, 100, 20), "Inizialize")) {
+        if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
             playerStats.InitializeCharacter();
         }
         if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
@@ -104,5 +108,11 @@ public class PlayerLogic : MonoBehaviour
         if (input.GetButtonDown(attackButton)) {
             movement.Attack();
         }
+    }
+
+    public void DealDamage(CharacterStats target, DamageType type) {
+        //target.hp -= playerStats.damage - (type == DamageType.physical ? target.defence : target.mdefence);
+        Vector3 knockbackDirection = (target.transform.position - transform.position).normalized;
+        target.transform.Translate(knockbackDirection * playerStats.equippedWeapon.knockback);
     }
 }

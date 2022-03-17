@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DamageType {
+    physical,
+    magical
+}
+
 public class CharacterStats : MonoBehaviour
 {
     [Header("Stats")]
@@ -46,6 +51,12 @@ public class CharacterStats : MonoBehaviour
         mdefence = intelligence;
         maxHp = vigor * 10;
         maxMana = intelligence * 10;
+    }
+
+    public void DealDamage(CharacterStats target, DamageType type) {
+        //target.hp -= damage - (type == DamageType.physical ? target.defence : target.mdefence);
+        Vector3 knockbackDirection = (target.transform.position - transform.position).normalized;
+        target.transform.Translate(knockbackDirection * equippedWeapon.knockback);
     }
 
     private void Update() {
