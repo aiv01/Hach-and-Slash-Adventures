@@ -55,7 +55,7 @@ public class CharacterStats : MonoBehaviour
 
     public void DealDamage(CharacterStats target, DamageType type) {
         //target.hp -= damage - (type == DamageType.physical ? target.defence : target.mdefence);
-        Vector3 knockbackDirection = (target.transform.position - transform.position).normalized;
+        Vector3 knockbackDirection = (new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z) - transform.position).normalized;
         target.transform.Translate(knockbackDirection * equippedWeapon.knockback);
     }
 

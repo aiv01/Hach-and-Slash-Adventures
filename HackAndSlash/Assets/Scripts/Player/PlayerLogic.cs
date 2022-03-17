@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 
+[RequireComponent(typeof(CharacterStats))]
 public class PlayerLogic : MonoBehaviour
 {
     [Header("Level")]
@@ -11,7 +12,6 @@ public class PlayerLogic : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
-    private Vector3 currentDirection;
 
     [Header("Input")]
     //Rewired
@@ -74,9 +74,6 @@ public class PlayerLogic : MonoBehaviour
             if(playerStats.level < maxLevel) {
                 LevelUp();
             }
-        }
-        if (GUI.Button(new Rect(0, 40, 100, 20), "Attack")) {
-            Debug.Log("Dealt " + playerStats.damage + " damage with " + playerStats.equippedWeapon.weaponName);
         }
     }
 

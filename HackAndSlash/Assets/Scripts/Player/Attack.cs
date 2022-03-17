@@ -5,7 +5,6 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     [SerializeField] private Collider hitbox;
-    public bool hasHit;
 
     public void MeleeAttackStart() {
         hitbox.gameObject.SetActive(true);
