@@ -13,7 +13,6 @@ public class Movement : MonoBehaviour
     private Ray mouseRay;
 
     public void Move(Vector3 velocity) {
-        Debug.Log(CanMove(velocity.normalized));
         if (CanMove(velocity.normalized)) {
             animator.SetFloat(speedParameter, velocity.magnitude);
         }
