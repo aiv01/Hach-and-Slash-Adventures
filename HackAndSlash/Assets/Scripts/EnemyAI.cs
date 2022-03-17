@@ -25,6 +25,9 @@ public class EnemyAI : MonoBehaviour
             enemyNavMesh.transform.LookAt(playerTarget);
             enemyNavMesh.SetDestination(playerTarget.position + new Vector3(0, 0, 0.099f));
         }
+        else {
+            anim.SetTrigger("Idle");
+        }
     }
 
     public void Run()
