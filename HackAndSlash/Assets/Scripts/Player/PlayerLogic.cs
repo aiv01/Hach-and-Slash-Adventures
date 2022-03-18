@@ -96,15 +96,9 @@ public class PlayerLogic : MonoBehaviour
         }
     }
 
-    public void DealDamage(CharacterStats target, DamageType type) {
-        target.hp -= playerStats.damage - (type == DamageType.physical ? target.defence : target.mdefence);
-        Vector3 knockbackDirection = (target.transform.position - transform.position).normalized;
-        target.transform.Translate(knockbackDirection * playerStats.equippedWeapon.knockback);
-    }
-
     //Debug stuff
     private void OnGUI() {
-        GUI.Label(new Rect(0, 40, 150, 500),
+        GUI.Label(new Rect(0, 40, 1920, 1080),
             "Level: " + playerStats.level + "\n" +
             "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
             "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
@@ -115,7 +109,8 @@ public class PlayerLogic : MonoBehaviour
             "Intelligence: " + playerStats.intelligence + "\n\n" +
             "Damage: " + playerStats.damage + "\n" +
             "Defence: " + playerStats.defence + "\n" +
-            "Magic Defence: " + playerStats.mdefence + "\n"
+            "Magic Defence: " + playerStats.mdefence + "\n" +
+            "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n"
             );
         if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
             playerStats.InitializeCharacter();

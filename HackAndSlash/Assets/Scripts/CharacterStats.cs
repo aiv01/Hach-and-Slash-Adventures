@@ -31,6 +31,8 @@ public class CharacterStats : MonoBehaviour
     public int expNeeded;
     public int level;
     public int exp;
+    [Header("Hit detection")]
+    public bool isHit;
 
     public void InitializeCharacter() {
         vigor = stats.baseVigor;

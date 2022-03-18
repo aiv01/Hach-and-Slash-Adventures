@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4562201051784600977}
   - component: {fileID: 2556718100674451197}
   - component: {fileID: 192667395053150522}
+  - component: {fileID: 2125137218}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -36,6 +37,7 @@ Transform:
   - {fileID: 2863293696538759670}
   - {fileID: 6268941409777294247}
   - {fileID: 6268941409777294253}
+  - {fileID: 4176011727603764327}
   m_Father: {fileID: 6268941409777294245}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,7 +102,7 @@ MonoBehaviour:
   intelligence: 0
   hp: 0
   mana: 0
-  damage: 0
+  damage: 5
   defence: 0
   mdefence: 0
   expNeeded: 0
@@ -119,8 +121,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInDetectionRange: 0
-  attackStateName: 
+  attackStateName: Chomper_Attack
   playerTarget: {fileID: 0}
+--- !u!114 &2125137218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79782373335570284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8b110fd964b4c4b8d896206fae7f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 7349708007638514824}
+  hurtbox: {fileID: 6591022580138401743}
 --- !u!1 &2863293696538759671
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDetection: 0
   fightAfterTime: 1
-  enemy: {fileID: 0}
+  enemy: {fileID: 192667395053150522}
 --- !u!65 &8291578945673066470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -225,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c3f12ccaf434f48883b94d97e656da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 192667395053150522}
 --- !u!65 &6502877393556317249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3512,6 +3528,50 @@ Transform:
   m_Father: {fileID: 6268941409777294225}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6991919824338787188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4176011727603764327}
+  - component: {fileID: 7349708007638514824}
+  m_Layer: 8
+  m_Name: EnemyHitbox
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4176011727603764327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991919824338787188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3381744680412494812}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7349708007638514824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991919824338787188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6370574, y: 0.64995265, z: 0.50615406}
+  m_Center: {x: 0.004775822, y: 0.54521775, z: 0.48929834}
 --- !u!1001 &6490926699778442682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3614,6 +3674,12 @@ PrefabInstance:
 --- !u!4 &6591022580138401742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 102566210266126964, guid: e9134453ccf6f7b41ab442503c1f355a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6490926699778442682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6591022580138401743 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 102566210266126965, guid: e9134453ccf6f7b41ab442503c1f355a,
     type: 3}
   m_PrefabInstance: {fileID: 6490926699778442682}
   m_PrefabAsset: {fileID: 0}

@@ -14,6 +14,7 @@ public class WeaponData : ScriptableObject
     public string weaponName;
     public WeaponType type;
     public bool usingDex;
+    public bool canStagger;
     public int baseDamage;
     /// <summary>
     /// Knockback multiplier on normalized direction vector
