@@ -16,6 +16,7 @@ public class HurtboxBehavior : MonoBehaviour
     }
 
     private void CreateDamageText(string text) {
+        if (textPrefab == null) return;
         TextMeshPro instance = Instantiate<TextMeshPro>(textPrefab);
         instance.transform.SetParent(GameObject.Find("UI").transform);
         instance.transform.position = transform.position;
