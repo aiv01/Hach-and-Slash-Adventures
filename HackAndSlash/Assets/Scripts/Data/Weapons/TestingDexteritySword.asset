@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebac6663f861fd4a8fb05e878dc330e, type: 3}
   m_Name: TestingDexteritySword
   m_EditorClassIdentifier: 
-  name: Testing Dexterity Sword
+  weaponName: Testing Dexterity Sword
   type: 0
   usingDex: 1
+  canStagger: 1
   baseDamage: 5
+  knockback: 0.6

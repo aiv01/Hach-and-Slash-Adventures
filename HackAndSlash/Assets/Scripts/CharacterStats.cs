@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DamageType {
+    physical,
+    magical
+}
+
 public class CharacterStats : MonoBehaviour
 {
     [Header("Stats")]
@@ -26,6 +31,8 @@ public class CharacterStats : MonoBehaviour
     public int expNeeded;
     public int level;
     public int exp;
+    [Header("Hit detection")]
+    public bool isHit;
 
     public void InitializeCharacter() {
         vigor = stats.baseVigor;
@@ -46,6 +53,13 @@ public class CharacterStats : MonoBehaviour
         mdefence = intelligence;
         maxHp = vigor * 10;
         maxMana = intelligence * 10;
+    }
+
+    public int DealDamage(CharacterStats target, DamageType type) {
+        int totalDamage = Mathf.Max(0, damage - (type == DamageType.physical ? target.defence : target.mdefence));
+        target.hp -= totalDamage;
+        target.transform.position += transform.forward * equippedWeapon.knockback;
+        return totalDamage;
     }
 
     private void Update() {

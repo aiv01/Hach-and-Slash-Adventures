@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 
-
+[RequireComponent(typeof(CharacterStats))]
 public class PlayerLogic : MonoBehaviour
 {
     [Header("Level")]
@@ -12,7 +12,6 @@ public class PlayerLogic : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
-    private Vector3 currentDirection;
 
     [Header("Input")]
     //Rewired
@@ -38,7 +37,12 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private CharacterStats playerStats;
     [SerializeField] private Movement movement;
 
+    //Singleton
+    private static PlayerLogic instance;
+    public static PlayerLogic Instance { get { return instance; } }
+
     private void Awake() {
+        instance = this;
         input = ReInput.players.GetPlayer(0);
     }
     public void LevelUp() {
@@ -60,20 +64,6 @@ public class PlayerLogic : MonoBehaviour
         playerStats.CalculateStats();
         playerStats.hp += playerStats.MaxHp - oldMaxHp;
         playerStats.mana += playerStats.MaxMana - oldMaxMana;
-    }
-
-    private void OnGUI() {
-        if (GUI.Button(new Rect(0, 0, 100, 20), "Inizialize")) {
-            playerStats.InitializeCharacter();
-        }
-        if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
-            if(playerStats.level < maxLevel) {
-                LevelUp();
-            }
-        }
-        if (GUI.Button(new Rect(0, 40, 100, 20), "Attack")) {
-            Debug.Log("Dealt " + playerStats.damage + " damage with " + playerStats.equippedWeapon.weaponName);
-        }
     }
 
     private void Update() {
@@ -103,6 +93,32 @@ public class PlayerLogic : MonoBehaviour
         //Character attack
         if (input.GetButtonDown(attackButton)) {
             movement.Attack();
+        }
+    }
+
+    //Debug stuff
+    private void OnGUI() {
+        GUI.Label(new Rect(0, 40, 1920, 1080),
+            "Level: " + playerStats.level + "\n" +
+            "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
+            "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
+            "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
+            "Vigor: " + playerStats.vigor + "\n" +
+            "Strength: " + playerStats.strength + "\n" +
+            "Dexterity: " + playerStats.dexterity + "\n" +
+            "Intelligence: " + playerStats.intelligence + "\n\n" +
+            "Damage: " + playerStats.damage + "\n" +
+            "Defence: " + playerStats.defence + "\n" +
+            "Magic Defence: " + playerStats.mdefence + "\n" +
+            "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n"
+            );
+        if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
+            playerStats.InitializeCharacter();
+        }
+        if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
+            if (playerStats.level < maxLevel) {
+                LevelUp();
+            }
         }
     }
 }
