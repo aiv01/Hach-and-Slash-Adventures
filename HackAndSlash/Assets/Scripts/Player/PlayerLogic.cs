@@ -107,7 +107,7 @@ public class PlayerLogic : MonoBehaviour
         GUI.Label(new Rect(0, 40, 150, 500),
             "Level: " + playerStats.level + "\n" +
             "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
-            "Mana: " + playerStats.mana + "/" + playerStats.MaxHp + "\n" +
+            "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
             "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
             "Vigor: " + playerStats.vigor + "\n" +
             "Strength: " + playerStats.strength + "\n" +
