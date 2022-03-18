@@ -51,8 +51,7 @@ public class EnemyAIShoot : MonoBehaviour
     public void Run()
     {
         enemyNavMesh.speed = 0.4f;
-        //anim.SetTrigger("Walk");
-        anim.SetTrigger("Run");
+        anim.SetTrigger("Walk");
     }
 
     public void Attack()
