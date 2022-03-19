@@ -18,7 +18,7 @@ public class PlayerLogic : MonoBehaviour
     private Player input;
 
     //Rotation
-    private bool usingMouse;
+    [SerializeField] private bool usingMouse;
 
     //Input strings
     [SerializeField] private string horizontalMovementAxis;
@@ -44,6 +44,7 @@ public class PlayerLogic : MonoBehaviour
     private void Awake() {
         instance = this;
         input = ReInput.players.GetPlayer(0);
+        playerStats = GetComponent<CharacterStats>();
     }
     public void LevelUp() {
         //Get class and increment level
@@ -93,6 +94,13 @@ public class PlayerLogic : MonoBehaviour
         //Character attack
         if (input.GetButtonDown(attackButton)) {
             movement.Attack();
+        }
+    }
+
+    public void GetExp(int exp) {
+        playerStats.exp += exp;
+        if(playerStats.exp >= playerStats.expNeeded) {
+            LevelUp();
         }
     }
 

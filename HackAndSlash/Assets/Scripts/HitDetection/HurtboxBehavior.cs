@@ -11,7 +11,7 @@ public class HurtboxBehavior : MonoBehaviour
         if (other.CompareTag(canGetHitBy)) {
             Debug.Log("hit");
             CharacterStats otherStats = other.GetComponentInParent<CharacterStats>();
-            CreateDamageText(otherStats.DealDamage(GetComponentInParent<CharacterStats>(), DamageType.physical).ToString());
+            CreateDamageText(otherStats.DealDamage(GetComponentInParent<CharacterStats>(), otherStats.equippedWeapon.damageType).ToString());
         }
     }
 

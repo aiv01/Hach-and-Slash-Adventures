@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e54ba2786f318f0409800f22a6ca11c2, type: 3}
+  m_Script: {fileID: 11500000, guid: b43c32fc310d1634a9a9f6cf05425081, type: 3}
   m_Name: Chomper
   m_EditorClassIdentifier: 
   baseVigor: 1
   baseStrength: 2
   baseDexterity: 1
   baseIntelligence: 0
+  enemyName: Chomper
+  type: 0
+  exp: 5
