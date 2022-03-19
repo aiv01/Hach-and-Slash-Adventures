@@ -4,30 +4,24 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
+    public float timeToSpawn = 5f;
+    private float timeSinceSpawn;
+    private ObjectPool objectPool;
+    public GameObject prefab;
 
-    public GameObject[] enemySpawn;
-    public int xPos;
-    public int zPos;
-    public int enemyCount;
-
-    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(EnemyDrop());
+        objectPool = FindObjectOfType<ObjectPool>();
     }
 
-    IEnumerator EnemyDrop()
+    void Update()
     {
-        while(enemyCount < 10)
+        timeSinceSpawn += Time.deltaTime;
+        if(timeSinceSpawn >= timeToSpawn)
         {
-            xPos = Random.Range(1, 50);
-            zPos = Random.Range(1, 31);
-            for(int i = 0; i < enemySpawn.Length; i++)
-            {
-                Instantiate(enemySpawn[i], new Vector3(xPos, 0, zPos), Quaternion.identity);
-            }
-            yield return new WaitForSeconds(0.1f);
-            enemyCount += 1;
+            GameObject newObject = objectPool.GetObject(prefab);
+            newObject.transform.position = this.transform.position;
+            timeSinceSpawn = 0f;
         }
     }
 }
