@@ -58,7 +58,7 @@ public class CharacterStats : MonoBehaviour
     public int DealDamage(CharacterStats target, DamageType type) {
         int totalDamage = Mathf.Max(1, damage - (type == DamageType.physical ? target.defence : target.mdefence));
         target.hp -= totalDamage;
-        target.transform.position += transform.forward * equippedWeapon.knockback;
+        target.transform.position += (new Vector3(transform.forward.x, 0, transform.forward.z)) * equippedWeapon.knockback;
         return totalDamage;
     }
 
