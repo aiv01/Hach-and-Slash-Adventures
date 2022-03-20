@@ -169,6 +169,7 @@ MonoBehaviour:
   maxLevel: 25
   speed: 1
   rotationSpeed: 0
+  usingMouse: 1
   horizontalMovementAxis: HorizontalMovement
   verticalMovementAxis: VerticalMovement
   horizontalLookAxis: HorizontalDirection
@@ -182,6 +183,8 @@ MonoBehaviour:
   skill4key: Skill4
   playerStats: {fileID: 4482356324216270667}
   movement: {fileID: 9089337827708930043}
+  hit: 0
+  weapons: []
 --- !u!114 &4482356324216270667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +211,7 @@ MonoBehaviour:
   expNeeded: 0
   level: 0
   exp: 0
+  isHit: 0
 --- !u!1 &9089337828072651704
 GameObject:
   m_ObjectHideFlags: 0

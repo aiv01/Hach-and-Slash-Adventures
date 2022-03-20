@@ -34,9 +34,15 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private string skill4key;
 
     [Header("References")]
-    [SerializeField] private CharacterStats playerStats;
+    [SerializeField] public CharacterStats playerStats;
     [SerializeField] private Movement movement;
 
+    //Hit detection
+    [Header("Hit detection")]
+    public bool hit;
+
+    //Debug stuff
+    [SerializeField] private WeaponData[] weapons;
     //Singleton
     private static PlayerLogic instance;
     public static PlayerLogic Instance { get { return instance; } }
@@ -126,6 +132,11 @@ public class PlayerLogic : MonoBehaviour
         if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
             if (playerStats.level < maxLevel) {
                 LevelUp();
+            }
+        }
+        for (int i = 0; i < weapons.Length; i++) {
+            if (GUI.Button(new Rect(100, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
+                playerStats.equippedWeapon = weapons[i];
             }
         }
     }

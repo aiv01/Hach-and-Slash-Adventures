@@ -9,7 +9,8 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField] private int level = 1;
     
     [Header("References")]
-    private CharacterStats enemyStats;
+    public CharacterStats enemyStats;
+
     // Start is called before the first frame update
     private void Awake() {
         enemyStats = GetComponent<CharacterStats>();

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3381744680412494812}
   - component: {fileID: 9194612232264873424}
   - component: {fileID: 4562201051784600977}
-  - component: {fileID: 2556718100674451197}
   - component: {fileID: 192667395053150522}
   - component: {fileID: 2125137218}
+  - component: {fileID: 2556718100674451197}
   - component: {fileID: 1392364230}
   m_Layer: 0
   m_Name: Controller
@@ -83,33 +83,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2556718100674451197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79782373335570284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f47fbb6948e1a58439b632b2ca56a30d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 83abd089146dffe49b62ae8b5e68a506, type: 2}
-  equippedWeapon: {fileID: 11400000, guid: 8607dd371ddd5f842a909983d04736f1, type: 2}
-  vigor: 0
-  strength: 0
-  dexterity: 0
-  intelligence: 0
-  hp: 0
-  mana: 0
-  damage: 5
-  defence: 0
-  mdefence: 0
-  expNeeded: 0
-  level: 0
-  exp: 0
-  isHit: 0
 --- !u!114 &192667395053150522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +112,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 7349708007638514824}
   hurtbox: {fileID: 6591022580138401743}
+--- !u!114 &2556718100674451197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79782373335570284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47fbb6948e1a58439b632b2ca56a30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 83abd089146dffe49b62ae8b5e68a506, type: 2}
+  equippedWeapon: {fileID: 11400000, guid: 8607dd371ddd5f842a909983d04736f1, type: 2}
+  vigor: 0
+  strength: 0
+  dexterity: 0
+  intelligence: 0
+  hp: 0
+  mana: 0
+  damage: 5
+  defence: 0
+  mdefence: 0
+  expNeeded: 0
+  level: 0
+  exp: 0
+  isHit: 0
 --- !u!114 &1392364230
 MonoBehaviour:
   m_ObjectHideFlags: 0

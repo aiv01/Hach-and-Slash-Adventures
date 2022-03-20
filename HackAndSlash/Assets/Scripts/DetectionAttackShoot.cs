@@ -7,48 +7,38 @@ public class DetectionAttackShoot : MonoBehaviour
 {
 
     public bool playerDetection = false;
-    public DateTime nextDamage;
-    public float fightAfterTime;
+    public float attackCooldown;
+    private float currentAttackTime;
 
     public EnemyAIShoot enemy;
 
     // Start is called before the first frame update
-    void Awake()
-    {
-        nextDamage = DateTime.Now;
+    void Awake() {
+        currentAttackTime = attackCooldown;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        if(playerDetection == true)
-        {
+    void Update() {
+        currentAttackTime -= Time.deltaTime;
+        if (playerDetection == true && currentAttackTime <= 0) {
             FightInDetection();
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
-        {
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player") {
             playerDetection = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
+    private void OnTriggerExit(Collider other) {
+        if (other.tag == "Player") {
             playerDetection = false;
         }
     }
 
-    public void FightInDetection()
-    {
-        if(nextDamage <= DateTime.Now)
-        {
-            enemy.Attack();
-            nextDamage = DateTime.Now.AddSeconds(System.Convert.ToDouble(fightAfterTime));
-        }
+    public void FightInDetection() {
+        enemy.Attack();
+        currentAttackTime = attackCooldown;
     }
 }

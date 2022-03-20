@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private string attackStateName;
     public Transform playerTarget;
     NavMeshAgent enemyNavMesh;
+    EnemyLogic logic;
     Animator anim;
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     {
         enemyNavMesh = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        logic = GetComponent<EnemyLogic>();
     }
 
     // Update is called once per frame
@@ -49,10 +51,12 @@ public class EnemyAI : MonoBehaviour
 
     public void Attack()
     {
+        enemyNavMesh.speed = 0f;
         anim.SetTrigger("Attack");
     }
 
     public void Idle() {
+        enemyNavMesh.speed = 0f;
         anim.SetTrigger("Idle");
     }
 }

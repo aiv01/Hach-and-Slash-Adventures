@@ -11,7 +11,6 @@ public class EnemyAIShoot : MonoBehaviour
     public Transform playerTarget;
     NavMeshAgent enemyNavMesh;
     Animator anim;
-    public float timeBetweenAttacks;
     public GameObject projectile;
 
 
@@ -51,33 +50,25 @@ public class EnemyAIShoot : MonoBehaviour
     public void Run()
     {
         enemyNavMesh.speed = 0.4f;
-        anim.SetTrigger("Walk");
+        anim.SetTrigger("Run");
     }
 
     public void Attack()
     {
+        enemyNavMesh.speed = 0f;
         anim.SetTrigger("Attack");
-
-        if (!isAttacking)
-        {
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-
-            isAttacking = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
-        }
-
-    }
-
-    private void ResetAttack()
-    {
-        isAttacking = false;
     }
 
 
     public void Idle()
     {
+        enemyNavMesh.speed = 0f;
         anim.SetTrigger("Idle");
+    }
+
+    public void Shoot() {
+        Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        rb.AddForce(new Vector3(transform.forward.x, 0, transform.forward.z) * 32f, ForceMode.Impulse);
+        rb.AddForce(transform.up * 8f, ForceMode.Impulse);
     }
 }

@@ -7,21 +7,22 @@ public class DetectionAttack : MonoBehaviour
 {
 
     public bool playerDetection = false;
-    public DateTime nextDamage;
-    public float fightAfterTime;
+    public float attackCooldown;
+    private float currentAttackTime;
 
     public EnemyAI enemy;
 
     // Start is called before the first frame update
     void Awake()
     {
-        nextDamage = DateTime.Now;
+        currentAttackTime = attackCooldown;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if(playerDetection == true)
+        currentAttackTime -= Time.deltaTime;
+        if(playerDetection == true && currentAttackTime <= 0)
         {
             FightInDetection();
         }
@@ -45,10 +46,7 @@ public class DetectionAttack : MonoBehaviour
 
     public void FightInDetection()
     {
-        if(nextDamage <= DateTime.Now)
-        {
-            enemy.Attack();
-            nextDamage = DateTime.Now.AddSeconds(System.Convert.ToDouble(fightAfterTime));
-        }
+        enemy.Attack();
+        currentAttackTime = attackCooldown;
     }
 }
