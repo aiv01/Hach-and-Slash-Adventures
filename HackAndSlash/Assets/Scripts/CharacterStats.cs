@@ -31,9 +31,15 @@ public class CharacterStats : MonoBehaviour
     public int expNeeded;
     public int level;
     public int exp;
-    [Header("Hit detection")]
-    public bool isHit;
-
+    //Hit detection
+    [HideInInspector] public bool isHit;
+    //Damage calculation
+    public int realDamage;
+    //Skills
+    public SkillLogic[] skills;
+    private void Awake() {
+        skills = new SkillLogic[4];
+    }
     public void InitializeCharacter() {
         vigor = stats.baseVigor;
         strength = stats.baseStrength;
@@ -43,12 +49,14 @@ public class CharacterStats : MonoBehaviour
         exp = 0;
         expNeeded = 20;
         CalculateStats();
+        realDamage = damage;
         hp = maxHp;
         mana = maxMana;
     }
 
     public void CalculateStats() {
         damage = equippedWeapon.baseDamage + (equippedWeapon.usingDex ? dexterity : strength);
+        realDamage = damage;
         defence = vigor;
         mdefence = intelligence;
         maxHp = vigor * 10;
@@ -56,13 +64,15 @@ public class CharacterStats : MonoBehaviour
     }
 
     public int DealDamage(CharacterStats target, DamageType type) {
-        int totalDamage = Mathf.Max(1, damage - (type == DamageType.physical ? target.defence : target.mdefence));
+        int totalDamage = Mathf.Max(1, realDamage - (type == DamageType.physical ? target.defence : target.mdefence));
         target.hp -= totalDamage;
         target.transform.position += (new Vector3(transform.forward.x, 0, transform.forward.z)) * equippedWeapon.knockback;
-        target.isHit = true;
+        if (equippedWeapon.canStagger) {
+            target.isHit = true;
+        }
         return totalDamage;
     }
-
+                                                                                                                            
     private void Update() {
         damage = equippedWeapon.baseDamage + (equippedWeapon.usingDex ? dexterity : strength); //Temporary until real equip logic
     }

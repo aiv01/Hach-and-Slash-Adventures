@@ -17,7 +17,14 @@ MonoBehaviour:
   baseDexterity: 2
   baseIntelligence: 1
   className: Warrior
+  weaponRestriction: 0
   incrementVigor: 3
   incrementStrength: 2
   incrementDexterity: 1
   incrementIntelligence: 1
+  unlockLevelSkill: 01000000020000000400000006000000
+  skills:
+  - {fileID: 3197066906837977733, guid: c10499fb0ed7def4f85668fdf3859dea, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
