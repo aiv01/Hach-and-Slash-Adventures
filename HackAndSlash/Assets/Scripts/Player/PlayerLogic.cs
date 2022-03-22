@@ -47,18 +47,12 @@ public class PlayerLogic : MonoBehaviour
     private static PlayerLogic instance;
     public static PlayerLogic Instance { get { return instance; } }
 
-    public PlayerBar healthBar;
-    public PlayerBar manaBar;
     public PlayerPanel playerPanel;
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float maxMana;
 
     private void Awake() {
         instance = this;
         input = ReInput.players.GetPlayer(0);
         playerStats = GetComponent<CharacterStats>();
-        healthBar.Initialize(maxHealth, maxHealth);
-        manaBar.Initialize(maxMana, maxMana);
     }
     public void LevelUp() {
         //Get class and increment level
@@ -84,17 +78,6 @@ public class PlayerLogic : MonoBehaviour
     private void Update() {
         ManageInput();
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            healthBar.CurrentValue -= 10;
-            manaBar.CurrentValue -= 10;
-
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            healthBar.CurrentValue += 10;
-            manaBar.CurrentValue += 10;
-        }
         if (Input.GetKeyDown(KeyCode.P))
         {
             playerPanel.OpenClose();
@@ -136,39 +119,39 @@ public class PlayerLogic : MonoBehaviour
     }
 
     //Debug stuff
-    //private void OnGUI()
-    //{
-    //    GUI.Label(new Rect(0, 40, 1920, 1080),
-    //        "Level: " + playerStats.level + "\n" +
-    //        "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
-    //        "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
-    //        "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
-    //        "Vigor: " + playerStats.vigor + "\n" +
-    //        "Strength: " + playerStats.strength + "\n" +
-    //        "Dexterity: " + playerStats.dexterity + "\n" +
-    //        "Intelligence: " + playerStats.intelligence + "\n\n" +
-    //        "Damage: " + playerStats.dexterity + "\n" +
-    //        "Defence: " + playerStats.defence + "\n" +
-    //        "Magic Defence: " + playerStats.mdefence + "\n" +
-    //        "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n"
-    //        );
-    //    if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize"))
-    //    {
-    //        playerStats.InitializeCharacter();
-    //    }
-    //    if (GUI.Button(new Rect(0, 20, 100, 20), "Level up"))
-    //    {
-    //        if (playerStats.level < maxLevel)
-    //        {
-    //            LevelUp();
-    //        }
-    //    }
-    //    for (int i = 0; i < weapons.Length; i++)
-    //    {
-    //        if (GUI.Button(new Rect(100, 0 + (i * 20), 150, 20), weapons[i].weaponName))
-    //        {
-    //            playerStats.equippedWeapon = weapons[i];
-    //        }
-    //    }
-    //}
+    private void OnGUI()
+    {
+        //GUI.Label(new Rect(0, 40, 1920, 1080),
+        //    "Level: " + playerStats.level + "\n" +
+        //    "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
+        //    "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
+        //    "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
+        //    "Vigor: " + playerStats.vigor + "\n" +
+        //    "Strength: " + playerStats.strength + "\n" +
+        //    "Dexterity: " + playerStats.dexterity + "\n" +
+        //    "Intelligence: " + playerStats.intelligence + "\n\n" +
+        //    "Damage: " + playerStats.dexterity + "\n" +
+        //    "Defence: " + playerStats.defence + "\n" +
+        //    "Magic Defence: " + playerStats.mdefence + "\n" +
+        //    "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n"
+        //    );
+        //if (GUI.Button(new Rect(0, 0, 100, 50), "Initialize"))
+        //{
+        //    playerStats.InitializeCharacter();
+        //}
+        //if (GUI.Button(new Rect(0, 20, 100, 50), "Level up"))
+        //{
+        //    if (playerStats.level < maxLevel)
+        //    {
+        //        LevelUp();
+        //    }
+        //}
+        //for (int i = 0; i < weapons.Length; i++)
+        //{
+        //    if (GUI.Button(new Rect(100, 0 + (i * 20), 150, 50), weapons[i].weaponName))
+        //    {
+        //        playerStats.equippedWeapon = weapons[i];
+        //    }
+        //}
+    }
 }
