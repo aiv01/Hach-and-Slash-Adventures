@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
     public Text vigorText, dexterityText, mdefenceText, intelligenceText;
     public Text strengthText, defenceText, cWeaponText,damageText;
 
-    void Start()
+    void Update()
     {
         UpdatePlayerStatus();
     }
