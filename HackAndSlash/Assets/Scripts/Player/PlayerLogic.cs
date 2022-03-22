@@ -135,23 +135,18 @@ public class PlayerLogic : MonoBehaviour
         //    "Magic Defence: " + playerStats.mdefence + "\n" +
         //    "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n"
         //    );
-        //if (GUI.Button(new Rect(0, 0, 100, 50), "Initialize"))
-        //{
-        //    playerStats.InitializeCharacter();
-        //}
-        //if (GUI.Button(new Rect(0, 20, 100, 50), "Level up"))
-        //{
-        //    if (playerStats.level < maxLevel)
-        //    {
-        //        LevelUp();
-        //    }
-        //}
-        //for (int i = 0; i < weapons.Length; i++)
-        //{
-        //    if (GUI.Button(new Rect(100, 0 + (i * 20), 150, 50), weapons[i].weaponName))
-        //    {
-        //        playerStats.equippedWeapon = weapons[i];
-        //    }
-        //}
+        if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
+            playerStats.InitializeCharacter();
+        }
+        if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
+            if (playerStats.level < maxLevel) {
+                LevelUp();
+            }
+        }
+        for (int i = 0; i < weapons.Length; i++) {
+            if (GUI.Button(new Rect(100, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
+                playerStats.equippedWeapon = weapons[i];
+            }
+        }
     }
 }
