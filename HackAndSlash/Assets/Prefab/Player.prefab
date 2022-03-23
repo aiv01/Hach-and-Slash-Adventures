@@ -184,7 +184,12 @@ MonoBehaviour:
   playerStats: {fileID: 4482356324216270667}
   movement: {fileID: 9089337827708930043}
   hit: 0
-  weapons: []
+  currentSkillId: 0
+  weapons:
+  - {fileID: 11400000, guid: 8607dd371ddd5f842a909983d04736f1, type: 2}
+  - {fileID: 11400000, guid: 4997eea6f4f35274687d913db571fa87, type: 2}
+  - {fileID: 11400000, guid: 21218005f5d3a9f4690268492bad7533, type: 2}
+  playerPanel: {fileID: 0}
 --- !u!114 &4482356324216270667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +217,12 @@ MonoBehaviour:
   level: 0
   exp: 0
   isHit: 0
+  realDamage: 0
+  skills:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &9089337828072651704
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,6 +41,11 @@ public class PlayerLogic : MonoBehaviour
     [Header("Hit detection")]
     public bool hit;
 
+    //Skill
+    [SerializeField] private int currentSkillId = 0;
+    private SkillLogic currentSkill;
+    private bool isUsingSkill;
+
     //Debug stuff
     [SerializeField] private WeaponData[] weapons;
     //Singleton
@@ -53,6 +58,7 @@ public class PlayerLogic : MonoBehaviour
         instance = this;
         input = ReInput.players.GetPlayer(0);
         playerStats = GetComponent<CharacterStats>();
+        UnlockSkillManagement();
     }
     public void LevelUp() {
         //Get class and increment level
@@ -73,10 +79,14 @@ public class PlayerLogic : MonoBehaviour
         playerStats.CalculateStats();
         playerStats.hp += playerStats.MaxHp - oldMaxHp;
         playerStats.mana += playerStats.MaxMana - oldMaxMana;
+
+        UnlockSkillManagement();
     }
 
     private void Update() {
         ManageInput();
+
+        currentSkill = playerStats.skills[currentSkillId] != null ? playerStats.skills[currentSkillId] : null;
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -108,7 +118,31 @@ public class PlayerLogic : MonoBehaviour
         if (input.GetButtonDown(attackButton)) {
             movement.Attack();
         }
+        if (input.GetButtonDown(skillButton)) {
+            isUsingSkill = true;
+            currentSkill.Skill();
+        }
 
+        //Select skill
+        if (!isUsingSkill) {
+            currentSkillId += (int)input.GetAxis(skillChangeAxis);
+            currentSkillId = currentSkillId >= 4 ? 0 : currentSkillId;
+            currentSkillId = currentSkillId < 0 ? 3 : currentSkillId;
+        }
+
+        //Skill with num
+        if (input.GetButtonDown(skill1key)) {
+            UseSkillWithNum(0);
+        }
+        if (input.GetButtonDown(skill2key)) {
+            UseSkillWithNum(1);
+        }
+        if (input.GetButtonDown(skill3key)) {
+            UseSkillWithNum(2);
+        }
+        if (input.GetButtonDown(skill4key)) {
+            UseSkillWithNum(3);
+        }
     }
 
     public void GetExp(int exp) {
@@ -118,23 +152,49 @@ public class PlayerLogic : MonoBehaviour
         }
     }
 
+    //Skill Management
+    public void SkillStart() {
+        currentSkill.OnSkillStart();
+    }
+    public void SkillEnd() {
+        currentSkill.OnSkillEnd();
+        isUsingSkill = false;
+    }
+    private void UnlockSkillManagement() {
+        ClassData currentClass = (ClassData)playerStats.stats;
+        for (int i = 0; i < currentClass.skills.Length; i++) {
+            if (playerStats.level == currentClass.unlockLevelSkill[i]) {
+                playerStats.skills[i] = currentClass.skills[i];
+            }
+        }
+    }
+
+    private void UseSkillWithNum(int num) {
+        if (!isUsingSkill) {
+            currentSkillId = num;
+            playerStats.skills[currentSkillId].Skill();
+            isUsingSkill = true;
+        }
+    }
+
     //Debug stuff
     private void OnGUI()
     {
-        //GUI.Label(new Rect(0, 40, 1920, 1080),
-        //    "Level: " + playerStats.level + "\n" +
-        //    "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
-        //    "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
-        //    "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
-        //    "Vigor: " + playerStats.vigor + "\n" +
-        //    "Strength: " + playerStats.strength + "\n" +
-        //    "Dexterity: " + playerStats.dexterity + "\n" +
-        //    "Intelligence: " + playerStats.intelligence + "\n\n" +
-        //    "Damage: " + playerStats.dexterity + "\n" +
-        //    "Defence: " + playerStats.defence + "\n" +
-        //    "Magic Defence: " + playerStats.mdefence + "\n" +
-        //    "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n"
-        //    );
+        GUI.Label(new Rect(0, 40, 1920, 1080),
+            "Level: " + playerStats.level + "\n" +
+            "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
+            "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
+            "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
+            "Vigor: " + playerStats.vigor + "\n" +
+            "Strength: " + playerStats.strength + "\n" +
+            "Dexterity: " + playerStats.dexterity + "\n" +
+            "Intelligence: " + playerStats.intelligence + "\n\n" +
+            "Damage: " + playerStats.damage + "\n" +
+            "Defence: " + playerStats.defence + "\n" +
+            "Magic Defence: " + playerStats.mdefence + "\n" +
+            "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n" +
+            "Current Skill: " + (currentSkill != null ? currentSkill.skill.skillName : "None") + "\n"
+            );
         if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
             playerStats.InitializeCharacter();
         }

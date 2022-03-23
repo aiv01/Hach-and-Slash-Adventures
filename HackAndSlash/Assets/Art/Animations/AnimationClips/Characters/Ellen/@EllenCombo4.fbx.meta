@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 6fd1fb8479e6a994f9e4cc7fb79d2ac2
 ModelImporter:
-  serializedVersion: 20101
+  serializedVersion: 20200
   internalIDToNameTable:
   - first:
       1: 100000
@@ -752,6 +752,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.2447019
+        functionName: SkillStart
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.26449007
         functionName: MeleeAttackStart
         data: 
@@ -759,7 +766,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
-      - time: 0.41482964
+      - time: 0.4122807
+        functionName: SkillEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.43252876
         functionName: MeleeAttackEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -835,6 +849,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

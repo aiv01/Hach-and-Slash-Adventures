@@ -11,4 +11,6 @@ public class ClassData : StatData
     public int incrementStrength;
     public int incrementDexterity;
     public int incrementIntelligence;
+    public int[] unlockLevelSkill;
+    public SkillLogic[] skills;
 }
