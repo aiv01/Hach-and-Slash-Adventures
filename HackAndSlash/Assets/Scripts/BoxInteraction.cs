@@ -8,6 +8,7 @@ public class BoxInteraction : MonoBehaviour
     public Rigidbody weapons;
     private bool isInsideTrigger = false;
     private bool isOpen = false;
+    public GameObject chest;
     public Transform weaponsCreate;
     public Animator anim;
     public static float defaultLifeTimer = 10;
@@ -30,7 +31,7 @@ public class BoxInteraction : MonoBehaviour
                     Rigidbody weaponsInstance;
                     weaponsInstance = Instantiate(weapons, weaponsCreate.position, weaponsCreate.rotation);
                     weaponsInstance.AddForce(Random.Range(-50, 50), 300f, -30f);
-                    WaitAndDestroy();
+                    StartCoroutine(WaitAndDestroy());
                 }
                 else if (isOpen == false)
                 {
@@ -60,7 +61,7 @@ public class BoxInteraction : MonoBehaviour
 
     IEnumerator WaitAndDestroy()
     {
-        yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(5f);
+        Destroy(chest);
     }
 }
