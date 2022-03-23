@@ -6,6 +6,8 @@ public abstract class SkillLogic : MonoBehaviour{
     public SkillData skill;
     [SerializeField] protected CharacterStats character;
     public abstract void Skill();
-    public abstract void OnSkillStart();
+    public virtual void OnSkillStart() {
+        character.mana -= skill.manaCost;
+    }
     public abstract void OnSkillEnd();
 }

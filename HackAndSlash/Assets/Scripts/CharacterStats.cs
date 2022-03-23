@@ -35,6 +35,9 @@ public class CharacterStats : MonoBehaviour
     [HideInInspector] public bool isHit;
     //Damage calculation
     public int realDamage;
+    //Mana regeneration
+    private float addManaTime = 1;
+    private float currentManaTime;
     //Skills
     public SkillLogic[] skills;
     public void InitializeCharacter() {
@@ -72,5 +75,13 @@ public class CharacterStats : MonoBehaviour
                                                                                                                             
     private void Update() {
         damage = equippedWeapon.baseDamage + (equippedWeapon.usingDex ? dexterity : strength); //Temporary until real equip logic
+        //Mana regeneration
+        if(mana < maxMana) {
+            currentManaTime -= Time.deltaTime * intelligence * 0.5f;
+            if(currentManaTime <= 0) {
+                mana++;
+                currentManaTime = addManaTime;
+            }
+        }
     }
 }
