@@ -42,8 +42,9 @@ public class PlayerLogic : MonoBehaviour
     public bool hit;
 
     //Skill
-    int currentSkillId = 0;
-    private SkillLogic currentSkill = null;
+    [SerializeField] private int currentSkillId = 0;
+    private SkillLogic currentSkill;
+    private bool isUsingSkill;
 
     //Debug stuff
     [SerializeField] private WeaponData[] weapons;
@@ -118,9 +119,30 @@ public class PlayerLogic : MonoBehaviour
             movement.Attack();
         }
         if (input.GetButtonDown(skillButton)) {
+            isUsingSkill = true;
             currentSkill.Skill();
         }
 
+        //Select skill
+        if (!isUsingSkill) {
+            currentSkillId += (int)input.GetAxis(skillChangeAxis);
+            currentSkillId = currentSkillId >= 4 ? 0 : currentSkillId;
+            currentSkillId = currentSkillId < 0 ? 3 : currentSkillId;
+        }
+
+        //Skill with num
+        if (input.GetButtonDown(skill1key)) {
+            UseSkillWithNum(0);
+        }
+        if (input.GetButtonDown(skill2key)) {
+            UseSkillWithNum(1);
+        }
+        if (input.GetButtonDown(skill3key)) {
+            UseSkillWithNum(2);
+        }
+        if (input.GetButtonDown(skill4key)) {
+            UseSkillWithNum(3);
+        }
     }
 
     public void GetExp(int exp) {
@@ -136,6 +158,7 @@ public class PlayerLogic : MonoBehaviour
     }
     public void SkillEnd() {
         currentSkill.OnSkillEnd();
+        isUsingSkill = false;
     }
     private void UnlockSkillManagement() {
         ClassData currentClass = (ClassData)playerStats.stats;
@@ -143,6 +166,14 @@ public class PlayerLogic : MonoBehaviour
             if (playerStats.level == currentClass.unlockLevelSkill[i]) {
                 playerStats.skills[i] = currentClass.skills[i];
             }
+        }
+    }
+
+    private void UseSkillWithNum(int num) {
+        if (!isUsingSkill) {
+            currentSkillId = num;
+            playerStats.skills[currentSkillId].Skill();
+            isUsingSkill = true;
         }
     }
 

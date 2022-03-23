@@ -29,7 +29,7 @@ public class CharacterStats : MonoBehaviour
     public int mdefence;
     //Level up
     public int expNeeded;
-    public int level;
+    public int level = 0;
     public int exp;
     //Hit detection
     [HideInInspector] public bool isHit;
@@ -37,9 +37,6 @@ public class CharacterStats : MonoBehaviour
     public int realDamage;
     //Skills
     public SkillLogic[] skills;
-    private void Awake() {
-        skills = new SkillLogic[4];
-    }
     public void InitializeCharacter() {
         vigor = stats.baseVigor;
         strength = stats.baseStrength;

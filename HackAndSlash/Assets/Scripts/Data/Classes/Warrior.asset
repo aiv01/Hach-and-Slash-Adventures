@@ -22,9 +22,9 @@ MonoBehaviour:
   incrementStrength: 2
   incrementDexterity: 1
   incrementIntelligence: 1
-  unlockLevelSkill: 01000000020000000400000006000000
+  unlockLevelSkill: 00000000020000000400000006000000
   skills:
   - {fileID: 3197066906837977733, guid: c10499fb0ed7def4f85668fdf3859dea, type: 3}
-  - {fileID: 0}
+  - {fileID: 3618693298752218042, guid: bdf32eef019e13c458b83255766e2ddb, type: 3}
   - {fileID: 0}
   - {fileID: 0}

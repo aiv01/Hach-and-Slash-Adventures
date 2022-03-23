@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d9b548e9a9cd5e41afe1660f4e6b762, type: 3}
-  m_Name: BaseAttack
+  m_Name: HeavyBlow
   m_EditorClassIdentifier: 
-  skillName: Attack
+  skillName: Heavy Blow
   type: 0
   damageType: 0
-  damageMultiplier: 1
+  damageMultiplier: 1.2
   knockbackMultiplier: 1
-  animationTrigger: Attack
-  description: Make a basic attack with your weapon.
+  animationTrigger: Heavy
+  description: Make a heavy blow that deals more damage.

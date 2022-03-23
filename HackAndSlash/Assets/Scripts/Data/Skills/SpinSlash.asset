@@ -16,6 +16,6 @@ MonoBehaviour:
   type: 0
   damageType: 0
   damageMultiplier: 0.8
-  knockbackMultiplier: 0
+  knockbackMultiplier: 0.5
   animationTrigger: Spin
   description: Hit all enemies around you.
