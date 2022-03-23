@@ -45,6 +45,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private int currentSkillId = 0;
     private SkillLogic currentSkill;
     private bool isUsingSkill;
+    private bool hasChangedSkill;
 
     //Debug stuff
     [SerializeField] private WeaponData[] weapons;
@@ -96,6 +97,12 @@ public class PlayerLogic : MonoBehaviour
 
     private void ManageInput() {
         //Character Rotation
+        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0) {
+            usingMouse = true;
+        }
+        else {
+            usingMouse = false;
+        }
         if (usingMouse) {
             movement.LookAtMouse();
         }
@@ -123,10 +130,14 @@ public class PlayerLogic : MonoBehaviour
         }
 
         //Select skill
-        if (!isUsingSkill) {
+        if (!isUsingSkill && !hasChangedSkill) {
             currentSkillId += (int)input.GetAxis(skillChangeAxis);
+            hasChangedSkill = true;
             currentSkillId = currentSkillId >= 4 ? 0 : currentSkillId;
             currentSkillId = currentSkillId < 0 ? 3 : currentSkillId;
+        }
+        if (input.GetAxis(skillChangeAxis) == 0) {
+            hasChangedSkill = false;
         }
 
         //Skill with num
