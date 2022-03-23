@@ -10,6 +10,7 @@ public class SkillHeavyBlow : SkillLogic {
         anim.SetTrigger(skill.animationTrigger);
     }
     public override void OnSkillStart() {
+        base.OnSkillStart();
         character.realDamage = Mathf.FloorToInt(character.damage * skill.damageMultiplier);
     }
     public override void OnSkillEnd() {

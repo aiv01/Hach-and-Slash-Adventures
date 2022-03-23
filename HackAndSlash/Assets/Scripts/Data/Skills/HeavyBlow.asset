@@ -17,5 +17,6 @@ MonoBehaviour:
   damageType: 0
   damageMultiplier: 1.2
   knockbackMultiplier: 1
+  manaCost: 15
   animationTrigger: Heavy
   description: Make a heavy blow that deals more damage.

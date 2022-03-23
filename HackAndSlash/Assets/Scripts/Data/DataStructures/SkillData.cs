@@ -15,6 +15,7 @@ public class SkillData : ScriptableObject
     public DamageType damageType;
     public float damageMultiplier;
     public float knockbackMultiplier;
+    public int manaCost;
     public string animationTrigger;
     [TextArea] public string description;
 }

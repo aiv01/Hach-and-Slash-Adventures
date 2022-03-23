@@ -119,10 +119,7 @@ public class PlayerLogic : MonoBehaviour
             movement.Attack();
         }
         if (input.GetButtonDown(skillButton)) {
-            if(currentSkill != null) {
-                isUsingSkill = true;
-                currentSkill.Skill();
-            }
+            UseSkillWithNum(currentSkillId);
         }
 
         //Select skill
@@ -175,8 +172,13 @@ public class PlayerLogic : MonoBehaviour
         if (!isUsingSkill) {
             currentSkillId = num;
             if(currentSkill != null) {
-                isUsingSkill = true;
-                playerStats.skills[currentSkillId].Skill();
+                if(playerStats.mana >= currentSkill.skill.manaCost) {
+                    isUsingSkill = true;
+                    playerStats.skills[currentSkillId].Skill();
+                }
+                else {
+                    Debug.Log("Not enough mana");
+                }
             }
             
         }
