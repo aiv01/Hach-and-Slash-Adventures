@@ -9,11 +9,15 @@ public class BoxInteraction : MonoBehaviour
     private bool isInsideTrigger = false;
     private bool isOpen = false;
     public Transform weaponsCreate;
+    public Animator anim;
+    public static float defaultLifeTimer = 10;
+    private float lifeTimer = 0;
 
     // Update is called once per frame
     void Update()
     {
-        if(isInsideTrigger == true)
+        lifeTimer += Time.deltaTime;
+        if (isInsideTrigger == true)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -22,10 +26,11 @@ public class BoxInteraction : MonoBehaviour
                 if(isOpen == true)
                 {
                     Debug.Log("Chest Open");
+                    anim.SetBool("isOpen", isOpen);
                     Rigidbody weaponsInstance;
                     weaponsInstance = Instantiate(weapons, weaponsCreate.position, weaponsCreate.rotation);
                     weaponsInstance.AddForce(Random.Range(-50, 50), 300f, -30f);
-
+                    WaitAndDestroy();
                 }
                 else if (isOpen == false)
                 {
@@ -42,16 +47,6 @@ public class BoxInteraction : MonoBehaviour
         {
             Debug.Log("Contact");
             isInsideTrigger = true;
-
-            if (isOpen == true)
-            {
-                Debug.Log("Chest Open");
-
-            }
-            else if (isOpen == false)
-            {
-                Debug.Log("Chest Closed");
-            }
         }
     }
 
@@ -61,5 +56,11 @@ public class BoxInteraction : MonoBehaviour
         {
             isInsideTrigger = false;
         }
+    }
+
+    IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }
