@@ -119,8 +119,10 @@ public class PlayerLogic : MonoBehaviour
             movement.Attack();
         }
         if (input.GetButtonDown(skillButton)) {
-            isUsingSkill = true;
-            currentSkill.Skill();
+            if(currentSkill != null) {
+                isUsingSkill = true;
+                currentSkill.Skill();
+            }
         }
 
         //Select skill
@@ -172,8 +174,11 @@ public class PlayerLogic : MonoBehaviour
     private void UseSkillWithNum(int num) {
         if (!isUsingSkill) {
             currentSkillId = num;
-            playerStats.skills[currentSkillId].Skill();
-            isUsingSkill = true;
+            if(currentSkill != null) {
+                isUsingSkill = true;
+                playerStats.skills[currentSkillId].Skill();
+            }
+            
         }
     }
 
