@@ -57,4 +57,12 @@ public class Movement : MonoBehaviour
     public void Attack() {
         animator.SetTrigger("Attack");
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Hit1")
+        {
+            print("Colpito");
+        }
+    }
 }
