@@ -5,80 +5,83 @@ using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
-    public int runTime;
+    public int runtime;
     public float timer;
-    public float time_runTime;
     public Animator anim;
+    public GameObject target;
     public Quaternion quaternion;
     public float grade;
-    public GameObject target;
     public bool attack;
-    public RangeBoss rangeBoss;
-    public float speed;
-    public GameObject[] hit;
-    public int hit_Select;
-
-    public bool flamethrowerDown;
-    public List<GameObject> pool = new List<GameObject>();
-    public GameObject fire;
-    public GameObject spawnShoot;
-    public float timerShoot;
-
-    public float areaPunch_distance;
-    public bool direction_Skill;
-
-    public GameObject ball_Energy;
-    public GameObject point;
-    public List<GameObject> pool2 = new List<GameObject>();
-
-    public int fase = 1;
-    public float HP_Min;
-    public float HP_Max;
-    public Image image;
-    public bool dead;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Behavior_Enemy();
     }
 
-    public void Boss_Behavior()
+    public void Behavior_Enemy()
     {
-        if(Vector3.Distance(transform.position, target.transform.position) < 12.5f)
+        if(Vector3.Distance(transform.position,target.transform.position) > 5)
         {
-            Vector3 lookPos = transform.position - target.transform.position;
-            lookPos.y = 0;
-            Quaternion rotation = Quaternion.LookRotation(lookPos);
-            point.transform.LookAt(target.transform.position);
+            anim.SetBool("Run", false);
+            timer += 1 * Time.deltaTime;
+            if (timer >= 4)
+            {
+                runtime = Random.Range(0, 2);
+                timer = 0;
+            }
+            switch (runtime)
+            {
+                case 0:
+                    anim.SetBool("Walk", false);
+                    break;
+                case 1:
+                    grade = Random.Range(0, 360);
+                    quaternion = Quaternion.Euler(0, grade, 0);
+                    runtime++;
+                    break;
+                case 2:
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, quaternion, 0.5f);
+                    transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+                    anim.SetBool("Walk", true);
+                    break;
+            }
 
+        }
+        else
+        {
             if(Vector3.Distance(transform.position,target.transform.position) > 1 && !attack)
             {
-                switch (runTime)
-                {
-                    case 0:
-                        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 2);
-                        anim.SetBool("Walk", true);
-                        anim.SetBool("Run", false);
+                var lookPos = target.transform.position - transform.position;
+                lookPos.y = 0;
+                var rotation = Quaternion.LookRotation(lookPos);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 3);
+                anim.SetBool("Walk", false);
+                anim.SetBool("Run", true);
+                transform.Translate(Vector3.forward * 2 * Time.deltaTime);
 
-                        if(transform.rotation == rotation)
-                        {
-                            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-                        }
+                anim.SetBool("Attack", false);
+            }
+            else
+            {
+                anim.SetBool("Walk", false);
+                anim.SetBool("Run", false);
 
-                        anim.SetBool("Attack", false);
-                        timer += 1 * Time.deltaTime;
-
-                        break;
-                }
+                anim.SetBool("Attack", true);
+                attack = true;
             }
         }
+    }
+
+    public void FinaleAnimation()
+    {
+        anim.SetBool("Attack", false);
+        attack = false;
     }
 }
