@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &16620957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -546,7 +546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &96752698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,7 +1308,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.34395766, y: 0.00000003957526, z: -0.00000001449673, w: 0.93898517}
+  m_LocalRotation: {x: 0.34395763, y: 4.2921565e-15, z: -5.6405184e-16, w: 0.93898517}
   m_LocalPosition: {x: 0, y: 5.5, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1435,13 +1435,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 389217891}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3488e8d9a15dfe44c884d2da4c388e12, type: 3}
+  m_Script: {fileID: 11500000, guid: b9a309e0e1ebba3438fc9581c28eef8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  manaBar: {fileID: 0}
-  myHealth: 0
-  myMana: 0
+  maxExp: 0
+  updateExp: 0
+  expBar: {fileID: 389217894}
+  expIncreasedForSecond: 0
+  playerLevel: 0
+  levelText: {fileID: 1792151698}
 --- !u!114 &389217894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1809,7 +1811,7 @@ PrefabInstance:
     - target: {fileID: 2625313591473002977, guid: 4f32274d5396bf647b59b3199c63f9f6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2625313591473423369, guid: 4f32274d5396bf647b59b3199c63f9f6,
         type: 3}
@@ -2037,6 +2039,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 887cc9cbcc10e8c45b6262198cc15ee6, type: 3}
       propertyPath: m_Name
       value: Grenadier
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 887cc9cbcc10e8c45b6262198cc15ee6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 887cc9cbcc10e8c45b6262198cc15ee6, type: 3}
       propertyPath: m_TagString
@@ -4274,7 +4280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1376864242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4745,7 +4751,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745665502}
-  m_LocalRotation: {x: 0.34395766, y: 0.00000003957526, z: -0.00000001449673, w: 0.93898517}
+  m_LocalRotation: {x: 0.34395763, y: 4.2921565e-15, z: -5.6405184e-16, w: 0.93898517}
   m_LocalPosition: {x: 0, y: 5.5, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5672,7 +5678,7 @@ PrefabInstance:
     - target: {fileID: 6268941409777387397, guid: 2b35b558ff6f69e44abca8c9232432b0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b35b558ff6f69e44abca8c9232432b0, type: 3}
