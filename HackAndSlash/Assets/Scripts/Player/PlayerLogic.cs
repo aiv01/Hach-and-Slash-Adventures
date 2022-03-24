@@ -226,5 +226,11 @@ public class PlayerLogic : MonoBehaviour
                 playerStats.equippedWeapon = weapons[i];
             }
         }
+        if (GUI.Button(new Rect(250, 0, 100, 20), "Save")) {
+            DataManagement.Save();
+        }
+        if (GUI.Button(new Rect(250, 20, 100, 20), "Load")) {
+            //Load
+        }
     }
 }
