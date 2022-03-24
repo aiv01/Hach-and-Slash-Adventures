@@ -1,0 +1,26 @@
+{
+    "playerClass": {
+        "instanceID": 59580
+    },
+    "equippedWeapon": {
+        "instanceID": 59144
+    },
+    "level": 0,
+    "exp": 0,
+    "expNeeded": 0,
+    "vigor": 0,
+    "strength": 0,
+    "dexterity": 0,
+    "intelligence": 0,
+    "position": {
+        "x": -0.005618223920464516,
+        "y": 0.0,
+        "z": 0.00837614480406046
+    },
+    "rotation": {
+        "x": 0.0,
+        "y": -0.2911311984062195,
+        "z": 0.0,
+        "w": 0.9566831588745117
+    }
+}

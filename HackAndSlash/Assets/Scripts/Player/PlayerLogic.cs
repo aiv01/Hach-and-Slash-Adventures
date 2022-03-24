@@ -59,7 +59,7 @@ public class PlayerLogic : MonoBehaviour
         instance = this;
         input = ReInput.players.GetPlayer(0);
         playerStats = GetComponent<CharacterStats>();
-        UnlockSkillManagement();
+        UnlockSkill();
     }
     public void LevelUp() {
         //Get class and increment level
@@ -81,7 +81,7 @@ public class PlayerLogic : MonoBehaviour
         playerStats.hp += playerStats.MaxHp - oldMaxHp;
         playerStats.mana += playerStats.MaxMana - oldMaxMana;
 
-        UnlockSkillManagement();
+        UnlockSkill();
     }
 
     private void Update() {
@@ -170,10 +170,10 @@ public class PlayerLogic : MonoBehaviour
         currentSkill.OnSkillEnd();
         isUsingSkill = false;
     }
-    private void UnlockSkillManagement() {
+    private void UnlockSkill() {
         ClassData currentClass = (ClassData)playerStats.stats;
         for (int i = 0; i < currentClass.skills.Length; i++) {
-            if (playerStats.level == currentClass.unlockLevelSkill[i]) {
+            if (playerStats.level >= currentClass.unlockLevelSkill[i]) {
                 playerStats.skills[i] = currentClass.skills[i];
             }
         }
@@ -230,7 +230,7 @@ public class PlayerLogic : MonoBehaviour
             DataManagement.Save();
         }
         if (GUI.Button(new Rect(250, 20, 100, 20), "Load")) {
-            //Load
+            DataManagement.Load();
         }
     }
 }
