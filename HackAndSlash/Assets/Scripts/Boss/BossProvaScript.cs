@@ -95,7 +95,7 @@ public class BossProvaScript : MonoBehaviour
                         anim.SetBool("Attack", false);
                         break;
                     case 2:
-                        if(fase == 2)
+                        if(fase == 1)
                         {
                             anim.SetBool("Walk", false);
                             anim.SetBool("Run", false);
@@ -123,11 +123,11 @@ public class BossProvaScript : MonoBehaviour
         rangoBoss.GetComponent<CapsuleCollider>().enabled = true;
     }
 
-    public void ColliderWeaponTrue()
+    public void StartAttack()
     {
         hit[hit_Select].GetComponent<SphereCollider>().enabled = true;
     }
-    public void ColliderWeaponFalse()
+    public void EndAttack()
     {
         hit[hit_Select].GetComponent<SphereCollider>().enabled = false;
     }
@@ -147,7 +147,7 @@ public class BossProvaScript : MonoBehaviour
         return obj;
     }
 
-    public void Fire_Energy_Skill()
+    public void ActivateShield()
     {
         GameObject obj = Get_Energy_Sphere();
         obj.transform.position = pointShoot.transform.position;
