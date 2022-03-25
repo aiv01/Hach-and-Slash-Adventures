@@ -125,11 +125,11 @@ public class BossProvaScript : MonoBehaviour
 
     public void StartAttack()
     {
-        hit[hit_Select].GetComponent<SphereCollider>().enabled = true;
+        hit[hit_Select].GetComponent<BoxCollider>().enabled = true;
     }
     public void EndAttack()
     {
-        hit[hit_Select].GetComponent<SphereCollider>().enabled = false;
+        hit[hit_Select].GetComponent<BoxCollider>().enabled = false;
     }
 
     public GameObject Get_Energy_Sphere()
