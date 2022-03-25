@@ -59,7 +59,7 @@ public class PlayerLogic : MonoBehaviour
         instance = this;
         input = ReInput.players.GetPlayer(0);
         playerStats = GetComponent<CharacterStats>();
-        UnlockSkillManagement();
+        UnlockSkill();
     }
     public void LevelUp() {
         //Get class and increment level
@@ -81,7 +81,7 @@ public class PlayerLogic : MonoBehaviour
         playerStats.hp += playerStats.MaxHp - oldMaxHp;
         playerStats.mana += playerStats.MaxMana - oldMaxMana;
 
-        UnlockSkillManagement();
+        UnlockSkill();
     }
 
     private void Update() {
@@ -170,10 +170,10 @@ public class PlayerLogic : MonoBehaviour
         currentSkill.OnSkillEnd();
         isUsingSkill = false;
     }
-    private void UnlockSkillManagement() {
+    private void UnlockSkill() {
         ClassData currentClass = (ClassData)playerStats.stats;
         for (int i = 0; i < currentClass.skills.Length; i++) {
-            if (playerStats.level == currentClass.unlockLevelSkill[i]) {
+            if (playerStats.level >= currentClass.unlockLevelSkill[i]) {
                 playerStats.skills[i] = currentClass.skills[i];
             }
         }
@@ -196,35 +196,41 @@ public class PlayerLogic : MonoBehaviour
     }
 
     //Debug stuff
-    //private void OnGUI()
-    //{
-    //    GUI.Label(new Rect(0, 40, 1920, 1080),
-    //        "Level: " + playerStats.level + "\n" +
-    //        "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
-    //        "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
-    //        "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
-    //        "Vigor: " + playerStats.vigor + "\n" +
-    //        "Strength: " + playerStats.strength + "\n" +
-    //        "Dexterity: " + playerStats.dexterity + "\n" +
-    //        "Intelligence: " + playerStats.intelligence + "\n\n" +
-    //        "Damage: " + playerStats.damage + "\n" +
-    //        "Defence: " + playerStats.defence + "\n" +
-    //        "Magic Defence: " + playerStats.mdefence + "\n" +
-    //        "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n" +
-    //        "Current Skill: " + (currentSkill != null ? currentSkill.skill.skillName : "None") + "\n"
-    //        );
-    //    if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
-    //        playerStats.InitializeCharacter();
-    //    }
-    //    if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
-    //        if (playerStats.level < maxLevel) {
-    //            LevelUp();
-    //        }
-    //    }
-    //    for (int i = 0; i < weapons.Length; i++) {
-    //        if (GUI.Button(new Rect(100, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
-    //            playerStats.equippedWeapon = weapons[i];
-    //        }
-    //    }
-    //}
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(0, 40, 1920, 1080),
+            "Level: " + playerStats.level + "\n" +
+            "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
+            "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
+            "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
+            "Vigor: " + playerStats.vigor + "\n" +
+            "Strength: " + playerStats.strength + "\n" +
+            "Dexterity: " + playerStats.dexterity + "\n" +
+            "Intelligence: " + playerStats.intelligence + "\n\n" +
+            "Damage: " + playerStats.damage + "\n" +
+            "Defence: " + playerStats.defence + "\n" +
+            "Magic Defence: " + playerStats.mdefence + "\n" +
+            "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n" +
+            "Current Skill: " + (currentSkill != null ? currentSkill.skill.skillName : "None") + "\n"
+            );
+        if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
+            playerStats.InitializeCharacter();
+        }
+        if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
+            if (playerStats.level < maxLevel) {
+                LevelUp();
+            }
+        }
+        for (int i = 0; i < weapons.Length; i++) {
+            if (GUI.Button(new Rect(100, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
+                playerStats.equippedWeapon = weapons[i];
+            }
+        }
+        if (GUI.Button(new Rect(250, 0, 100, 20), "Save")) {
+            DataManagement.Save();
+        }
+        if (GUI.Button(new Rect(250, 20, 100, 20), "Load")) {
+            DataManagement.Load();
+        }
+    }
 }
