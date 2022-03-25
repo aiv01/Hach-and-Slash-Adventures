@@ -5,6 +5,7 @@ using UnityEngine;
 public class BoxInteraction : MonoBehaviour
 {
     //private int objectCollect = 0;
+    bool instanceWeapons;
     public Rigidbody weapons;
     private bool isInsideTrigger = false;
     private bool isOpen = false;
@@ -28,9 +29,14 @@ public class BoxInteraction : MonoBehaviour
                 {
                     Debug.Log("Chest Open");
                     anim.SetBool("isOpen", isOpen);
-                    Rigidbody weaponsInstance;
-                    weaponsInstance = Instantiate(weapons, weaponsCreate.position, weaponsCreate.rotation);
-                    weaponsInstance.AddForce(Random.Range(-50, 50), 300f, -30f);
+                    if(instanceWeapons == false)
+                    {
+                        Rigidbody weaponsInstance;
+                        weaponsInstance = Instantiate(weapons, weaponsCreate.position, weaponsCreate.rotation);
+                        weaponsInstance.AddForce(Random.Range(-50, 50), 300f, -30f);
+                        instanceWeapons = true;
+                    }
+
                     StartCoroutine(WaitAndDestroy());
                 }
                 else if (isOpen == false)

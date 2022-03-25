@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 4442491572399601738}
   - component: {fileID: 1222966580066622505}
   - component: {fileID: 834159899955685394}
-  - component: {fileID: 4348235597319446602}
-  - component: {fileID: 8551060180570602066}
+  - component: {fileID: 1857423158355931547}
   m_Layer: 0
   m_Name: EnergySphere
   m_TagString: Untagged
@@ -97,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4348235597319446602
+--- !u!114 &1857423158355931547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,20 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1769257921431256001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72d1bd2e19b60f4a99596f8441e93b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 473434bc587cc914a8d4ce339ee7d518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
---- !u!114 &8551060180570602066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769257921431256001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a55dff9c6e87e6d4d9fc5ac8fb5a0219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerShoot: 0
+  timer: 0
