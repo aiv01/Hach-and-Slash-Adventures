@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BossProvaScript : MonoBehaviour
 {
-    public int runTime; //rutina
-    public float timer; //cronometro
-    public float time_RunTime; //time_rutinas
+    public int runTime; 
+    public float timer; 
+    public float time_RunTime;
     public Animator anim;
-    public Quaternion quaternion; //angulo
-    public float grade; //grado
+    public Quaternion quaternion;
+    public float grade;
     public GameObject target;
     public bool attack;
     public RangoBoss rangoBoss;
