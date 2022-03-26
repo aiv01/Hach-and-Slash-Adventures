@@ -33,7 +33,7 @@ public class BoxInteraction : MonoBehaviour
                     {
                         Rigidbody weaponsInstance;
                         weaponsInstance = Instantiate(weapons, weaponsCreate.position, weaponsCreate.rotation);
-                        weaponsInstance.AddForce(Random.Range(-50, 50), 300f, -30f);
+                        weaponsInstance.AddForce(Random.Range(-50, 50), 300f, 30f);
                         instanceWeapons = true;
                     }
 
