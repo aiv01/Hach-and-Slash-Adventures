@@ -37,6 +37,12 @@ public class PlayerLogic : MonoBehaviour
     [Header("References")]
     [SerializeField] public CharacterStats playerStats;
     [SerializeField] private Movement movement;
+    [SerializeField] private Transform weaponAttach;
+
+    [Header("Animation managing")]
+    [SerializeField] private Animator anim;
+    [SerializeField] private RuntimeAnimatorController meleeAnimation;
+    [SerializeField] private RuntimeAnimatorController rangedAnimation;
 
     //Hit detection
     [Header("Hit detection")]
@@ -221,6 +227,9 @@ public class PlayerLogic : MonoBehaviour
             if (playerStats.level < maxLevel) {
                 LevelUp();
             }
+        }
+        if (GUI.Button(new Rect(600, 40, 100, 20), "Ranged")) {
+            anim.runtimeAnimatorController = rangedAnimation;
         }
         for (int i = 0; i < weapons.Length; i++) {
             if (GUI.Button(new Rect(700, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
