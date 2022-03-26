@@ -32,6 +32,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private string skill2key;
     [SerializeField] private string skill3key;
     [SerializeField] private string skill4key;
+    [SerializeField] private string openMenuKey;
 
     [Header("References")]
     [SerializeField] public CharacterStats playerStats;
@@ -88,11 +89,6 @@ public class PlayerLogic : MonoBehaviour
         ManageInput();
 
         currentSkill = playerStats.skills[currentSkillId] != null ? playerStats.skills[currentSkillId] : null;
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            playerPanel.OpenClose();
-        }
     }
 
     private void ManageInput() {
@@ -153,6 +149,11 @@ public class PlayerLogic : MonoBehaviour
         if (input.GetButtonDown(skill4key)) {
             UseSkillWithNum(3);
         }
+
+
+        if (input.GetButtonDown(openMenuKey)) {
+            playerPanel.OpenClose();
+        }
     }
 
     public void GetExp(int exp) {
@@ -198,38 +199,38 @@ public class PlayerLogic : MonoBehaviour
     //Debug stuff
     private void OnGUI()
     {
-        GUI.Label(new Rect(0, 40, 1920, 1080),
-            "Level: " + playerStats.level + "\n" +
-            "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
-            "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
-            "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
-            "Vigor: " + playerStats.vigor + "\n" +
-            "Strength: " + playerStats.strength + "\n" +
-            "Dexterity: " + playerStats.dexterity + "\n" +
-            "Intelligence: " + playerStats.intelligence + "\n\n" +
-            "Damage: " + playerStats.damage + "\n" +
-            "Defence: " + playerStats.defence + "\n" +
-            "Magic Defence: " + playerStats.mdefence + "\n" +
-            "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n" +
-            "Current Skill: " + (currentSkill != null ? currentSkill.skill.skillName : "None") + "\n"
-            );
-        if (GUI.Button(new Rect(0, 0, 100, 20), "Initialize")) {
+        //GUI.Label(new Rect(0, 40, 1920, 1080),
+        //    "Level: " + playerStats.level + "\n" +
+        //    "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
+        //    "Mana: " + playerStats.mana + "/" + playerStats.MaxMana + "\n" +
+        //    "Exp: " + playerStats.exp + "/" + playerStats.expNeeded + "\n\n" +
+        //    "Vigor: " + playerStats.vigor + "\n" +
+        //    "Strength: " + playerStats.strength + "\n" +
+        //    "Dexterity: " + playerStats.dexterity + "\n" +
+        //    "Intelligence: " + playerStats.intelligence + "\n\n" +
+        //    "Damage: " + playerStats.damage + "\n" +
+        //    "Defence: " + playerStats.defence + "\n" +
+        //    "Magic Defence: " + playerStats.mdefence + "\n" +
+        //    "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n" +
+        //    "Current Skill: " + (currentSkill != null ? currentSkill.skill.skillName : "None") + "\n"
+        //    );
+        if (GUI.Button(new Rect(600, 0, 100, 20), "Initialize")) {
             playerStats.InitializeCharacter();
         }
-        if (GUI.Button(new Rect(0, 20, 100, 20), "Level up")) {
+        if (GUI.Button(new Rect(600, 20, 100, 20), "Level up")) {
             if (playerStats.level < maxLevel) {
                 LevelUp();
             }
         }
         for (int i = 0; i < weapons.Length; i++) {
-            if (GUI.Button(new Rect(100, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
+            if (GUI.Button(new Rect(700, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
                 playerStats.equippedWeapon = weapons[i];
             }
         }
-        if (GUI.Button(new Rect(250, 0, 100, 20), "Save")) {
+        if (GUI.Button(new Rect(850, 0, 100, 20), "Save")) {
             DataManagement.Save();
         }
-        if (GUI.Button(new Rect(250, 20, 100, 20), "Load")) {
+        if (GUI.Button(new Rect(850, 20, 100, 20), "Load")) {
             DataManagement.Load();
         }
     }

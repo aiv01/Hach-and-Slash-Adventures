@@ -1,25 +1,25 @@
 {
     "stats": {
-        "instanceID": 59582
+        "instanceID": 58628
     },
     "equippedWeapon": {
-        "instanceID": 59146
+        "instanceID": 58186
     },
-    "level": 1,
+    "level": 3,
     "exp": 0,
-    "expNeeded": 20,
-    "vigor": 4,
-    "strength": 3,
-    "dexterity": 2,
-    "intelligence": 1,
-    "hp": 40,
-    "mana": 10,
+    "expNeeded": 80,
+    "vigor": 10,
+    "strength": 7,
+    "dexterity": 4,
+    "intelligence": 3,
+    "hp": 100,
+    "mana": 30,
     "skills": [
         {
-            "instanceID": 59632
+            "instanceID": 58678
         },
         {
-            "instanceID": 0
+            "instanceID": 58680
         },
         {
             "instanceID": 0
@@ -29,14 +29,14 @@
         }
     ],
     "position": {
-        "x": -2.7207424640655519,
+        "x": 1.834274411201477,
         "y": 0.0,
-        "z": 0.014342394657433033
+        "z": -18.55029296875
     },
     "rotation": {
         "x": 0.0,
-        "y": -0.26695340871810915,
+        "y": 0.7071068286895752,
         "z": 0.0,
-        "w": 0.9637094140052795
+        "w": 0.7071068286895752
     }
 }

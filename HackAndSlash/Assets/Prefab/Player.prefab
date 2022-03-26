@@ -181,6 +181,7 @@ MonoBehaviour:
   skill2key: Skill2
   skill3key: Skill3
   skill4key: Skill4
+  openMenuKey: ShowStats
   playerStats: {fileID: 4482356324216270667}
   movement: {fileID: 9089337827708930043}
   hit: 0
@@ -234,7 +235,7 @@ GameObject:
   - component: {fileID: 9089337828072651711}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

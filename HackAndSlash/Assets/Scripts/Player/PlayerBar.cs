@@ -2,26 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerBar : MonoBehaviour
 {
     public Image healthBar;
     public Image manaBar;
+    public Image expBar;
 
-    public float myHealth;
-    public float myMana;
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI manaText;
+    [SerializeField] private TextMeshProUGUI expText;
+    [SerializeField] private TextMeshProUGUI levelText;
 
-    private float currentHealth;
-    private float currentMana;
-    private float calculateHealth;
+    private CharacterStats playerData;
+    private float calculatedHealth;
+    private float calculatedMana;
+    private float calculatedExp;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentHealth = myHealth;
-        currentMana = myMana;
+    private void Awake() {
+        playerData = PlayerLogic.Instance.playerStats;
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -30,47 +31,16 @@ public class PlayerBar : MonoBehaviour
 
     void HandleBar()
     {
-        calculateHealth = currentHealth / myHealth;
-        healthBar.fillAmount = Mathf.MoveTowards(healthBar.fillAmount, calculateHealth, Time.deltaTime);
+        calculatedHealth = (float)playerData.hp / playerData.MaxHp;
+        calculatedMana = (float)playerData.mana / playerData.MaxMana;
+        calculatedExp = (float)playerData.exp / playerData.expNeeded;
 
-        if(currentMana < myMana)
-        {
-            manaBar.fillAmount = Mathf.MoveTowards(manaBar.fillAmount, 1f, Time.deltaTime * 0.01f);
-            currentMana = Mathf.MoveTowards(currentMana / myMana, 1f, Time.deltaTime * 0.01f) * myMana;
-        }
-
-        if (currentHealth < myHealth)
-        {
-            healthBar.fillAmount = Mathf.MoveTowards(healthBar.fillAmount, 1f, Time.deltaTime * 0.01f);
-            currentHealth = Mathf.MoveTowards(currentHealth / myHealth, 1f, Time.deltaTime * 0.01f) * myHealth;
-        }
-
-        if (currentMana < 0)
-        {
-            currentMana = 0;
-        }
-
-        if (currentHealth <= 0)
-        {
-            //Dead
-        }
-    }
-
-    public void Damage(float damage)
-    {
-        currentHealth -= damage;
-    }
-
-    public void ReduceMana(float mana)
-    {
-        if(mana <= currentMana)
-        {
-            currentMana -= mana;
-            manaBar.fillAmount -= mana / myMana;
-        }
-        else
-        {
-            //Not enough Mana
-        }
+        healthText.text = playerData.hp + "/" + playerData.MaxHp;
+        manaText.text = playerData.mana + "/" + playerData.MaxMana;
+        expText.text = playerData.exp + "/" + playerData.expNeeded;
+        levelText.text = playerData.level.ToString();
+        healthBar.fillAmount = Mathf.MoveTowards(healthBar.fillAmount, calculatedHealth, Time.deltaTime);
+        manaBar.fillAmount = Mathf.MoveTowards(manaBar.fillAmount, calculatedMana, Time.deltaTime);
+        expBar.fillAmount = Mathf.MoveTowards(expBar.fillAmount, calculatedExp, Time.deltaTime);
     }
 }
