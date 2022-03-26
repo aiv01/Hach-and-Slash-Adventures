@@ -21,7 +21,7 @@ public class PlayerBar : MonoBehaviour
     private float calculatedExp;
 
     private void Awake() {
-        playerData = PlayerLogic.Instance.playerStats;
+        
     }
     // Update is called once per frame
     void Update()
@@ -31,6 +31,7 @@ public class PlayerBar : MonoBehaviour
 
     void HandleBar()
     {
+        playerData = PlayerLogic.Instance.playerStats;
         calculatedHealth = (float)playerData.hp / playerData.MaxHp;
         calculatedMana = (float)playerData.mana / playerData.MaxMana;
         calculatedExp = (float)playerData.exp / playerData.expNeeded;

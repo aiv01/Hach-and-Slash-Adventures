@@ -16,14 +16,15 @@ public class BossProvaScript : MonoBehaviour
     public float speed;
     public GameObject[] hit;
     public int hit_Select;
+    [SerializeField] private CharacterStats stats;
 
     public GameObject energy_ball;
     public GameObject pointShoot;
     public List<GameObject> pool = new List<GameObject>();
 
     public int fase = 1;
-    public float HP_Min;
-    public float HP_Max;
+    private float HP_Min;
+    private float HP_Max;
     public bool dead;
 
     // Start is called before the first frame update
@@ -31,6 +32,8 @@ public class BossProvaScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player");
+        HP_Max = stats.MaxHp;
+        HP_Min = HP_Max;
     }
 
     // Update is called once per frame
@@ -156,7 +159,7 @@ public class BossProvaScript : MonoBehaviour
 
     public void BoossLive()
     {
-        if (HP_Min < 500)
+        if (HP_Min < HP_Max * 0.5f)
         {
             fase = 2;
             time_RunTime = 1;
