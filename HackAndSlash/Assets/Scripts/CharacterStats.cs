@@ -74,7 +74,9 @@ public class CharacterStats : MonoBehaviour
     }
                                                                                                                             
     private void Update() {
-        damage = equippedWeapon.baseDamage + (equippedWeapon.usingDex ? dexterity : strength); //Temporary until real equip logic
+        if(equippedWeapon != null) {
+            damage = equippedWeapon.baseDamage + (equippedWeapon.usingDex ? dexterity : strength); //Temporary until real equip logic
+        }
         //Mana regeneration
         if(mana < maxMana) {
             currentManaTime -= Time.deltaTime * intelligence * 0.5f;

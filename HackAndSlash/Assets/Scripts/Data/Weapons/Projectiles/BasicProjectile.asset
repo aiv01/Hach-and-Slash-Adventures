@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ebac6663f861fd4a8fb05e878dc330e, type: 3}
-  m_Name: Pistol
+  m_Name: BasicProjectile
   m_EditorClassIdentifier: 
-  weaponName: Pistol
+  weaponName: Bullet
   type: 1
-  baseAttack: {fileID: 2192311047858936814, guid: 3b22fb8f3d9ecc04aa3526b4f36aef4b,
-    type: 3}
+  baseAttack: {fileID: 0}
   damageType: 0
-  usingDex: 1
+  usingDex: 0
   canStagger: 0
-  baseDamage: 1
+  baseDamage: 0
   knockback: 0

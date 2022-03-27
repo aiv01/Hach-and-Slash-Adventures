@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private LayerMask rayLayer;
     [SerializeField] private LayerMask moveLayers;
     [SerializeField] private CapsuleCollider capsuleCollider;
-    private Ray mouseRay;
+    [SerializeField] private Ray mouseRay;
 
     public void Move(Vector3 velocity) {
         if (CanMove(velocity.normalized)) {

@@ -189,10 +189,10 @@ public class PlayerLogic : MonoBehaviour
         currentSkill.OnSkillEnd();
         isUsingSkill = false;
     }
-    public void MeleeAttackStart() {
+    public void AttackStart() {
         playerStats.equippedWeapon.baseAttack.OnAttackStart();
     }
-    public void MeleeAttackEnd() {
+    public void AttackEnd() {
         playerStats.equippedWeapon.baseAttack.OnAttackEnd();
     }
     private void UnlockSkill() {
