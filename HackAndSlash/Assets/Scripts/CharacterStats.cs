@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum DamageType {
     physical,
@@ -40,6 +41,8 @@ public class CharacterStats : MonoBehaviour
     private float currentManaTime;
     //Skills
     public SkillLogic[] skills;
+    [Header("Event")]
+    public UnityEvent onDamageDealt;
     public void InitializeCharacter() {
         vigor = stats.baseVigor;
         strength = stats.baseStrength;
@@ -70,6 +73,7 @@ public class CharacterStats : MonoBehaviour
         if (equippedWeapon.canStagger) {
             target.isHit = true;
         }
+        onDamageDealt.Invoke();
         return totalDamage;
     }
                                                                                                                             

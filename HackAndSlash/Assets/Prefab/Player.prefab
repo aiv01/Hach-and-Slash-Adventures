@@ -195,6 +195,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8607dd371ddd5f842a909983d04736f1, type: 2}
   - {fileID: 11400000, guid: 4997eea6f4f35274687d913db571fa87, type: 2}
   - {fileID: 11400000, guid: 21218005f5d3a9f4690268492bad7533, type: 2}
+  - {fileID: 11400000, guid: ca0e0b334be05cd48b3f09e7449d99c3, type: 2}
   playerPanel: {fileID: 0}
 --- !u!114 &4482356324216270667
 MonoBehaviour:
@@ -229,6 +230,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  onDamageDealt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CameraShake, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9089337828072651704
 GameObject:
   m_ObjectHideFlags: 0
