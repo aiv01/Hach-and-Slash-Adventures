@@ -13,6 +13,7 @@ public class WeaponData : ScriptableObject
 {
     public string weaponName;
     public WeaponType type;
+    public SkillBasicAttack baseAttack;
     public DamageType damageType;
     public bool usingDex;
     public bool canStagger;

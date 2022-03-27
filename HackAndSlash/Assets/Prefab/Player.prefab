@@ -184,7 +184,8 @@ MonoBehaviour:
   openMenuKey: ShowStats
   playerStats: {fileID: 4482356324216270667}
   movement: {fileID: 9089337827708930043}
-  weaponAttach: {fileID: 9089337827337530464}
+  meleeWeapon: {fileID: 9089337827168507795}
+  rangedWeapon: {fileID: 8192212342633651307}
   anim: {fileID: 9089337827708930042}
   meleeAnimation: {fileID: 9100000, guid: 26bd53b8cca21c5448cedba70cef8952, type: 2}
   rangedAnimation: {fileID: 22100000, guid: dff833b7d9566464a9c880e4614287c8, type: 2}
@@ -333,6 +334,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fd9916376d1ad64e9fd73c1abf4933a, type: 3}
+--- !u!4 &8192212342633651307 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8192212342209351004, guid: 6fd9916376d1ad64e9fd73c1abf4933a,
+    type: 3}
+  m_PrefabInstance: {fileID: 986337591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3360358533105007854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -538,6 +545,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a399295cc208594dbfe66a7375b0008, type: 3}
+--- !u!4 &9089337827168507795 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1978869295436141101, guid: 5a399295cc208594dbfe66a7375b0008,
+    type: 3}
+  m_PrefabInstance: {fileID: 7301896007946618302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &4150135838610438165 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 6687200264736112043, guid: 5a399295cc208594dbfe66a7375b0008,

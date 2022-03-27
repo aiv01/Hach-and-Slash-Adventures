@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Bare Hands
   type: 0
+  baseAttack: {fileID: -3831355915957615246, guid: 391b5d89a7b5a2545bd5698e44596cf2,
+    type: 3}
   damageType: 0
   usingDex: 0
   canStagger: 1
