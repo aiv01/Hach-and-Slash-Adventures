@@ -22,10 +22,11 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if(playerInDetectionRange == true)
+        if(playerInDetectionRange == true && !logic.enemyStats.isHit)
         {
+            anim.ResetTrigger("Hit");
             if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackStateName)) {
                 isAttacking = true;
             }
@@ -38,25 +39,38 @@ public class EnemyAI : MonoBehaviour
             }
             Run();
         }
+        else if (logic.enemyStats.isHit && !isAttacking) {
+            Hit();
+        }
         else {
+            anim.ResetTrigger("Hit");
             Idle();
         }
     }
 
     public void Run()
     {
+        logic.enemyStats.isHit = false;
         enemyNavMesh.speed = 0.4f;
         anim.SetTrigger("Run");
     }
 
     public void Attack()
     {
+        logic.enemyStats.isHit = false;
         enemyNavMesh.speed = 0f;
         anim.SetTrigger("Attack");
     }
 
     public void Idle() {
+        logic.enemyStats.isHit = false;
         enemyNavMesh.speed = 0f;
         anim.SetTrigger("Idle");
+    }
+
+    public void Hit() {
+        logic.enemyStats.isHit = false;
+        enemyNavMesh.speed = 0f;
+        anim.SetTrigger("Hit");
     }
 }

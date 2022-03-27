@@ -675,14 +675,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.48685452
-        functionName: MeleeAttackStart
+        functionName: AttackStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.6173913
-        functionName: MeleeAttackEnd
+        functionName: AttackEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

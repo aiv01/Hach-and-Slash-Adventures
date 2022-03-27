@@ -97,6 +97,12 @@ public class PlayerLogic : MonoBehaviour
 
         currentSkill = playerStats.skills[currentSkillId] != null ? playerStats.skills[currentSkillId] : null;
 
+        //Manage animations
+        if (playerStats.isHit) {
+            playerStats.isHit = false;
+            anim.SetTrigger("Hit");
+        }
+
         if(playerStats.equippedWeapon.type == WeaponType.ranged) {
             anim.runtimeAnimatorController = rangedAnimation;
             rangedWeapon.gameObject.SetActive(true);

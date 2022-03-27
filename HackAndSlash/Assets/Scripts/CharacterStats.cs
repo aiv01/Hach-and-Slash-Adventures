@@ -32,7 +32,7 @@ public class CharacterStats : MonoBehaviour
     public int level = 0;
     public int exp;
     //Hit detection
-    [HideInInspector] public bool isHit;
+    public bool isHit;
     //Damage calculation
     public int realDamage;
     //Mana regeneration
