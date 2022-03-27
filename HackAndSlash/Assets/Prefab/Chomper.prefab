@@ -139,6 +139,8 @@ MonoBehaviour:
   level: 0
   exp: 0
   isHit: 0
+  realDamage: 0
+  skills: []
 --- !u!114 &1392364230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  enemyStats: {fileID: 0}
 --- !u!1 &2863293696538759671
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetection: 0
-  fightAfterTime: 1
+  attackCooldown: 0
   enemy: {fileID: 192667395053150522}
 --- !u!65 &8291578945673066470
 BoxCollider:
@@ -3675,7 +3678,7 @@ PrefabInstance:
     - target: {fileID: 102566210266126965, guid: e9134453ccf6f7b41ab442503c1f355a,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.0859182
+      value: 1.856118
       objectReference: {fileID: 0}
     - target: {fileID: 102566210266126965, guid: e9134453ccf6f7b41ab442503c1f355a,
         type: 3}
@@ -3690,7 +3693,7 @@ PrefabInstance:
     - target: {fileID: 102566210266126965, guid: e9134453ccf6f7b41ab442503c1f355a,
         type: 3}
       propertyPath: m_Center.y
-      value: 0.54223037
+      value: 0.92733026
       objectReference: {fileID: 0}
     - target: {fileID: 102566210266126965, guid: e9134453ccf6f7b41ab442503c1f355a,
         type: 3}

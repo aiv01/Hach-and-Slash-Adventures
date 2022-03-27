@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Heavy Blow
   type: 0
   damageType: 0
-  damageMultiplier: 1.2
+  damageMultiplier: 1.4
   knockbackMultiplier: 1
   manaCost: 15
   animationTrigger: Heavy

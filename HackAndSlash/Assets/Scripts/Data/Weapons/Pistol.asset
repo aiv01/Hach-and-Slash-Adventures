@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ebac6663f861fd4a8fb05e878dc330e, type: 3}
-  m_Name: TestingDexteritySword
+  m_Name: Pistol
   m_EditorClassIdentifier: 
-  weaponName: Testing Dexterity Sword
-  type: 0
-  baseAttack: {fileID: -3831355915957615246, guid: 391b5d89a7b5a2545bd5698e44596cf2,
+  weaponName: Pistol
+  type: 1
+  baseAttack: {fileID: 2192311047858936814, guid: 3b22fb8f3d9ecc04aa3526b4f36aef4b,
     type: 3}
   damageType: 0
   usingDex: 1
-  canStagger: 1
-  baseDamage: 5
-  knockback: 0.6
+  canStagger: 0
+  baseDamage: 1
+  knockback: 0

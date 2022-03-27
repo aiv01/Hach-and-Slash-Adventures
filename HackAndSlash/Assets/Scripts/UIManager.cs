@@ -22,8 +22,8 @@ public class UIManager : MonoBehaviour
         strength.text = "" + characterStats.strength;
         dexterity.text = "" + characterStats.dexterity;
         intelligence.text = "" + characterStats.intelligence;
-        defence.text = "" + characterStats.strength;
-        mdefence.text = "" + characterStats.defence;
+        defence.text = "" + characterStats.defence;
+        mdefence.text = "" + characterStats.mdefence;
         damage.text = "" + characterStats.damage;
         weaponName.text = "" + characterStats.equippedWeapon.weaponName;
         weaponDamage.text = "" + characterStats.equippedWeapon.baseDamage + " + " + (characterStats.equippedWeapon.usingDex ? "Dexterity" : "Strength");

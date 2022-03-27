@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDetection: 0
-  fightAfterTime: 0
+  attackCooldown: 0
   enemy: {fileID: 0}
 --- !u!1 &2625313591473002241
 GameObject:
@@ -3483,6 +3483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  enemyStats: {fileID: 0}
 --- !u!114 &571912969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3510,6 +3511,8 @@ MonoBehaviour:
   level: 0
   exp: 0
   isHit: 0
+  realDamage: 0
+  skills: []
 --- !u!114 &571912970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3590,6 +3593,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102566210266126965, guid: e9134453ccf6f7b41ab442503c1f355a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.2547529
+      objectReference: {fileID: 0}
+    - target: {fileID: 102566210266126965, guid: e9134453ccf6f7b41ab442503c1f355a,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.1266476
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9134453ccf6f7b41ab442503c1f355a, type: 3}

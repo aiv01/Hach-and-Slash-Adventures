@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8959090004892184766}
-  - component: {fileID: 3618693298752218042}
+  - component: {fileID: 2192311047858936814}
   m_Layer: 0
-  m_Name: HeavyBlow
+  m_Name: BasicRangedAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3618693298752218042
+--- !u!114 &2192311047858936814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,8 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4057198097605675852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea638689533c80f49b904f8be4897e02, type: 3}
+  m_Script: {fileID: 11500000, guid: 05049f6d51786f14591bf0f5a019fbdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skill: {fileID: 11400000, guid: 0bb3fd4baed2b404db610aee89008a81, type: 2}
+  skill: {fileID: 11400000, guid: 0c66557470a6c604b8c570d04e0e59fc, type: 2}
   character: {fileID: 0}
+  shootSpeed: 25
+  shootFrom: {fileID: 0}
