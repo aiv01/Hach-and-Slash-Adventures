@@ -9,6 +9,7 @@ TagManager:
   - Chest
   - Boss
   - Hit1
+  - Teleporter
   layers:
   - Default
   - TransparentFX
