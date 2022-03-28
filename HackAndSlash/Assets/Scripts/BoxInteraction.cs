@@ -6,7 +6,7 @@ public class BoxInteraction : MonoBehaviour
 {
     //private int objectCollect = 0;
     bool instanceWeapons;
-    public Rigidbody weapons;
+    public WeaponDrop weapons;
     private bool isInsideTrigger = false;
     private bool isOpen = false;
     public GameObject chest;
@@ -21,7 +21,7 @@ public class BoxInteraction : MonoBehaviour
         lifeTimer += Time.deltaTime;
         if (isInsideTrigger == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (PlayerLogic.Instance.isInteracting)
             {
                 isOpen = !isOpen;
 
@@ -31,13 +31,14 @@ public class BoxInteraction : MonoBehaviour
                     anim.SetBool("isOpen", isOpen);
                     if(instanceWeapons == false)
                     {
-                        Rigidbody weaponsInstance;
+                        WeaponDrop weaponsInstance;
+                        Rigidbody weaponRb;
                         weaponsInstance = Instantiate(weapons, weaponsCreate.position, weaponsCreate.rotation);
-                        weaponsInstance.AddForce(Random.Range(-50, 50), 300f, -30f);
+                        weaponsInstance.Spawn();
+                        weaponRb = weaponsInstance.GetComponent<Rigidbody>();
+                        weaponRb.AddForce(Random.Range(-50, 50), 300f, -30f);
                         instanceWeapons = true;
                     }
-
-                    StartCoroutine(WaitAndDestroy());
                 }
                 else if (isOpen == false)
                 {
@@ -63,11 +64,5 @@ public class BoxInteraction : MonoBehaviour
         {
             isInsideTrigger = false;
         }
-    }
-
-    IEnumerator WaitAndDestroy()
-    {
-        yield return new WaitForSeconds(5f);
-        Destroy(chest);
     }
 }

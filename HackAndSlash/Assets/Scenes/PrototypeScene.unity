@@ -547,6 +547,16 @@ PrefabInstance:
       propertyPath: playerPanel
       value: 
       objectReference: {fileID: 1516121550}
+    - target: {fileID: 8192212342633152587, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089337827168209843, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9089337828072651704, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
         type: 3}
       propertyPath: m_Name
@@ -2464,6 +2474,12 @@ PrefabInstance:
       propertyPath: chest
       value: 
       objectReference: {fileID: 1096627684}
+    - target: {fileID: 6614999412423183096, guid: 7f1a5f52c43b93f4a9989487d75db754,
+        type: 3}
+      propertyPath: weapons
+      value: 
+      objectReference: {fileID: -5667860337335617598, guid: b34f563238bc44a49bb166c8cb9e98cc,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f1a5f52c43b93f4a9989487d75db754, type: 3}
 --- !u!1001 &7852393792271571518
@@ -2573,41 +2589,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432085202409385536, guid: 56f1ba1f65c3b7644bc1a5b58b5a57e0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.7275724
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432085202409385536, guid: 56f1ba1f65c3b7644bc1a5b58b5a57e0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.94778
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432085202409385536, guid: 56f1ba1f65c3b7644bc1a5b58b5a57e0,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.2414103
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432085202409385536, guid: 56f1ba1f65c3b7644bc1a5b58b5a57e0,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432085202409385536, guid: 56f1ba1f65c3b7644bc1a5b58b5a57e0,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432085202409385536, guid: 56f1ba1f65c3b7644bc1a5b58b5a57e0,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8432085202409385536, guid: 56f1ba1f65c3b7644bc1a5b58b5a57e0,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8432085202409385536, guid: 56f1ba1f65c3b7644bc1a5b58b5a57e0,
         type: 3}

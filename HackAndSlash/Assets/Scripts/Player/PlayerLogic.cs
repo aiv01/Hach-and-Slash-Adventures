@@ -26,8 +26,9 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private string horizontalLookAxis;
     [SerializeField] private string verticalLookAxis;
     [SerializeField] private string skillChangeAxis;
-    [SerializeField] private string attackButton;
-    [SerializeField] private string skillButton;
+    [SerializeField] private string attackKey;
+    [SerializeField] private string skillKey;
+    [SerializeField] private string interactKey;
     [SerializeField] private string skill1key;
     [SerializeField] private string skill2key;
     [SerializeField] private string skill3key;
@@ -50,11 +51,16 @@ public class PlayerLogic : MonoBehaviour
     public bool hit;
 
     //Skill
-    [SerializeField] private int currentSkillId = 0;
+    [Header("Skills")]
+    private int currentSkillId = 0;
     public int CurrentSkillId { get { return currentSkillId; } }
     private SkillLogic currentSkill;
     private bool isUsingSkill;
     private bool hasChangedSkill;
+
+    //Interaction
+    [Header("Interaction")]
+    public bool isInteracting;
 
     //Debug stuff
     [SerializeField] private WeaponData[] weapons;
@@ -143,10 +149,10 @@ public class PlayerLogic : MonoBehaviour
         movement.Move(moveInput);
 
         //Character attack
-        if (input.GetButtonDown(attackButton)) {
+        if (input.GetButtonDown(attackKey)) {
             playerStats.equippedWeapon.baseAttack.Skill();
         }
-        if (input.GetButtonDown(skillButton)) {
+        if (input.GetButtonDown(skillKey)) {
             UseSkillWithNum(currentSkillId);
         }
 
@@ -175,10 +181,14 @@ public class PlayerLogic : MonoBehaviour
             UseSkillWithNum(3);
         }
 
-
+        //Stats panel
         if (input.GetButtonDown(openMenuKey)) {
             playerPanel.OpenClose();
         }
+
+        //Interaction
+        isInteracting = input.GetButtonDown(interactKey);
+        if (isInteracting) Debug.Log("Has interacted");
     }
 
     public void GetExp(int exp) {
