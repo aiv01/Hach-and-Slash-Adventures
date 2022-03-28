@@ -11,10 +11,10 @@ public class SkillBasicAttackRanged : SkillBasicAttack {
         base.OnAttackStart();
         bm = GameObject.Find("BulletManager").GetComponent<BulletManager>();
         shootFrom = GameObject.Find("ShootPoint").transform;
-        Projectile instance = bm.GetBullet();
+        Projectile instance = bm.GetBullet(ProjectileType.normal);
         instance.transform.position = shootFrom.position;
         instance.gameObject.SetActive(true);
-        instance.Shoot(character, character.transform.forward, shootSpeed, false);
+        instance.Shoot(character, character.transform.forward, shootSpeed);
     }
     public override void OnAttackEnd() {
         base.OnAttackEnd();

@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     private Rigidbody rb;
     private TrailRenderer tr;
     [SerializeField] private bool piercing;
+    [SerializeField] private ParticleSystem hitParticle;
     [SerializeField] private float timeToDespawn;
     private float currentAliveTime;
 
@@ -19,9 +20,8 @@ public class Projectile : MonoBehaviour
     private void OnEnable() {
         currentAliveTime = timeToDespawn;
     }
-    public void Shoot(CharacterStats shooter, Vector3 direction, float speed, bool piercing) {
+    public void Shoot(CharacterStats shooter, Vector3 direction, float speed) {
         tr.Clear();
-        this.piercing = piercing;
         stats.realDamage = shooter.realDamage;
         rb.velocity = direction * speed;
     }
@@ -31,5 +31,11 @@ public class Projectile : MonoBehaviour
         if(currentAliveTime <= 0) {
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        ParticleSystem instance = Instantiate<ParticleSystem>(hitParticle);
+        instance.transform.position = transform.position;
+        if (!piercing) gameObject.SetActive(false);
     }
 }

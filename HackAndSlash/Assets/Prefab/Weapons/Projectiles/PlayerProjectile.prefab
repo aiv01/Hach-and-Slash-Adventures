@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piercing: 0
+  hitParticle: {fileID: 3588204940648030775, guid: 9b42a97ff1314e44e9c9ea3e3c4c1c85,
+    type: 3}
   timeToDespawn: 2
 --- !u!114 &5092694310749582908
 MonoBehaviour:
@@ -138,6 +140,9 @@ MonoBehaviour:
   isHit: 0
   realDamage: 0
   skills: []
+  onDamageDealt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6375551754485630953
 GameObject:
   m_ObjectHideFlags: 0
