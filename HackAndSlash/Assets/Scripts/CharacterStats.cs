@@ -83,7 +83,7 @@ public class CharacterStats : MonoBehaviour
         }
         //Mana regeneration
         if(mana < maxMana) {
-            currentManaTime -= Time.deltaTime * intelligence * 0.5f;
+            currentManaTime -= Time.deltaTime * intelligence * 0.1f;
             if(currentManaTime <= 0) {
                 mana++;
                 currentManaTime = addManaTime;

@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public CharacterStats characterStats;
     public TextMeshProUGUI vigor, strength, dexterity, intelligence;
-    public TextMeshProUGUI defence, mdefence, damage;
+    public TextMeshProUGUI defence, mdefence, damage, manaRegen;
     public TextMeshProUGUI weaponName, weaponDamage, weaponKnockback;
 
     void Update()
@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
         intelligence.text = "" + characterStats.intelligence;
         defence.text = "" + characterStats.defence;
         mdefence.text = "" + characterStats.mdefence;
+        manaRegen.text = "" + characterStats.intelligence * 0.1f + "/s";
         damage.text = "" + characterStats.damage;
         weaponName.text = "" + characterStats.equippedWeapon.weaponName;
         weaponDamage.text = "" + characterStats.equippedWeapon.baseDamage + " + " + (characterStats.equippedWeapon.usingDex ? "Dexterity" : "Strength");
