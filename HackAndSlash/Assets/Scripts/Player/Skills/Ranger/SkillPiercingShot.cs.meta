@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: fe6f644fc55ce0748b16ceae478a1da3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - skill: {fileID: 11400000, guid: 0bb3fd4baed2b404db610aee89008a81, type: 2}
+  - character: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

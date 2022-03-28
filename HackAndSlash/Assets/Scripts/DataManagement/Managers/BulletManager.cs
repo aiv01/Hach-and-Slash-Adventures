@@ -12,6 +12,7 @@ public class BulletManager : MonoBehaviour
     [SerializeField] private int bulletNumber;
     private Projectile[,] bullets;
     [SerializeField] private Projectile originalNormalBullet;
+    [SerializeField] private Projectile originalPiercingBullet;
 
     void Awake()
     {
@@ -30,6 +31,10 @@ public class BulletManager : MonoBehaviour
                         bullets[j, i].gameObject.SetActive(false);
                         break;
                     case ProjectileType.piercing:
+                        bullets[j, i] = Instantiate(originalPiercingBullet);
+                        bullets[j, i].name = "PiercingPlayerBullet_" + i;
+                        bullets[j, i].transform.parent = gameObject.transform;
+                        bullets[j, i].gameObject.SetActive(false);
                         break;
                     case ProjectileType.last:
                         break;

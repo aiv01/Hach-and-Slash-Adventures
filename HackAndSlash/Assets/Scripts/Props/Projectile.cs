@@ -27,6 +27,7 @@ public class Projectile : MonoBehaviour
     }
 
     private void Update() {
+        rb.rotation = Quaternion.LookRotation(rb.velocity.normalized);
         currentAliveTime -= Time.deltaTime;
         if(currentAliveTime <= 0) {
             gameObject.SetActive(false);
