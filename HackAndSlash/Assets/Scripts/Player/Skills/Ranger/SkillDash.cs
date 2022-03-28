@@ -12,9 +12,8 @@ public class SkillDash : SkillLogic {
         capsuleCollider = PlayerLogic.Instance.GetComponentInChildren<CapsuleCollider>();
         anim = PlayerLogic.Instance.GetComponent<Animator>();
         RaycastHit hit;
-        if(CanMove(character.transform.forward, out hit)) {
-            Debug.Log("Hit");
-            character.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
+        if(!CanMove(character.transform.forward, out hit)) {
+            character.transform.position += new Vector3(character.transform.forward.x, 0, character.transform.forward.z) * (hit.distance - 1f);
         }
         else {
             character.transform.position += new Vector3(character.transform.forward.x, 0, character.transform.forward.z) * distance;
@@ -34,8 +33,8 @@ public class SkillDash : SkillLogic {
         Debug.DrawLine(capsuleCollider.center + transform.position, transform.position + direction);
         RaycastHit capsuleHit;
         bool rayResult = !Physics.CapsuleCast(
-            transform.TransformPoint(capsuleCollider.center + Vector3.up * (capsuleCollider.height * 0.5f - capsuleCollider.radius)),
-            transform.TransformPoint(capsuleCollider.center - Vector3.up * (capsuleCollider.height * 0.5f - capsuleCollider.radius - 0.25f)),
+            character.transform.TransformPoint(capsuleCollider.center + Vector3.up * (capsuleCollider.height * 0.5f - capsuleCollider.radius)),
+            character.transform.TransformPoint(capsuleCollider.center - Vector3.up * (capsuleCollider.height * 0.5f - capsuleCollider.radius - 0.25f)),
             capsuleCollider.radius,
             direction,
             out capsuleHit,
