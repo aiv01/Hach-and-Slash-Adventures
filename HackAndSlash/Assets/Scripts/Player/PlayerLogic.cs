@@ -51,6 +51,7 @@ public class PlayerLogic : MonoBehaviour
 
     //Skill
     [SerializeField] private int currentSkillId = 0;
+    public int CurrentSkillId { get { return currentSkillId; } }
     private SkillLogic currentSkill;
     private bool isUsingSkill;
     private bool hasChangedSkill;

@@ -10,10 +10,19 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI vigor, strength, dexterity, intelligence;
     public TextMeshProUGUI defence, mdefence, damage, manaRegen;
     public TextMeshProUGUI weaponName, weaponDamage, weaponKnockback;
+    public Image selector;
+    public Image[] skills;
+    [SerializeField] private float spacing;
+    private Vector3 selectorOriginalPosition;
 
+    private void Awake() {
+        selectorOriginalPosition = selector.rectTransform.localPosition;
+    }
     void Update()
     {
         UpdatePlayerStatus();
+        CheckAvaiableSkill();
+        CheckSelectorPosition();
     }
 
     public void UpdatePlayerStatus()
@@ -29,5 +38,21 @@ public class UIManager : MonoBehaviour
         weaponName.text = "" + characterStats.equippedWeapon.weaponName;
         weaponDamage.text = "" + characterStats.equippedWeapon.baseDamage + " + " + (characterStats.equippedWeapon.usingDex ? "Dexterity" : "Strength");
         weaponKnockback.text = "" + characterStats.equippedWeapon.knockback;
+    }
+
+    private void CheckAvaiableSkill() {
+        ClassData currentClass = (ClassData)characterStats.stats;
+        for (int i = 0; i < currentClass.skills.Length; i++) {
+            if (currentClass.unlockLevelSkill[i] > characterStats.level) {
+                skills[i].color = Color.gray;
+            }
+            else {
+                skills[i].color = Color.white;
+            }
+        }
+    }
+
+    private void CheckSelectorPosition() {
+        selector.rectTransform.localPosition = new Vector3(selectorOriginalPosition.x + (spacing * PlayerLogic.Instance.CurrentSkillId), selectorOriginalPosition.y, selectorOriginalPosition.z);
     }
 }
