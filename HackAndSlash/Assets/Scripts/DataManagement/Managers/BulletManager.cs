@@ -21,7 +21,7 @@ public class BulletManager : MonoBehaviour
 
     private void CreateBullets() {
         for (int j = 0; j < (int)ProjectileType.last; j++) {
-            for (int i = 0; i < bullets.Length/(int)ProjectileType.last; i++) {
+            for (int i = 0; i < bullets.GetLength(1)/(int)ProjectileType.last + 1; i++) {
                 switch ((ProjectileType)j) {
                     case ProjectileType.normal:
                         bullets[j, i] = Instantiate(originalNormalBullet);
@@ -30,10 +30,6 @@ public class BulletManager : MonoBehaviour
                         bullets[j, i].gameObject.SetActive(false);
                         break;
                     case ProjectileType.piercing:
-                        bullets[j, i] = Instantiate(originalNormalBullet);
-                        bullets[j, i].name = "PiercingPlayerBullet_" + i;
-                        bullets[j, i].transform.parent = gameObject.transform;
-                        bullets[j, i].gameObject.SetActive(false);
                         break;
                     case ProjectileType.last:
                         break;
@@ -42,7 +38,6 @@ public class BulletManager : MonoBehaviour
                 }
             }
         }
-        originalNormalBullet.gameObject.SetActive(false);
     }
 
     public Projectile GetBullet(ProjectileType type) {

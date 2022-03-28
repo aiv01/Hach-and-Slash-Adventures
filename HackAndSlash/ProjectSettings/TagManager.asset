@@ -8,7 +8,7 @@ TagManager:
   - WayPoints
   - Chest
   - Boss
-  - Hit1
+  - Spawner
   layers:
   - Default
   - TransparentFX

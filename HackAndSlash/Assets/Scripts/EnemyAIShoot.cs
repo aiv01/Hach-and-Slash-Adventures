@@ -18,6 +18,7 @@ public class EnemyAIShoot : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        playerTarget = GameObject.Find("Player").transform.GetChild(0).transform;
         enemyNavMesh = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         logic = GetComponent<EnemyLogic>();
