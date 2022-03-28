@@ -26,8 +26,9 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private string horizontalLookAxis;
     [SerializeField] private string verticalLookAxis;
     [SerializeField] private string skillChangeAxis;
-    [SerializeField] private string attackButton;
-    [SerializeField] private string skillButton;
+    [SerializeField] private string attackKey;
+    [SerializeField] private string skillKey;
+    [SerializeField] private string interactKey;
     [SerializeField] private string skill1key;
     [SerializeField] private string skill2key;
     [SerializeField] private string skill3key;
@@ -37,16 +38,29 @@ public class PlayerLogic : MonoBehaviour
     [Header("References")]
     [SerializeField] public CharacterStats playerStats;
     [SerializeField] private Movement movement;
+    [SerializeField] private Transform meleeWeapon;
+    [SerializeField] private Transform rangedWeapon;
+
+    [Header("Animation managing")]
+    [SerializeField] private Animator anim;
+    [SerializeField] private RuntimeAnimatorController meleeAnimation;
+    [SerializeField] private RuntimeAnimatorController rangedAnimation;
 
     //Hit detection
     [Header("Hit detection")]
     public bool hit;
 
     //Skill
-    [SerializeField] private int currentSkillId = 0;
+    [Header("Skills")]
+    private int currentSkillId = 0;
+    public int CurrentSkillId { get { return currentSkillId; } }
     private SkillLogic currentSkill;
     private bool isUsingSkill;
     private bool hasChangedSkill;
+
+    //Interaction
+    [Header("Interaction")]
+    public bool isInteracting;
 
     //Debug stuff
     [SerializeField] private WeaponData[] weapons;
@@ -89,6 +103,23 @@ public class PlayerLogic : MonoBehaviour
         ManageInput();
 
         currentSkill = playerStats.skills[currentSkillId] != null ? playerStats.skills[currentSkillId] : null;
+
+        //Manage animations
+        if (playerStats.isHit) {
+            playerStats.isHit = false;
+            anim.SetTrigger("Hit");
+        }
+
+        if(playerStats.equippedWeapon.type == WeaponType.ranged) {
+            anim.runtimeAnimatorController = rangedAnimation;
+            rangedWeapon.gameObject.SetActive(true);
+            meleeWeapon.gameObject.SetActive(false);
+        }
+        else {
+            anim.runtimeAnimatorController = meleeAnimation;
+            rangedWeapon.gameObject.SetActive(false);
+            meleeWeapon.gameObject.SetActive(true);
+        }
     }
 
     private void ManageInput() {
@@ -118,10 +149,10 @@ public class PlayerLogic : MonoBehaviour
         movement.Move(moveInput);
 
         //Character attack
-        if (input.GetButtonDown(attackButton)) {
-            movement.Attack();
+        if (input.GetButtonDown(attackKey)) {
+            playerStats.equippedWeapon.baseAttack.Skill();
         }
-        if (input.GetButtonDown(skillButton)) {
+        if (input.GetButtonDown(skillKey)) {
             UseSkillWithNum(currentSkillId);
         }
 
@@ -150,10 +181,14 @@ public class PlayerLogic : MonoBehaviour
             UseSkillWithNum(3);
         }
 
-
+        //Stats panel
         if (input.GetButtonDown(openMenuKey)) {
             playerPanel.OpenClose();
         }
+
+        //Interaction
+        isInteracting = input.GetButtonDown(interactKey);
+        if (isInteracting) Debug.Log("Has interacted");
     }
 
     public void GetExp(int exp) {
@@ -163,13 +198,19 @@ public class PlayerLogic : MonoBehaviour
         }
     }
 
-    //Skill Management
+    //Attack and Skill Management
     public void SkillStart() {
         currentSkill.OnSkillStart();
     }
     public void SkillEnd() {
         currentSkill.OnSkillEnd();
         isUsingSkill = false;
+    }
+    public void AttackStart() {
+        playerStats.equippedWeapon.baseAttack.OnAttackStart();
+    }
+    public void AttackEnd() {
+        playerStats.equippedWeapon.baseAttack.OnAttackEnd();
     }
     private void UnlockSkill() {
         ClassData currentClass = (ClassData)playerStats.stats;

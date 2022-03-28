@@ -38,6 +38,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3423444791707771010}
     m_Modifications:
+    - target: {fileID: 3417240507405115658, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417240507405115658, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417240507405115658, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417240507405115658, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shake
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417240507405115658, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CameraShake, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417240507405115658, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417240507405115658, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609404493386263569, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 7598970972464549047}
     - target: {fileID: 7609404493386263570, guid: 063f49976ca9166459f80219a1d00f04,
         type: 3}
       propertyPath: m_Name
@@ -111,3 +151,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5050943063282953661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7598970972464549047 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3417240507405115658, guid: 063f49976ca9166459f80219a1d00f04,
+    type: 3}
+  m_PrefabInstance: {fileID: 5050943063282953661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47fbb6948e1a58439b632b2ca56a30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

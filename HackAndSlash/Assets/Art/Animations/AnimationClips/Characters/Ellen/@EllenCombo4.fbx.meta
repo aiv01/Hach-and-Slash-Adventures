@@ -760,7 +760,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.26449007
-        functionName: MeleeAttackStart
+        functionName: AttackStart
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -774,7 +774,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.43252876
-        functionName: MeleeAttackEnd
+        functionName: AttackEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

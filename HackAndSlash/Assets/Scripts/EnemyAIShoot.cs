@@ -11,59 +11,66 @@ public class EnemyAIShoot : MonoBehaviour
     public Transform playerTarget;
     NavMeshAgent enemyNavMesh;
     Animator anim;
+    EnemyLogic logic;
     public GameObject projectile;
 
 
     // Start is called before the first frame update
     void Awake()
     {
+        playerTarget = GameObject.Find("Player").transform.GetChild(0).transform;
         enemyNavMesh = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        logic = GetComponent<EnemyLogic>();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (playerInDetectionRange == true)
-        {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackStateName))
-            {
+    void Update() {
+        if (playerInDetectionRange == true && !logic.enemyStats.isHit) {
+            anim.ResetTrigger("Hit");
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName(attackStateName)) {
                 isAttacking = true;
             }
-            else
-            {
+            else {
                 isAttacking = false;
             }
-            if (!isAttacking)
-            {
+            if (!isAttacking) {
                 enemyNavMesh.transform.LookAt(playerTarget);
                 enemyNavMesh.SetDestination(playerTarget.position + new Vector3(0, 0, 0.099f));
             }
             Run();
         }
-        else
-        {
+        else if (logic.enemyStats.isHit && !isAttacking) {
+            Hit();
+        }
+        else {
+            anim.ResetTrigger("Hit");
             Idle();
         }
     }
 
-    public void Run()
-    {
+    public void Run() {
+        logic.enemyStats.isHit = false;
         enemyNavMesh.speed = 0.4f;
         anim.SetTrigger("Run");
     }
 
-    public void Attack()
-    {
+    public void Attack() {
+        logic.enemyStats.isHit = false;
         enemyNavMesh.speed = 0f;
         anim.SetTrigger("Attack");
     }
 
-
-    public void Idle()
-    {
+    public void Idle() {
+        logic.enemyStats.isHit = false;
         enemyNavMesh.speed = 0f;
         anim.SetTrigger("Idle");
+    }
+
+    public void Hit() {
+        logic.enemyStats.isHit = false;
+        enemyNavMesh.speed = 0f;
+        anim.SetTrigger("Hit");
     }
 
     public void Shoot() {

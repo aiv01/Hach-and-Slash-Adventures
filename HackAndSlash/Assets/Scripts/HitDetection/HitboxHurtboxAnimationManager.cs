@@ -7,11 +7,11 @@ public class HitboxHurtboxAnimationManager : MonoBehaviour
     [SerializeField] private Collider hitbox = null;
     [SerializeField] private Collider hurtbox = null;
 
-    public void MeleeAttackStart() {
+    public void AttackStart() {
         hitbox.gameObject.SetActive(true);
     }
 
-    public void MeleeAttackEnd() {
+    public void AttackEnd() {
         hitbox.gameObject.SetActive(false);
     }
 

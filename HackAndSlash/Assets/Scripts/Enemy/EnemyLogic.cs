@@ -37,6 +37,10 @@ public class EnemyLogic : MonoBehaviour
         }   
     }
 
+    public void HitStart() {
+        enemyStats.isHit = false;
+    }
+
     private void Die() {
         PlayerLogic.Instance.GetExp(enemyStats.exp);
         transform.parent.gameObject.SetActive(false);
