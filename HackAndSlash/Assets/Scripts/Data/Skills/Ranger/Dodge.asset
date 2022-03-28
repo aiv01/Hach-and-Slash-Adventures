@@ -18,5 +18,5 @@ MonoBehaviour:
   damageMultiplier: 0
   knockbackMultiplier: 0
   manaCost: 5
-  animationTrigger: 
+  animationTrigger: Dash
   description: Dash quickly in the direction you're facing.
