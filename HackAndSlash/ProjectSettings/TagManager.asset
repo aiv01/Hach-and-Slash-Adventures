@@ -9,6 +9,7 @@ TagManager:
   - Chest
   - Boss
   - Spawner
+  - Teleporter
   layers:
   - Default
   - TransparentFX
