@@ -1474,44 +1474,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
         type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
-        type: 3}
-      propertyPath: rangoBoss
-      value: 
-      objectReference: {fileID: 509764627}
-    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
-        type: 3}
-      propertyPath: pointShoot
-      value: 
-      objectReference: {fileID: 143962857}
-    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
-        type: 3}
       propertyPath: shootSpeed
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
-        type: 3}
-      propertyPath: time_RunTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
-        type: 3}
-      propertyPath: hit.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
-        type: 3}
-      propertyPath: hit.Array.data[0]
-      value: 
-      objectReference: {fileID: 2098025732}
-    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
-        type: 3}
-      propertyPath: hit.Array.data[1]
-      value: 
-      objectReference: {fileID: 1872720378}
     - target: {fileID: 7598970972464549047, guid: d18c2fe19583eab4da7ea50eb41732fd,
         type: 3}
       propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_Target

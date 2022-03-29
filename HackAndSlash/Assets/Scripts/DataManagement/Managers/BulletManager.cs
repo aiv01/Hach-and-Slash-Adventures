@@ -16,6 +16,7 @@ public class BulletManager : MonoBehaviour
     [SerializeField] private Projectile originalNormalBullet;
     [SerializeField] private Projectile originalPiercingBullet;
     [SerializeField] private Projectile originalEnemyBullet;
+    [SerializeField] private Projectile originalBossBullet;
 
     void Awake()
     {
@@ -42,6 +43,12 @@ public class BulletManager : MonoBehaviour
                     case ProjectileType.enemy:
                         bullets[j, i] = Instantiate(originalEnemyBullet);
                         bullets[j, i].name = "EnemyBullet_" + i;
+                        bullets[j, i].transform.parent = gameObject.transform;
+                        bullets[j, i].gameObject.SetActive(false);
+                        break;
+                    case ProjectileType.boss:
+                        bullets[j, i] = Instantiate(originalBossBullet);
+                        bullets[j, i].name = "BossBullet_" + i;
                         bullets[j, i].transform.parent = gameObject.transform;
                         bullets[j, i].gameObject.SetActive(false);
                         break;
