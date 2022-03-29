@@ -5,6 +5,7 @@ using UnityEngine;
 public enum ProjectileType {
     normal,
     piercing,
+    enemy,
     last
 }
 public class BulletManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class BulletManager : MonoBehaviour
     private Projectile[,] bullets;
     [SerializeField] private Projectile originalNormalBullet;
     [SerializeField] private Projectile originalPiercingBullet;
+    [SerializeField] private Projectile originalEnemyBullet;
 
     void Awake()
     {
@@ -33,6 +35,12 @@ public class BulletManager : MonoBehaviour
                     case ProjectileType.piercing:
                         bullets[j, i] = Instantiate(originalPiercingBullet);
                         bullets[j, i].name = "PiercingPlayerBullet_" + i;
+                        bullets[j, i].transform.parent = gameObject.transform;
+                        bullets[j, i].gameObject.SetActive(false);
+                        break;
+                    case ProjectileType.enemy:
+                        bullets[j, i] = Instantiate(originalEnemyBullet);
+                        bullets[j, i].name = "EnemyBullet_" + i;
                         bullets[j, i].transform.parent = gameObject.transform;
                         bullets[j, i].gameObject.SetActive(false);
                         break;

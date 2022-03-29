@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+using UnityEngine.Events;
 
+[RequireComponent(typeof(CharacterStats))]
 public class Projectile : MonoBehaviour
 {
     private CharacterStats stats;
@@ -10,15 +13,20 @@ public class Projectile : MonoBehaviour
     [SerializeField] private bool piercing;
     [SerializeField] private ParticleSystem hitParticle;
     [SerializeField] private float timeToDespawn;
+    [SerializeField] private float shakeStrength;
+    [SerializeField] private string canGoThrough;
+    private CameraShake ingameCamera;
     private float currentAliveTime;
 
     private void Awake() {
         stats = GetComponent<CharacterStats>();
         rb = GetComponent<Rigidbody>();
         tr = GetComponentInChildren<TrailRenderer>();
+        ingameCamera = GameObject.Find("IngameCamera").GetComponent<CameraShake>();
     }
     private void OnEnable() {
         currentAliveTime = timeToDespawn;
+        stats.onDamageDealt.AddListener(ShakeCamera);
     }
     public void Shoot(CharacterStats shooter, Vector3 direction, float speed) {
         tr.Clear();
@@ -35,8 +43,14 @@ public class Projectile : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        ParticleSystem instance = Instantiate<ParticleSystem>(hitParticle);
-        instance.transform.position = transform.position;
-        if (!piercing) gameObject.SetActive(false);
+        if (!other.CompareTag(canGoThrough)) {
+            ParticleSystem instance = Instantiate<ParticleSystem>(hitParticle);
+            instance.transform.position = transform.position;
+            if (!piercing) gameObject.SetActive(false);
+        }
+    }
+
+    private void ShakeCamera() {
+        ingameCamera.Shake(shakeStrength);
     }
 }

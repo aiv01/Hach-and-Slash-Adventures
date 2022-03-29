@@ -48,3 +48,5 @@ MonoBehaviour:
     type: 3}
   originalPiercingBullet: {fileID: 8384608833444652242, guid: 59c9aaacc080c44488ad018ac4ab636b,
     type: 3}
+  originalEnemyBullet: {fileID: 8384608833444652242, guid: cf0cd23a501a31f4aa574c28f995fb33,
+    type: 3}

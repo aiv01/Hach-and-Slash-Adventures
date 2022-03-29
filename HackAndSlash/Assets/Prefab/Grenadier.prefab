@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3423444791707771010}
   m_Layer: 0
   m_Name: Grenadier
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +82,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609404493386263570, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7609404493386263574, guid: 063f49976ca9166459f80219a1d00f04,
         type: 3}
