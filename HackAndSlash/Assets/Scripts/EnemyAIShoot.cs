@@ -12,13 +12,16 @@ public class EnemyAIShoot : MonoBehaviour
     NavMeshAgent enemyNavMesh;
     Animator anim;
     EnemyLogic logic;
-    public GameObject projectile;
+    private BulletManager br;
+    [SerializeField] private Transform shootPoint;
+    [SerializeField] private float shootSpeed;
 
 
     // Start is called before the first frame update
     void Awake()
     {
         playerTarget = GameObject.Find("Player").transform.GetChild(0).transform;
+        br = GameObject.Find("BulletManager").GetComponent<BulletManager>();
         enemyNavMesh = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         logic = GetComponent<EnemyLogic>();
@@ -74,8 +77,9 @@ public class EnemyAIShoot : MonoBehaviour
     }
 
     public void Shoot() {
-        Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-        rb.AddForce(new Vector3(transform.forward.x, 0, transform.forward.z) * 32f, ForceMode.Impulse);
-        rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+        Projectile instance = br.GetBullet(ProjectileType.enemy);
+        instance.transform.position = shootPoint.position;
+        instance.Shoot(logic.enemyStats, transform.forward, shootSpeed);
+        instance.gameObject.SetActive(true);
     }
 }

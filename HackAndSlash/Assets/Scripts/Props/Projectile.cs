@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private ParticleSystem hitParticle;
     [SerializeField] private float timeToDespawn;
     [SerializeField] private float shakeStrength;
+    [SerializeField] private string canGoThrough;
     private CameraShake ingameCamera;
     private float currentAliveTime;
 
@@ -42,9 +43,11 @@ public class Projectile : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        ParticleSystem instance = Instantiate<ParticleSystem>(hitParticle);
-        instance.transform.position = transform.position;
-        if (!piercing) gameObject.SetActive(false);
+        if (!other.CompareTag(canGoThrough)) {
+            ParticleSystem instance = Instantiate<ParticleSystem>(hitParticle);
+            instance.transform.position = transform.position;
+            if (!piercing) gameObject.SetActive(false);
+        }
     }
 
     private void ShakeCamera() {
