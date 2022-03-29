@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossProvaScript : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class BossProvaScript : MonoBehaviour
     public int fase = 1;
     private float HP_Min;
     private float HP_Max;
+    public Image HP_bar;
     public bool dead;
 
     // Start is called before the first frame update
@@ -39,6 +41,7 @@ public class BossProvaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HP_bar.fillAmount = HP_Min / HP_Max;
         if(HP_Min > 0)
         {
             BoossLive();
