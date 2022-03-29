@@ -6,6 +6,7 @@ public enum ProjectileType {
     normal,
     piercing,
     enemy,
+    boss,
     last
 }
 public class BulletManager : MonoBehaviour

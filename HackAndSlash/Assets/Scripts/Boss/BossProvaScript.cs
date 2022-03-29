@@ -19,14 +19,14 @@ public class BossProvaScript : MonoBehaviour
     public int hit_Select;
     [SerializeField] private CharacterStats stats;
 
-    public GameObject energy_ball;
     public GameObject pointShoot;
-    public List<GameObject> pool = new List<GameObject>();
+    private BulletManager bm;
+    [SerializeField] private float shootSpeed;
 
     public int fase = 1;
     private float HP_Min;
     private float HP_Max;
-    public Image HP_bar;
+    //public Image HP_bar;
     public bool dead;
 
     // Start is called before the first frame update
@@ -38,10 +38,13 @@ public class BossProvaScript : MonoBehaviour
         HP_Min = HP_Max;
     }
 
+    private void Awake() {
+        bm = GameObject.Find("BulletManager").GetComponent<BulletManager>();
+    }
     // Update is called once per frame
     void Update()
     {
-        HP_bar.fillAmount = HP_Min / HP_Max;
+        //HP_bar.fillAmount = HP_Min / HP_Max;
         if(HP_Min > 0)
         {
             BoossLive();
@@ -138,26 +141,13 @@ public class BossProvaScript : MonoBehaviour
         hit[hit_Select].GetComponent<BoxCollider>().enabled = false;
     }
 
-    public GameObject Get_Energy_Sphere()
-    {
-        for(int i = 0; i < pool.Count; i++)
-        {
-            if (!pool[i].activeInHierarchy)
-            {
-                pool[i].SetActive(true);
-                return pool[i];
-            }
-        }
-        GameObject obj = Instantiate(energy_ball, pointShoot.transform.position, pointShoot.transform.rotation) as GameObject;
-        pool.Add(obj);
-        return obj;
-    }
 
     public void ActivateShield()
     {
-        GameObject obj = Get_Energy_Sphere();
-        obj.transform.position = pointShoot.transform.position;
-        obj.transform.rotation = pointShoot.transform.rotation;
+        Projectile instance = bm.GetBullet(ProjectileType.boss);
+        instance.transform.position = pointShoot.transform.position;
+        instance.Shoot(stats, transform.forward, shootSpeed);
+        instance.gameObject.SetActive(true);
     }
 
     public void BoossLive()

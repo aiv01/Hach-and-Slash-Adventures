@@ -1,31 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EventBossManager : MonoBehaviour
 {
-    public BossProvaScript bossHealthBar;
+    [SerializeField] private EventColliderBossFight bossFight;
 
-    public bool bossFightIsActive;
-    public bool bossHasBeenAwakened;
-    public bool bossHasBeenDefeated;
-
-    void Awake()
+    private void Start()
     {
-        bossHealthBar = FindObjectOfType<BossProvaScript>();
+        bossFight.OnPlayerEnterTrigger += ColliderTrigger_OnPlayerEnterTrigger;
     }
 
-    public void ActiveBossFight()
+    private void ColliderTrigger_OnPlayerEnterTrigger(object sender,EventArgs e)
     {
-        bossFightIsActive = true;
-        bossHasBeenAwakened = true;
-        bossHealthBar.BoossLive();
+        StartBattle();
+        bossFight.OnPlayerEnterTrigger -= ColliderTrigger_OnPlayerEnterTrigger;
     }
 
-    public void BossHasBeenDefeated()
+    private void StartBattle()
     {
-        bossHasBeenDefeated = true;
-        bossFightIsActive = false;
+        Debug.Log("StartBattle");
     }
-
 }

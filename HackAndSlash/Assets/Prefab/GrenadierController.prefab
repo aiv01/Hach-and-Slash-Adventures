@@ -142,30 +142,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 7609404493386263570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c9dace832263642a4a954d6a5df65a, type: 3}
+  m_Script: {fileID: 11500000, guid: ff6cf6d6c6c415141bb23d6ab1f51d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   runTime: 0
   timer: 0
-  time_RunTime: 2
+  time_RunTime: 0
   anim: {fileID: 0}
   quaternion: {x: 0, y: 0, z: 0, w: 0}
   grade: 0
   target: {fileID: 0}
   attack: 0
-  rangoBoss: {fileID: 7609404494250552513}
-  speed: 2
-  hit:
-  - {fileID: 7609404494016888512}
-  - {fileID: 7609404495421712370}
+  rangoBoss: {fileID: 0}
+  speed: 0
+  hit: []
   hit_Select: 0
-  energy_ball: {fileID: 1769257921431256001, guid: c41c326bff9a7b14895cc0b0debc69a5,
-    type: 3}
-  pointShoot: {fileID: 7609404494040762717}
-  pool: []
+  stats: {fileID: 0}
+  pointShoot: {fileID: 0}
+  shootSpeed: 0
   fase: 1
-  HP_Min: 1000
-  HP_Max: 1000
+  HP_bar: {fileID: 0}
   dead: 0
 --- !u!114 &3417240507405115658
 MonoBehaviour:
@@ -196,6 +192,9 @@ MonoBehaviour:
   isHit: 0
   realDamage: 0
   skills: []
+  onDamageDealt:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3855614605428051170
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,21 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EventColliderBossFight : MonoBehaviour
 {
-    EventBossManager bossManager;
-
-    void Awake()
-    {
-        bossManager = FindObjectOfType<EventBossManager>();
-    }
+    public event EventHandler OnPlayerEnterTrigger;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        PlayerLogic player = other.GetComponent<PlayerLogic>();
+        if(player != null)
         {
-            bossManager.ActiveBossFight();
+            OnPlayerEnterTrigger?.Invoke(this,EventArgs.Empty);
         }
     }
 }
