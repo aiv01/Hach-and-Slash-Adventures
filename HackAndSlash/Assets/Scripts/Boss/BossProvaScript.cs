@@ -26,7 +26,7 @@ public class BossProvaScript : MonoBehaviour
     public int fase = 1;
     private float HP_Min;
     private float HP_Max;
-    //public Image HP_bar;
+    public Image HP_bar;
     public bool dead;
 
     // Start is called before the first frame update
@@ -44,8 +44,8 @@ public class BossProvaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //HP_bar.fillAmount = HP_Min / HP_Max;
-        if(HP_Min > 0)
+        HP_bar.fillAmount = HP_Min / HP_Max;
+        if (HP_Min > 0)
         {
             BoossLive();
         }
@@ -104,7 +104,7 @@ public class BossProvaScript : MonoBehaviour
                         anim.SetBool("Attack", false);
                         break;
                     case 2:
-                        if(fase == 1)
+                        if(fase == 2)
                         {
                             anim.SetBool("Walk", false);
                             anim.SetBool("Run", false);
