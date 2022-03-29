@@ -111,6 +111,7 @@ MonoBehaviour:
   hitParticle: {fileID: 3588204940648030775, guid: 9b42a97ff1314e44e9c9ea3e3c4c1c85,
     type: 3}
   timeToDespawn: 2
+  shakeStrength: 3
 --- !u!114 &5092694310749582908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +143,19 @@ MonoBehaviour:
   skills: []
   onDamageDealt:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4866381509536642933
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +196,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4866381509536642933}
   serializedVersion: 7
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -258,7 +271,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2

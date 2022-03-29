@@ -17,6 +17,6 @@ MonoBehaviour:
   damageType: 0
   damageMultiplier: 1.2
   knockbackMultiplier: 0
-  manaCost: 15
+  manaCost: 20
   animationTrigger: Piercing
   description: Shoot a projectile that pierces enemies.
