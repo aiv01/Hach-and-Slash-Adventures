@@ -529,6 +529,16 @@ PrefabInstance:
       propertyPath: playerPanel
       value: 
       objectReference: {fileID: 1516121550}
+    - target: {fileID: 8113534624318084305, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.5400693
+      objectReference: {fileID: 0}
+    - target: {fileID: 8113534624318084305, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.27991
+      objectReference: {fileID: 0}
     - target: {fileID: 8192212342633152587, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
         type: 3}
       propertyPath: m_IsActive
@@ -1427,6 +1437,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grenadier
       objectReference: {fileID: 0}
+    - target: {fileID: 3423444791707771013, guid: d18c2fe19583eab4da7ea50eb41732fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
+        type: 3}
+      propertyPath: shootSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7598970972464549047, guid: d18c2fe19583eab4da7ea50eb41732fd,
         type: 3}
       propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1653,7 +1673,7 @@ PrefabInstance:
     - target: {fileID: 6998454909357265898, guid: df605b9043fecdd4cbe78e77b0d26a67,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df605b9043fecdd4cbe78e77b0d26a67, type: 3}
@@ -1683,7 +1703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnSpread: 10
   spawnTime: 3
-  spitterRarity: 70
+  spitterRarity: 0
 --- !u!1001 &8432085202356457288
 PrefabInstance:
   m_ObjectHideFlags: 0

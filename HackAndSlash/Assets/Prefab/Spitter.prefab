@@ -3559,7 +3559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8712075080744778463}
   m_Layer: 0
-  m_Name: ShootPoint
+  m_Name: SpitterShootPoint
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
