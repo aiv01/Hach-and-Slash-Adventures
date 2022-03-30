@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -24,31 +25,48 @@ public struct PlayerData {
     public Vector3 position;
     public Quaternion rotation;
 }
+[System.Serializable]
+public struct WorldData {
+    public List<string> keys;
+    public List<bool> values;
+}
 public static class DataManagement
 {
-    private static PlayerData data;
+    private static PlayerData playerData;
+    private static WorldData worldData;
     private static CharacterStats playerStats;
-    //Needs worldlogic here
+    private static Dictionary<string, bool> flags = new Dictionary<string, bool>();
 
-    private static string path = $"Data.json";
+    private static string playerPath = @"Data.json";
+    private static string worldPath = @"WorldData.json";
 
     public static void Save() {
-        data = GetData();
-        Debug.Log(JsonUtility.ToJson(data, true));
-        File.WriteAllText(path, JsonUtility.ToJson(data, true));
+        //Player
+        playerData = GetData();
+        Debug.Log(JsonUtility.ToJson(playerData));
+        File.WriteAllText(playerPath, JsonUtility.ToJson(playerData));
+
+        //Flags
+        worldData = GetFlagData();
+        string worldJsonData = JsonUtility.ToJson(worldData);
+        Debug.Log(worldJsonData);
+        File.WriteAllText(worldPath, worldJsonData);
     }
 
     public static void Load() {
-        string jsonData = File.ReadAllText(path);
+        string jsonData = File.ReadAllText(playerPath);
         Debug.Log(jsonData);
         //Load stats
         JsonUtility.FromJsonOverwrite(jsonData, PlayerLogic.Instance.playerStats);
         PlayerLogic.Instance.playerStats.CalculateStats();
 
         //Load position
-        JsonUtility.FromJsonOverwrite(jsonData, data);
-        PlayerLogic.Instance.transform.position = data.position;
-        PlayerLogic.Instance.transform.rotation = data.rotation;
+        JsonUtility.FromJsonOverwrite(jsonData, playerData);
+        PlayerLogic.Instance.transform.position = playerData.position;
+        PlayerLogic.Instance.transform.rotation = playerData.rotation;
+
+        //Load world flags
+        LoadFlagData();
     }
 
     private static PlayerData GetData() {
@@ -75,5 +93,37 @@ public static class DataManagement
         data.rotation = playerStats.transform.rotation;
 
         return data;
+    }
+
+    private static WorldData GetFlagData() {
+        WorldData data = new WorldData();
+        data.keys = flags.Keys.ToList();
+        data.values = flags.Values.ToList();
+        return data;
+    }
+
+    private static void LoadFlagData() {
+        worldData = new WorldData();
+        worldData.keys = new List<string>();
+        worldData.values = new List<bool>();
+        string jsonWorldData = File.ReadAllText(worldPath);
+        JsonUtility.FromJsonOverwrite(jsonWorldData, worldData);
+        for (int i = 0; i < worldData.keys.Count; i++) {
+            flags[worldData.keys[i]] = worldData.values[i];
+        }
+    }
+
+
+    public static void SetKey(string key, bool value) {
+        if (!flags.ContainsKey(key)) {
+            flags.Add(key, value);
+        }
+        else {
+            flags[key] = value;
+        }
+    }
+
+    public static bool GetKey(string key) {
+        return flags[key];
     }
 }
