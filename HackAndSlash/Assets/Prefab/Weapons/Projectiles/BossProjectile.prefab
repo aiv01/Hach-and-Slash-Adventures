@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 917733610227043115}
   - component: {fileID: 8384608833444652242}
   - component: {fileID: 5092694310749582908}
+  - component: {fileID: 313079155082405854}
   m_Layer: 0
   m_Name: BossProjectile
   m_TagString: Enemy
@@ -126,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
-  equippedWeapon: {fileID: 11400000, guid: 3a15bf412630e694cb5b797927fcc499, type: 2}
+  equippedWeapon: {fileID: 11400000, guid: f41f187dec4e2e64990e1c39e40b3a15, type: 2}
   vigor: 0
   strength: 0
   dexterity: 0
@@ -145,6 +146,19 @@ MonoBehaviour:
   onDamageDealt:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &313079155082405854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706574600992475431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d02dc9732b7e24387dc0b2bcdb8122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackingSpeed: 0.8
 --- !u!1 &6375551754485630953
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +323,15 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.077381134
         value: 1
         inSlope: 0
         outSlope: 0

@@ -46,6 +46,9 @@ MonoBehaviour:
   skill: {fileID: 11400000, guid: e17a7df9a32e52e489bead43dd23b3ad, type: 2}
   character: {fileID: 0}
   distance: 3
+  yOffset: 1
   mask:
     serializedVersion: 2
     m_Bits: 128
+  trail: {fileID: 3970886704746771291, guid: e574539662feffc40ab47d6d9b1362cb, type: 3}
+  instance: {fileID: 0}

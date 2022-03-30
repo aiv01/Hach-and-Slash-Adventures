@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class SkillDash : SkillLogic {
     [SerializeField] private float distance;
+    [SerializeField] private float yOffset;
     [SerializeField] private LayerMask mask;
+    [SerializeField] private TrailRenderer trail;
+    private TrailRenderer instance;
     private CapsuleCollider capsuleCollider;
     private Animator anim;
     public override void Skill() {
         character = PlayerLogic.Instance.playerStats;
         capsuleCollider = PlayerLogic.Instance.GetComponentInChildren<CapsuleCollider>();
         anim = PlayerLogic.Instance.GetComponent<Animator>();
+        instance = Instantiate<TrailRenderer>(trail);
+        instance.transform.position = new Vector3(character.transform.position.x, character.transform.position.y + yOffset, character.transform.position.z);
         RaycastHit hit;
         if(!CanMove(character.transform.forward, out hit)) {
             character.transform.position += new Vector3(character.transform.forward.x, 0, character.transform.forward.z) * (hit.distance - 1f);
@@ -23,7 +28,9 @@ public class SkillDash : SkillLogic {
     }
 
     public override void OnSkillStart() {
-        //Do nothing
+        if (instance == null) return;
+        instance.transform.parent = character.transform;
+        instance.transform.localPosition = new Vector3(0, yOffset, 0);
     }
     public override void OnSkillEnd() {
         //Do nothing
