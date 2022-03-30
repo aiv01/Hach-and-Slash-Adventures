@@ -28,9 +28,9 @@ public static class DataManagement
 {
     private static PlayerData data;
     private static CharacterStats playerStats;
-    //Needs worldlogic here
+    private static Dictionary<string, bool> flags = new Dictionary<string, bool>();
 
-    private static string path = $"Data.json";
+    private static string path = @"Data.json";
 
     public static void Save() {
         data = GetData();
@@ -75,5 +75,18 @@ public static class DataManagement
         data.rotation = playerStats.transform.rotation;
 
         return data;
+    }
+
+    public static void SetKey(string key, bool value) {
+        if (!flags.ContainsKey(key)) {
+            flags.Add(key, value);
+        }
+        else {
+            flags[key] = value;
+        }
+    }
+
+    public static bool GetKey(string key) {
+        return flags[key];
     }
 }

@@ -28,7 +28,7 @@ public class EnemyLogic : MonoBehaviour
         enemyStats.dexterity += level - 1;
         enemyStats.intelligence += level - 1;
         enemyStats.CalculateStats();
-        enemyStats.exp = currentEnemy.exp;
+        enemyStats.exp = currentEnemy.exp * level;
     }
 
     private void Update() {
