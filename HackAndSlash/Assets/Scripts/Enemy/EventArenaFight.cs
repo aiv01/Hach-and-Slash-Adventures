@@ -6,6 +6,7 @@ using UnityEngine;
 public class EventArenaFight : MonoBehaviour
 {
     public event EventHandler OnPlayerEnterTrigger;
+    public GameObject wallActive;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class EventArenaFight : MonoBehaviour
         {
             Debug.Log("Player inside Trigger");
             OnPlayerEnterTrigger?.Invoke(this, EventArgs.Empty);
+            wallActive.SetActive(true);
         }
     }
 }

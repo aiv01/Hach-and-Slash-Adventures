@@ -12,7 +12,6 @@ public class EventBattleFight : MonoBehaviour
     }
 
     [SerializeField] private EventArenaFight colliderTrigger;
-    [SerializeField] private EnemySpawn[] enemySpawnArray;
 
     private State state;
 
@@ -38,10 +37,6 @@ public class EventBattleFight : MonoBehaviour
     private void StartBattle()
     {
         Debug.Log("StartBattle");
-        foreach(EnemySpawn enemySpawn in enemySpawnArray)
-        {
-          
-        }
         state = State.Active;
     }
 }

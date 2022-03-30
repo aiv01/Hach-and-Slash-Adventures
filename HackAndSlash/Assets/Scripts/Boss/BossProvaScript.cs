@@ -61,7 +61,7 @@ public class BossProvaScript : MonoBehaviour
 
     public void Behavior_Boss()
     {
-        if(Vector3.Distance(transform.position,target.transform.position) < 10)
+        if(Vector3.Distance(transform.position,target.transform.position) < 15)
         {
             var lookPos = target.transform.position - transform.position;
             lookPos.y = 0;
@@ -164,6 +164,6 @@ public class BossProvaScript : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 10);
+        Gizmos.DrawWireSphere(transform.position, 15);
     }
 }
