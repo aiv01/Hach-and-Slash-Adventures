@@ -78,6 +78,12 @@ public class CharacterStats : MonoBehaviour
     }
                                                                                                                             
     private void Update() {
+        if(hp < 0) {
+            hp = 0;
+        }
+        if(mana < 0) {
+            mana = 0;
+        }
         if(equippedWeapon != null) {
             damage = equippedWeapon.baseDamage + (equippedWeapon.usingDex ? dexterity : strength); //Temporary until real equip logic
         }

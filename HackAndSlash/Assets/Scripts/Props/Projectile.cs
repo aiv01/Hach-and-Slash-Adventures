@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
     }
     public void Shoot(CharacterStats shooter, Vector3 direction, float speed) {
         tr.Clear();
-        stats.realDamage = shooter.realDamage;
+        stats.realDamage = shooter.realDamage + stats.equippedWeapon.baseDamage;
         rb.velocity = direction * speed;
     }
 
