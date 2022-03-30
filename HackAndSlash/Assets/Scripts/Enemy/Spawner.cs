@@ -26,7 +26,7 @@ public class Spawner : MonoBehaviour
             else {
                 currentEnemy = em.GetEnemy(Enemy.chomper);
             }
-            currentEnemy.transform.position = new Vector3(Random.insideUnitCircle.x * spawnSpread, 0, Random.insideUnitCircle.y * spawnSpread);
+            currentEnemy.transform.position = new Vector3(transform.position.x + Random.insideUnitCircle.x * spawnSpread, 0, transform.position.z + Random.insideUnitCircle.y * spawnSpread);
             currentEnemy.SetActive(true);
         }
     }
