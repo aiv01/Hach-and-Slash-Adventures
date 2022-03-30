@@ -61,14 +61,13 @@ public class BossProvaScript : MonoBehaviour
 
     public void Behavior_Boss()
     {
-        if(Vector3.Distance(transform.position,target.transform.position) < 15)
+        if(Vector3.Distance(transform.position,target.transform.position) < 10)
         {
             var lookPos = target.transform.position - transform.position;
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
             pointShoot.transform.LookAt(target.transform.position);
-
-            if(Vector3.Distance(transform.position,target.transform.position) > 1 && !attack)
+            if(Vector3.Distance(transform.position,target.transform.position) > 2 && !attack)
             {
                 switch (runTime)
                 {
@@ -87,7 +86,7 @@ public class BossProvaScript : MonoBehaviour
                         timer += 1 * Time.deltaTime;
                         if(timer > time_RunTime)
                         {
-                            runTime = Random.Range(0, 5);
+                            runTime = Random.Range(0, 2);
                             timer = 0;
                         }
                         break;
@@ -104,6 +103,7 @@ public class BossProvaScript : MonoBehaviour
                         anim.SetBool("Attack", false);
                         break;
                     case 2:
+                        //ENERGYSHOOT
                         if(fase == 2)
                         {
                             anim.SetBool("Walk", false);
@@ -161,4 +161,9 @@ public class BossProvaScript : MonoBehaviour
         Behavior_Boss();
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 10);
+    }
 }

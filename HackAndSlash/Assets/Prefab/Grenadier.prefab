@@ -148,6 +148,26 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7609404494250552514, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: m_Height
+      value: 5.5398192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609404494250552514, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609404494250552514, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 2.7300904
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609404494250552515, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063f49976ca9166459f80219a1d00f04, type: 3}
 --- !u!4 &3423444792266752427 stripped

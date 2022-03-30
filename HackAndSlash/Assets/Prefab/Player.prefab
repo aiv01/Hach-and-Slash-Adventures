@@ -163,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9089337827708930036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700f7f8e9c0055545813151c252a5070, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f0bf18434b99564d81c8e68cde6972a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxLevel: 25
@@ -183,11 +183,11 @@ MonoBehaviour:
   skill3key: Skill3
   skill4key: Skill4
   openMenuKey: ShowStats
-  playerStats: {fileID: 4482356324216270667}
-  movement: {fileID: 9089337827708930043}
-  meleeWeapon: {fileID: 9089337827168507795}
-  rangedWeapon: {fileID: 8192212342633651307}
-  anim: {fileID: 9089337827708930042}
+  playerStats: {fileID: 0}
+  movement: {fileID: 0}
+  meleeWeapon: {fileID: 0}
+  rangedWeapon: {fileID: 0}
+  anim: {fileID: 0}
   meleeAnimation: {fileID: 9100000, guid: 26bd53b8cca21c5448cedba70cef8952, type: 2}
   rangedAnimation: {fileID: 22100000, guid: dff833b7d9566464a9c880e4614287c8, type: 2}
   hit: 0
@@ -351,12 +351,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fd9916376d1ad64e9fd73c1abf4933a, type: 3}
---- !u!4 &8192212342633651307 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8192212342209351004, guid: 6fd9916376d1ad64e9fd73c1abf4933a,
-    type: 3}
-  m_PrefabInstance: {fileID: 986337591}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3360358533105007854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -562,12 +556,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a399295cc208594dbfe66a7375b0008, type: 3}
---- !u!4 &9089337827168507795 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1978869295436141101, guid: 5a399295cc208594dbfe66a7375b0008,
-    type: 3}
-  m_PrefabInstance: {fileID: 7301896007946618302}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &4150135838610438165 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 6687200264736112043, guid: 5a399295cc208594dbfe66a7375b0008,
