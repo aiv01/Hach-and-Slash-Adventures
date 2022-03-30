@@ -49,6 +49,7 @@ public class PlayerLogic : MonoBehaviour
     //Hit detection
     [Header("Hit detection")]
     public bool hit;
+    public bool dead;
 
     //Skill
     [Header("Skills")]
@@ -74,6 +75,7 @@ public class PlayerLogic : MonoBehaviour
         instance = this;
         input = ReInput.players.GetPlayer(0);
         playerStats = GetComponent<CharacterStats>();
+        playerStats.InitializeCharacter();
         UnlockSkill();
     }
     public void LevelUp() {
@@ -100,6 +102,7 @@ public class PlayerLogic : MonoBehaviour
     }
 
     private void Update() {
+        if (dead) return;
         ManageInput();
 
         currentSkill = playerStats.skills[currentSkillId] != null ? playerStats.skills[currentSkillId] : null;
@@ -119,6 +122,11 @@ public class PlayerLogic : MonoBehaviour
             anim.runtimeAnimatorController = meleeAnimation;
             rangedWeapon.gameObject.SetActive(false);
             meleeWeapon.gameObject.SetActive(true);
+        }
+
+        if(playerStats.hp <= 0) {
+            anim.SetTrigger("Die");
+            dead = true;
         }
     }
 

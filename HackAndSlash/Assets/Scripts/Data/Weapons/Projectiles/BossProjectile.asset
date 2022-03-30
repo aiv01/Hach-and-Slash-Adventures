@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b43c32fc310d1634a9a9f6cf05425081, type: 3}
-  m_Name: Grenadier
+  m_Script: {fileID: 11500000, guid: 1ebac6663f861fd4a8fb05e878dc330e, type: 3}
+  m_Name: BossProjectile
   m_EditorClassIdentifier: 
-  baseVigor: 15
-  baseStrength: 15
-  baseDexterity: 5
-  baseIntelligence: 15
-  enemyName: Grenadier
-  type: 2
-  exp: 2000
+  weaponName: Bullet
+  type: 1
+  baseAttack: {fileID: 0}
+  damageType: 1
+  usingDex: 0
+  canStagger: 0
+  baseDamage: 5
+  knockback: 0
