@@ -46,11 +46,6 @@ public static class DataManagement
         Debug.Log(JsonUtility.ToJson(playerData));
         File.WriteAllText(playerPath, JsonUtility.ToJson(playerData));
 
-        //Debug keys
-        SetKey("KeyTest1", true);
-        SetKey("KeyTest2", false);
-        SetKey("KeyTest3", true);
-
         //Flags
         worldData = GetFlagData();
         string worldJsonData = JsonUtility.ToJson(worldData);
