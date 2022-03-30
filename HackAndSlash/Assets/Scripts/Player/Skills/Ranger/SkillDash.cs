@@ -7,7 +7,7 @@ public class SkillDash : SkillLogic {
     [SerializeField] private float yOffset;
     [SerializeField] private LayerMask mask;
     [SerializeField] private TrailRenderer trail;
-    [SerializeField] private TrailRenderer instance;
+    private TrailRenderer instance;
     private CapsuleCollider capsuleCollider;
     private Animator anim;
     public override void Skill() {
@@ -28,6 +28,7 @@ public class SkillDash : SkillLogic {
     }
 
     public override void OnSkillStart() {
+        if (instance == null) return;
         instance.transform.parent = character.transform;
         instance.transform.localPosition = new Vector3(0, yOffset, 0);
     }

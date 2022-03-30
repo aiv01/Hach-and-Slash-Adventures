@@ -51,3 +51,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   trail: {fileID: 3970886704746771291, guid: e574539662feffc40ab47d6d9b1362cb, type: 3}
+  instance: {fileID: 0}
