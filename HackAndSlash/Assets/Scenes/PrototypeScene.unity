@@ -2072,6 +2072,12 @@ MonoBehaviour:
   strength: 2
   shakeTime: 0.1
   camera: {fileID: 1745665504}
+--- !u!1 &1753039052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6927597977982930230, guid: 42236645adeb2924894bf194bbb1342c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1899220760943418199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1872720378 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3423444790240021071, guid: d18c2fe19583eab4da7ea50eb41732fd,
@@ -2274,6 +2280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6927597977271800439, guid: 42236645adeb2924894bf194bbb1342c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6927597977982930230, guid: 42236645adeb2924894bf194bbb1342c,
         type: 3}
       propertyPath: m_IsActive
@@ -2433,6 +2444,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
+        type: 3}
+      propertyPath: HP_Boss
+      value: 
+      objectReference: {fileID: 1753039052}
     - target: {fileID: 3423444792266752428, guid: d18c2fe19583eab4da7ea50eb41732fd,
         type: 3}
       propertyPath: rangoBoss

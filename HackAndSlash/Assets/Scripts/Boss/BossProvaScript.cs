@@ -27,6 +27,7 @@ public class BossProvaScript : MonoBehaviour
     private float HP_Min;
     private float HP_Max;
     public Image HP_bar;
+    public GameObject HP_Boss;
     public bool dead;
 
     // Start is called before the first frame update
@@ -67,7 +68,9 @@ public class BossProvaScript : MonoBehaviour
             lookPos.y = 0;
             var rotation = Quaternion.LookRotation(lookPos);
             pointShoot.transform.LookAt(target.transform.position);
-            if(Vector3.Distance(transform.position,target.transform.position) > 2 && !attack)
+            HP_Boss.SetActive(true);
+
+            if (Vector3.Distance(transform.position,target.transform.position) > 2 && !attack)
             {
                 switch (runTime)
                 {

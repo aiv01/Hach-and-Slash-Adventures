@@ -12,7 +12,6 @@ public class EventBattleFight : MonoBehaviour
     }
 
     [SerializeField] private EventArenaFight colliderTrigger;
-
     private State state;
 
     private void Awake()
@@ -38,5 +37,6 @@ public class EventBattleFight : MonoBehaviour
     {
         Debug.Log("StartBattle");
         state = State.Active;
+        
     }
 }
