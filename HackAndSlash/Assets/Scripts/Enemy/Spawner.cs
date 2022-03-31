@@ -8,6 +8,10 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float spawnSpread;
     [SerializeField] private float spawnTime;
     private float currentSpawnTime;
+    private int enemySpawned = 0;
+    [SerializeField] private int enemiesToSpawn;
+    [Range(1, 25)] [SerializeField] private int level = 1;
+    [SerializeField] private GameObject wallToDisable;
     [Range(0, 100)] [SerializeField] private int spitterRarity;
 
     private void Awake() {
@@ -15,16 +19,23 @@ public class Spawner : MonoBehaviour
         currentSpawnTime = spawnTime;
     }
 
-    private void Update() 
-    {
-        Spawn();
+    private void Update() {
+        if(enemySpawned < enemiesToSpawn) {
+            Spawn();
+        }
+        if(DataManagement.enemyKilled >= enemiesToSpawn) {
+            DataManagement.enemyKilled = 0;
+            wallToDisable.SetActive(false);
+            gameObject.SetActive(false);
+        }
+    }
+    private void OnDrawGizmos() {
+        Gizmos.DrawWireSphere(transform.position, spawnSpread);
     }
 
-    public void Spawn()
-    {
+    private void Spawn() {
         currentSpawnTime -= Time.deltaTime;
-        if (currentSpawnTime <= 0)
-        {
+        if (currentSpawnTime <= 0) {
             currentSpawnTime = spawnTime;
             GameObject currentEnemy;
             if (Random.Range(0, 100) > spitterRarity)
@@ -36,12 +47,10 @@ public class Spawner : MonoBehaviour
                 currentEnemy = em.GetEnemy(Enemy.chomper);
             }
             currentEnemy.transform.position = new Vector3(transform.position.x + Random.insideUnitCircle.x * spawnSpread, 0, transform.position.z + Random.insideUnitCircle.y * spawnSpread);
+            currentEnemy.GetComponent<EnemyLogic>().level = level;
             currentEnemy.SetActive(true);
+            enemySpawned++;
         }
 
-    }
-
-    private void OnDrawGizmos() {
-        Gizmos.DrawWireSphere(transform.position, spawnSpread);
     }
 }

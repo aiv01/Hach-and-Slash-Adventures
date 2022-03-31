@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyLogic : MonoBehaviour
 {
     [Header("Level")]
-    [SerializeField] private int level = 1;
+    [SerializeField] public int level = 1;
     
     [Header("References")]
     public CharacterStats enemyStats;
@@ -43,6 +43,7 @@ public class EnemyLogic : MonoBehaviour
 
     private void Die() {
         PlayerLogic.Instance.GetExp(enemyStats.exp);
+        DataManagement.enemyKilled++;
         transform.parent.gameObject.SetActive(false);
     }
 }
