@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponDrop : MonoBehaviour
 {
-    [SerializeField] private Mesh staffMesh, gunMesh;
+    [SerializeField] private Mesh staffMesh, gunMesh, creaturaMesh;
+    [SerializeField] private Material staffMat, gunMat, creaturaMat;
     [SerializeField] private WeaponData weapon;
     [SerializeField] private float playerDistanceToEquip;
     [SerializeField] private WeaponDrop originalDrop;
@@ -22,11 +23,29 @@ public class WeaponDrop : MonoBehaviour
         CheckIfPlayerInteracting();
     }
     public void Spawn() {
-        if(weapon.type == WeaponType.ranged) {
-            mf.mesh = gunMesh;
-        }
-        else {
-            mf.mesh = staffMesh;
+        switch (weapon.type) {
+            case WeaponType.melee:
+                mf.mesh = staffMesh;
+                mr.material = staffMat;
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                break;
+            case WeaponType.ranged:
+                mf.mesh = gunMesh;
+                mr.material = gunMat;
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                break;
+            case WeaponType.magic:
+                mf.mesh = staffMesh;
+                mr.material = staffMat;
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                break;
+            case WeaponType.creatura:
+                mf.mesh = creaturaMesh;
+                mr.material = creaturaMat;
+                transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                break;
+            default:
+                break;
         }
     }
 

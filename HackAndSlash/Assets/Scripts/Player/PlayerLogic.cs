@@ -40,6 +40,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private Movement movement;
     [SerializeField] private Transform meleeWeapon;
     [SerializeField] private Transform rangedWeapon;
+    [SerializeField] private Transform creaturaWeapon;
 
     [Header("Animation managing")]
     [SerializeField] private Animator anim;
@@ -114,15 +115,33 @@ public class PlayerLogic : MonoBehaviour
             anim.SetTrigger("Hit");
         }
 
-        if(playerStats.equippedWeapon.type == WeaponType.ranged) {
-            anim.runtimeAnimatorController = rangedAnimation;
-            rangedWeapon.gameObject.SetActive(true);
-            meleeWeapon.gameObject.SetActive(false);
-        }
-        else {
-            anim.runtimeAnimatorController = meleeAnimation;
-            rangedWeapon.gameObject.SetActive(false);
-            meleeWeapon.gameObject.SetActive(true);
+        switch (playerStats.equippedWeapon.type) {
+            case WeaponType.melee:
+                anim.runtimeAnimatorController = meleeAnimation;
+                rangedWeapon.gameObject.SetActive(false);
+                meleeWeapon.gameObject.SetActive(true);
+                creaturaWeapon.gameObject.SetActive(false);
+                break;
+            case WeaponType.ranged:
+                anim.runtimeAnimatorController = rangedAnimation;
+                rangedWeapon.gameObject.SetActive(true);
+                meleeWeapon.gameObject.SetActive(false);
+                creaturaWeapon.gameObject.SetActive(false);
+                break;
+            case WeaponType.magic:
+                anim.runtimeAnimatorController = meleeAnimation;
+                rangedWeapon.gameObject.SetActive(false);
+                meleeWeapon.gameObject.SetActive(true);
+                creaturaWeapon.gameObject.SetActive(false);
+                break;
+            case WeaponType.creatura:
+                anim.runtimeAnimatorController = rangedAnimation;
+                rangedWeapon.gameObject.SetActive(false);
+                meleeWeapon.gameObject.SetActive(false);
+                creaturaWeapon.gameObject.SetActive(true);
+                break;
+            default:
+                break;
         }
 
         if(playerStats.hp <= 0) {

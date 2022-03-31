@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebac6663f861fd4a8fb05e878dc330e, type: 3}
+  m_Name: CreaturaGun
+  m_EditorClassIdentifier: 
+  weaponName: Creatura
+  type: 3
+  baseAttack: {fileID: 5188986975615405352, guid: 0333bd7956f541c4bb29b186c243035a,
+    type: 3}
+  damageType: 0
+  usingDex: 1
+  canStagger: 1
+  baseDamage: 15
+  knockback: 0
