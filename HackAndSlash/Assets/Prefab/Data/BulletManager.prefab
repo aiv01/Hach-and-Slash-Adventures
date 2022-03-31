@@ -52,3 +52,5 @@ MonoBehaviour:
     type: 3}
   originalBossBullet: {fileID: 8384608833444652242, guid: 607e703a68cba7d409d69b9b72afaa10,
     type: 3}
+  originalCreaturaBullet: {fileID: 8384608833444652242, guid: 86d095e311e5e154ab720d4a1c5b53c5,
+    type: 3}

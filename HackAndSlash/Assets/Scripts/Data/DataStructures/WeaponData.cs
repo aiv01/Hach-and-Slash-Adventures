@@ -5,7 +5,8 @@ using UnityEngine;
 public enum WeaponType {
     melee,
     ranged,
-    magic
+    magic,
+    creatura
 }
 
 [CreateAssetMenu(fileName = "newWeapon", menuName = "Data/Weapon")]
