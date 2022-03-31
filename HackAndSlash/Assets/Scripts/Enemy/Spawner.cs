@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     private float currentSpawnTime;
     private int enemySpawned = 0;
     [SerializeField] private int enemiesToSpawn;
-    [Range(1, 25)] [SerializeField] private int level;
+    [Range(1, 25)] [SerializeField] private int level = 1;
     [SerializeField] private GameObject wallToDisable;
     [Range(0, 100)] [SerializeField] private int spitterRarity;
 
