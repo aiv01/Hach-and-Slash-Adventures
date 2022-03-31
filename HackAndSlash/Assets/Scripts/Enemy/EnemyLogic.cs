@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyLogic : MonoBehaviour
 {
     [Header("Level")]
-    [SerializeField] private int level = 1;
+    [SerializeField] public int level = 1;
     
     [Header("References")]
     public CharacterStats enemyStats;

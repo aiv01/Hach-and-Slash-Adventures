@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     private float currentSpawnTime;
     private int enemySpawned = 0;
     [SerializeField] private int enemiesToSpawn;
-    [Range(1, 25)] private int level;
+    [Range(1, 25)] [SerializeField] private int level;
     [SerializeField] private GameObject wallToDisable;
     [Range(0, 100)] [SerializeField] private int spitterRarity;
 
@@ -45,6 +45,7 @@ public class Spawner : MonoBehaviour
                 currentEnemy = em.GetEnemy(Enemy.chomper);
             }
             currentEnemy.transform.position = new Vector3(transform.position.x + Random.insideUnitCircle.x * spawnSpread, 0, transform.position.z + Random.insideUnitCircle.y * spawnSpread);
+            currentEnemy.GetComponent<EnemyLogic>().level = level;
             currentEnemy.SetActive(true);
             enemySpawned++;
         }

@@ -5754,7 +5754,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.34395766, y: 0.00000003957526, z: -0.00000001449673, w: 0.93898517}
+  m_LocalRotation: {x: 0.34395766, y: -0.00000003957526, z: 0.00000001449673, w: 0.93898517}
   m_LocalPosition: {x: 0, y: 5.5, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -13565,6 +13565,7 @@ MonoBehaviour:
   spawnSpread: 12
   spawnTime: 1.5
   enemiesToSpawn: 10
+  level: 0
   wallToDisable: {fileID: 626645329}
   spitterRarity: 70
 --- !u!1001 &786919236
@@ -14898,8 +14899,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnSpread: 13
   spawnTime: 1.5
-  enemiesToSpawn: 0
-  wallToDisable: {fileID: 0}
+  enemiesToSpawn: 20
+  level: 8
+  wallToDisable: {fileID: 2031012097}
   spitterRarity: 70
 --- !u!1001 &848780609
 PrefabInstance:
@@ -24673,8 +24675,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnSpread: 13
   spawnTime: 1.5
-  enemiesToSpawn: 0
-  wallToDisable: {fileID: 0}
+  enemiesToSpawn: 15
+  level: 4
+  wallToDisable: {fileID: 1047991976}
   spitterRarity: 70
 --- !u!1 &1433483957
 GameObject:
@@ -29302,7 +29305,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745665502}
-  m_LocalRotation: {x: 0.34395766, y: 0.00000003957526, z: -0.00000001449673, w: 0.93898517}
+  m_LocalRotation: {x: 0.34395766, y: -0.00000003957526, z: 0.00000001449673, w: 0.93898517}
   m_LocalPosition: {x: 0, y: 5.5, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -34328,7 +34331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2031012098
 Transform:
   m_ObjectHideFlags: 0
