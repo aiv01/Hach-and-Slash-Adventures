@@ -70,6 +70,7 @@ public class PlayerLogic : MonoBehaviour
     public static PlayerLogic Instance { get { return instance; } }
 
     public PlayerPanel playerPanel;
+    public GameObject gameOverPanel;
 
     private void Awake() {
         instance = this;
@@ -127,6 +128,7 @@ public class PlayerLogic : MonoBehaviour
         if(playerStats.hp <= 0) {
             anim.SetTrigger("Die");
             dead = true;
+            gameOverPanel.SetActive(true);
         }
     }
 
