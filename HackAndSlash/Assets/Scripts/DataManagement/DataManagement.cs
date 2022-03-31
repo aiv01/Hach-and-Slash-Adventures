@@ -40,6 +40,9 @@ public static class DataManagement
     private static string playerPath = @"Data.json";
     private static string worldPath = @"WorldData.json";
 
+    //World logic
+    public static int enemyKilled;
+
     public static void Save() {
         //Player
         playerData = GetData();

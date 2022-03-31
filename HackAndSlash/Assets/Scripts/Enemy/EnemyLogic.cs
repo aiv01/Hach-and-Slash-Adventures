@@ -43,6 +43,7 @@ public class EnemyLogic : MonoBehaviour
 
     private void Die() {
         PlayerLogic.Instance.GetExp(enemyStats.exp);
+        DataManagement.enemyKilled++;
         transform.parent.gameObject.SetActive(false);
     }
 }
