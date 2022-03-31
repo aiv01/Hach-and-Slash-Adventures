@@ -1,3 +1,4 @@
+using Rewired;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,18 @@ public class PauseMenuController : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    private Player input;
+    [SerializeField] private string openMenuKey;
+
+    void Awake()
+    {
+        input = ReInput.players.GetPlayer(0);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || input.GetButtonDown(openMenuKey))
         {
             if (GameIsPaused)
             {

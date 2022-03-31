@@ -37,6 +37,6 @@ public class EventBattleFight : MonoBehaviour
     {
         Debug.Log("StartBattle");
         state = State.Active;
-        
+
     }
 }

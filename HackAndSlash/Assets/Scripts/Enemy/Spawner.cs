@@ -15,21 +15,32 @@ public class Spawner : MonoBehaviour
         currentSpawnTime = spawnTime;
     }
 
-    private void Update() {
+    private void Update() 
+    {
+        Spawn();
+    }
+
+    public void Spawn()
+    {
         currentSpawnTime -= Time.deltaTime;
-        if(currentSpawnTime <= 0) {
+        if (currentSpawnTime <= 0)
+        {
             currentSpawnTime = spawnTime;
             GameObject currentEnemy;
-            if (Random.Range(0, 100) > spitterRarity) {
+            if (Random.Range(0, 100) > spitterRarity)
+            {
                 currentEnemy = em.GetEnemy(Enemy.spitter);
             }
-            else {
+            else
+            {
                 currentEnemy = em.GetEnemy(Enemy.chomper);
             }
             currentEnemy.transform.position = new Vector3(transform.position.x + Random.insideUnitCircle.x * spawnSpread, 0, transform.position.z + Random.insideUnitCircle.y * spawnSpread);
             currentEnemy.SetActive(true);
         }
+
     }
+
     private void OnDrawGizmos() {
         Gizmos.DrawWireSphere(transform.position, spawnSpread);
     }

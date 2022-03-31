@@ -6,17 +6,14 @@ using UnityEngine;
 public class EventArenaFight : MonoBehaviour
 {
     public event EventHandler OnPlayerEnterTrigger;
-    public GameObject wallActive;
-    public GameObject enemySpawn;
-
+    public GameObject wallBattle;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player inside Trigger");
             OnPlayerEnterTrigger?.Invoke(this, EventArgs.Empty);
-            wallActive.SetActive(true);
-            enemySpawn.SetActive(true);
+            wallBattle.SetActive(true);
         }
     }
 }
