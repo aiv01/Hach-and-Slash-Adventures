@@ -25,6 +25,6 @@ MonoBehaviour:
   unlockLevelSkill: 00000000020000000400000006000000
   skills:
   - {fileID: 7638021612746765762, guid: ac26e53d81c77f848a7c1c911c0d4644, type: 3}
-  - {fileID: 0}
+  - {fileID: 7638021612746765762, guid: c6d3a147139f518468f5792395c6d718, type: 3}
   - {fileID: 0}
   - {fileID: 0}

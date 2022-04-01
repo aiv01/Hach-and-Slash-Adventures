@@ -56,3 +56,5 @@ MonoBehaviour:
     type: 3}
   originalFireboltBullet: {fileID: 8384608833444652242, guid: 2cca6d5cd9016f048bfa00255f42812f,
     type: 3}
+  originalFireballBullet: {fileID: 8384608833444652242, guid: 6cda533aab40c29468f3a399899a279f,
+    type: 3}

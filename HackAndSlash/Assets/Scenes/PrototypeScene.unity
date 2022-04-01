@@ -369,7 +369,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.44328356, y: 0.00000001542348, z: -0.000000007627306, w: 0.89638144}
+  m_LocalRotation: {x: 0.44328356, y: -0.000000015423481, z: 0.000000007627307, w: 0.89638144}
   m_LocalPosition: {x: 0, y: 8.51, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -495,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 4919730835519617988, guid: 678ac7685ec44544ea27e365535a0d69,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4919730835519617988, guid: 678ac7685ec44544ea27e365535a0d69,
         type: 3}
@@ -900,19 +900,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1052896851
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1234183007}
     m_Modifications:
+    - target: {fileID: 784729317, guid: df605b9043fecdd4cbe78e77b0d26a67, type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 784729317, guid: df605b9043fecdd4cbe78e77b0d26a67, type: 3}
+      propertyPath: enemiesToSpawn
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5605395749553435085, guid: df605b9043fecdd4cbe78e77b0d26a67,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5605395749553435085, guid: df605b9043fecdd4cbe78e77b0d26a67,
         type: 3}
@@ -937,17 +945,17 @@ PrefabInstance:
     - target: {fileID: 5605395749553435085, guid: df605b9043fecdd4cbe78e77b0d26a67,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5605395749553435085, guid: df605b9043fecdd4cbe78e77b0d26a67,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5605395749553435085, guid: df605b9043fecdd4cbe78e77b0d26a67,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5605395749553435085, guid: df605b9043fecdd4cbe78e77b0d26a67,
         type: 3}
@@ -976,6 +984,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6614999411022802463, guid: 7f1a5f52c43b93f4a9989487d75db754,
     type: 3}
   m_PrefabInstance: {fileID: 6614999412075895803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1214520480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5605395749553435085, guid: df605b9043fecdd4cbe78e77b0d26a67,
+    type: 3}
+  m_PrefabInstance: {fileID: 1052896851}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1234183006
 GameObject:
@@ -1007,8 +1021,9 @@ Transform:
   - {fileID: 1967209944}
   - {fileID: 1336858745}
   - {fileID: 1368597870}
+  - {fileID: 1214520480}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1336858745 stripped
 Transform:
@@ -1236,7 +1251,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745665502}
-  m_LocalRotation: {x: 0.44328356, y: 0.00000001542348, z: -0.000000007627306, w: 0.89638144}
+  m_LocalRotation: {x: 0.44328356, y: -0.000000015423481, z: 0.000000007627307, w: 0.89638144}
   m_LocalPosition: {x: 0, y: 8.51, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1438,7 +1453,7 @@ PrefabInstance:
     - target: {fileID: 1586430053054513723, guid: 4d3b99a14d7fe9448935319d12712f22,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1586430053054513723, guid: 4d3b99a14d7fe9448935319d12712f22,
         type: 3}

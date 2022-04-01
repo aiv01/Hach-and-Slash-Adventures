@@ -34,18 +34,19 @@ public class Projectile : MonoBehaviour
         rb.velocity = direction * speed;
     }
 
-    private void Update() {
+    private void FixedUpdate() {
         rb.rotation = Quaternion.LookRotation(rb.velocity.normalized);
         currentAliveTime -= Time.deltaTime;
         if(currentAliveTime <= 0) {
             gameObject.SetActive(false);
         }
     }
-
     private void OnTriggerEnter(Collider other) {
         if (!other.CompareTag(canGoThrough)) {
-            ParticleSystem instance = Instantiate<ParticleSystem>(hitParticle);
-            instance.transform.position = transform.position;
+            if(hitParticle != null) {
+                ParticleSystem instance = Instantiate<ParticleSystem>(hitParticle);
+                instance.transform.position = transform.position;
+            } 
             if (!piercing) gameObject.SetActive(false);
         }
     }
