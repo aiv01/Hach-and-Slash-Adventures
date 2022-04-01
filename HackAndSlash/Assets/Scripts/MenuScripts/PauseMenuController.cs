@@ -3,6 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public enum PauseMenuOption
+{
+    Resume,
+    Menu,
+    Quit,
+    last
+}
+
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -11,14 +21,32 @@ public class PauseMenuController : MonoBehaviour
     public GameObject pauseMenuUI;
     private Player input;
     [SerializeField] private string openMenuKey;
+    private int currentSelection = (int)PauseMenuOption.Resume;
+    [SerializeField] private float spacing;
+    private Vector3 originalSelectorPosition;
+    [SerializeField] private Image selector;
+    private bool hasChangedSelection;
+    private string skillChangeAxis = "VerticalMovement";
+
 
     void Awake()
     {
         input = ReInput.players.GetPlayer(0);
+        originalSelectorPosition = selector.rectTransform.position;
     }
 
     // Update is called once per frame
     void Update()
+    {
+        ManageInput();
+        selector.rectTransform.position = new Vector3(
+            originalSelectorPosition.x,
+            originalSelectorPosition.y - spacing * currentSelection,
+            originalSelectorPosition.z);
+        MenuUpdate();
+    }
+
+    void MenuUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || input.GetButtonDown(openMenuKey))
         {
@@ -31,6 +59,7 @@ public class PauseMenuController : MonoBehaviour
                 Pause();
             }
         }
+
     }
 
     public void Resume()
@@ -56,4 +85,21 @@ public class PauseMenuController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    private void ManageInput()
+    {
+        if (!hasChangedSelection)
+        {
+            currentSelection -= (int)input.GetAxisRaw(skillChangeAxis);
+            Debug.Log((int)input.GetAxisRaw(skillChangeAxis));
+            hasChangedSelection = true;
+            currentSelection = currentSelection >= (int)PauseMenuOption.last ? (int)PauseMenuOption.Resume : currentSelection < 0 ? (int)PauseMenuOption.Quit : currentSelection;
+            Debug.Log(currentSelection);
+        }
+        if (input.GetAxisRaw(skillChangeAxis) == 0)
+        {
+            hasChangedSelection = false;
+        }
+    }
+
 }

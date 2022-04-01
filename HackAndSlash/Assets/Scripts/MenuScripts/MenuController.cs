@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour
         ManageInput();
         selector.rectTransform.position = new Vector3(
             originalSelectorPosition.x, 
-            originalSelectorPosition.y + spacing * currentSelection, 
+            originalSelectorPosition.y - spacing * currentSelection, 
             originalSelectorPosition.z);
     }
     public void NewGameDialogYes()
@@ -60,14 +60,16 @@ public class MenuController : MonoBehaviour
     }
 
     private void ManageInput() {
-        if (!hasChangedSelection) {
-            currentSelection += (int)input.GetAxis(skillChangeAxis);
-            Debug.Log((int)input.GetAxis(skillChangeAxis));
+        if (!hasChangedSelection)
+        {
+            currentSelection -= (int)input.GetAxisRaw(skillChangeAxis);
+            Debug.Log((int)input.GetAxisRaw(skillChangeAxis));
             hasChangedSelection = true;
-            currentSelection = currentSelection >= (int)MenuOption.last ? (int)MenuOption.newgame : currentSelection;
-            currentSelection = currentSelection < 0 ? (int)MenuOption.exit : currentSelection;
+            currentSelection = currentSelection >= (int)MenuOption.last ? (int)MenuOption.newgame : currentSelection < 0 ? (int)MenuOption.exit : currentSelection;
+            Debug.Log(currentSelection);
         }
-        if (input.GetAxis(skillChangeAxis) == 0) {
+        if (input.GetAxisRaw(skillChangeAxis) == 0)
+        {
             hasChangedSelection = false;
         }
     }
