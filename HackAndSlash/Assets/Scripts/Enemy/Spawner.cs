@@ -37,18 +37,18 @@ public class Spawner : MonoBehaviour
         currentSpawnTime -= Time.deltaTime;
         if (currentSpawnTime <= 0) {
             currentSpawnTime = spawnTime;
-            GameObject currentEnemy;
+            EnemyLogic currentEnemy;
             if (Random.Range(0, 100) > spitterRarity)
             {
-                currentEnemy = em.GetEnemy(Enemy.spitter);
+                currentEnemy = em.GetEnemy(Enemy.spitter).GetComponentInChildren<EnemyLogic>();
             }
             else
             {
-                currentEnemy = em.GetEnemy(Enemy.chomper);
+                currentEnemy = em.GetEnemy(Enemy.chomper).GetComponentInChildren<EnemyLogic>();
             }
             currentEnemy.transform.position = new Vector3(transform.position.x + Random.insideUnitCircle.x * spawnSpread, 0, transform.position.z + Random.insideUnitCircle.y * spawnSpread);
-            currentEnemy.GetComponent<EnemyLogic>().level = level;
-            currentEnemy.SetActive(true);
+            currentEnemy.level = level;
+            currentEnemy.transform.parent.gameObject.SetActive(true);
             enemySpawned++;
         }
 
