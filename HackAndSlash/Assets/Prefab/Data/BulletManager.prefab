@@ -54,3 +54,5 @@ MonoBehaviour:
     type: 3}
   originalCreaturaBullet: {fileID: 8384608833444652242, guid: 86d095e311e5e154ab720d4a1c5b53c5,
     type: 3}
+  originalFireboltBullet: {fileID: 8384608833444652242, guid: 2cca6d5cd9016f048bfa00255f42812f,
+    type: 3}
