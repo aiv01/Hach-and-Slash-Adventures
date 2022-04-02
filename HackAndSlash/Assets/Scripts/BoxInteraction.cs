@@ -14,15 +14,27 @@ public class BoxInteraction : MonoBehaviour
     public Animator anim;
     public static float defaultLifeTimer = 10;
     private float lifeTimer = 0;
+    [SerializeField] private string chestFlag;
 
     // Update is called once per frame
+    private void OnEnable() {
+        DataManagement.SetKey(chestFlag, false);
+    }
     void Update()
     {
+        if (DataManagement.GetKey(chestFlag)) {
+            isOpen = true;
+            anim.SetBool("isOpen", isOpen);
+        }else if (!DataManagement.GetKey(chestFlag)) {
+            isOpen = false;
+            anim.SetBool("isOpen", isOpen);
+        }
         lifeTimer += Time.deltaTime;
         if (isInsideTrigger == true)
         {
             if (PlayerLogic.Instance.isInteracting)
             {
+                DataManagement.SetKey(chestFlag, true);
                 isOpen = !isOpen;
 
                 if(isOpen == true)

@@ -1863,6 +1863,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -5667860337335617598, guid: 3a2a8e99a64a9534ca0767799c2d9d6b,
         type: 3}
+    - target: {fileID: 6614999412423183096, guid: 7f1a5f52c43b93f4a9989487d75db754,
+        type: 3}
+      propertyPath: chestFlag
+      value: ChestTest
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f1a5f52c43b93f4a9989487d75db754, type: 3}
 --- !u!114 &6927597977271800433 stripped

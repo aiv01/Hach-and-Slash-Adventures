@@ -37,13 +37,19 @@ public static class DataManagement
     private static CharacterStats playerStats;
     private static Dictionary<string, bool> flags = new Dictionary<string, bool>();
 
-    private static string playerPath = @"Data.json";
-    private static string worldPath = @"WorldData.json";
+    private static string dirPath = @"Data";
+    private static string playerPath = @"Data/PlayerData.json";
+    private static string worldPath = @"Data/WorldData.json";
 
     //World logic
     public static int enemyKilled;
 
+    public static bool needsLoading;
+    public static bool newGame;
+
     public static void Save() {
+        //Check if dir exist
+        if (!Directory.Exists(dirPath)) Directory.CreateDirectory(dirPath);
         //Player
         playerData = GetData();
         Debug.Log(JsonUtility.ToJson(playerData));
@@ -59,12 +65,13 @@ public static class DataManagement
     public static void Load() {
         string jsonData = File.ReadAllText(playerPath);
         Debug.Log(jsonData);
+        PlayerData playerData = new PlayerData();
         //Load stats
         JsonUtility.FromJsonOverwrite(jsonData, PlayerLogic.Instance.playerStats);
         PlayerLogic.Instance.playerStats.CalculateStats();
 
         //Load position
-        JsonUtility.FromJsonOverwrite(jsonData, playerData);
+        playerData = JsonUtility.FromJson<PlayerData>(jsonData);
         PlayerLogic.Instance.transform.position = playerData.position;
         PlayerLogic.Instance.transform.rotation = playerData.rotation;
 
@@ -110,6 +117,7 @@ public static class DataManagement
         worldData.keys = new List<string>();
         worldData.values = new List<bool>();
         string jsonWorldData = File.ReadAllText(worldPath);
+        Debug.Log(jsonWorldData);
         JsonUtility.FromJsonOverwrite(jsonWorldData, worldData);
         for (int i = 0; i < worldData.keys.Count; i++) {
             flags[worldData.keys[i]] = worldData.values[i];

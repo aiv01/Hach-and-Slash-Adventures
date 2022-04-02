@@ -6006,7 +6006,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.34395766, y: 0.000000039575266, z: -0.000000014496732, w: 0.93898517}
+  m_LocalRotation: {x: 0.34395766, y: -0.00000003957526, z: 0.00000001449673, w: 0.93898517}
   m_LocalPosition: {x: 14, y: 5.5, z: -1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -30894,7 +30894,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745665502}
-  m_LocalRotation: {x: 0.34395766, y: 0.000000039575266, z: -0.000000014496732, w: 0.93898517}
+  m_LocalRotation: {x: 0.34395766, y: -0.00000003957526, z: 0.00000001449673, w: 0.93898517}
   m_LocalPosition: {x: 14, y: 5.5, z: -1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -39665,6 +39665,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -5667860337335617598, guid: 772f7655d6982e043b43d9c43f764dfd,
         type: 3}
+    - target: {fileID: 6614999412423183096, guid: 7f1a5f52c43b93f4a9989487d75db754,
+        type: 3}
+      propertyPath: chestFlag
+      value: FirstBoxChest
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f1a5f52c43b93f4a9989487d75db754, type: 3}
 --- !u!1001 &8515419247496075388
