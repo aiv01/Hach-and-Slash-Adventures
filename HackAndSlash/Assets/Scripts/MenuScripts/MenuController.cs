@@ -18,7 +18,7 @@ public class MenuController : MonoBehaviour
     public string newGameLevel;
     private string levelToLoad;
     [SerializeField] private GameObject noSavedGameDialog = null;
-    private int currentSelection = (int)MenuOption.newgame;
+    private MenuOption currentSelection = MenuOption.newgame;
     [SerializeField] private float spacing;
     private Vector3 originalSelectorPosition;
     [SerializeField] private Image selector;
@@ -33,7 +33,7 @@ public class MenuController : MonoBehaviour
         ManageInput();
         selector.rectTransform.position = new Vector3(
             originalSelectorPosition.x, 
-            originalSelectorPosition.y - spacing * currentSelection, 
+            originalSelectorPosition.y - spacing * (int)currentSelection, 
             originalSelectorPosition.z);
     }
     public void NewGameDialogYes()
@@ -60,17 +60,32 @@ public class MenuController : MonoBehaviour
     }
 
     private void ManageInput() {
-        if (!hasChangedSelection)
-        {
+        if (!hasChangedSelection) {
             currentSelection -= (int)input.GetAxisRaw(skillChangeAxis);
             Debug.Log((int)input.GetAxisRaw(skillChangeAxis));
             hasChangedSelection = true;
-            currentSelection = currentSelection >= (int)MenuOption.last ? (int)MenuOption.newgame : currentSelection < 0 ? (int)MenuOption.exit : currentSelection;
+            currentSelection = currentSelection >= MenuOption.last ? MenuOption.newgame : currentSelection < 0 ? MenuOption.exit : currentSelection;
             Debug.Log(currentSelection);
         }
-        if (input.GetAxisRaw(skillChangeAxis) == 0)
-        {
+        if (input.GetAxisRaw(skillChangeAxis) == 0) {
             hasChangedSelection = false;
+        }
+        if (input.GetButton("Confirm")) {
+            switch (currentSelection) {
+                case MenuOption.newgame:
+                    NewGameDialogYes();
+                    break;
+                case MenuOption.loadgame:
+                    LoadGameDialogYes();
+                    break;
+                case MenuOption.exit:
+                    ExitButton();
+                    break;
+                case MenuOption.last:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

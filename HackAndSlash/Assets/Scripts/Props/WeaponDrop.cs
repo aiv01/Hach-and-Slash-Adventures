@@ -52,11 +52,14 @@ public class WeaponDrop : MonoBehaviour
     private void CheckIfPlayerInteracting() {
         float playerDistance = (transform.position - PlayerLogic.Instance.transform.position).magnitude;
         if(playerDistance < playerDistanceToEquip) {
+            ClassData playerClass = (ClassData) PlayerLogic.Instance.playerStats.stats;
             mr.material.color = Color.yellow;
             if (PlayerLogic.Instance.isInteracting) {
-                InstancePlayerWeapon();
-                PlayerLogic.Instance.playerStats.equippedWeapon = weapon;
-                Destroy(gameObject);
+                if(weapon.type == playerClass.weaponRestriction || weapon.type == WeaponType.creatura) {
+                    InstancePlayerWeapon();
+                    PlayerLogic.Instance.playerStats.equippedWeapon = weapon;
+                    Destroy(gameObject);
+                }
             }
         }
         else {

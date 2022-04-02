@@ -2005,9 +2005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd23d5f883218b8499d0dbf68de7f5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameLevel: PrototypeScene
+  newGameLevel: PrototypeAmbientScene
   noSavedGameDialog: {fileID: 1417838451}
-  spacing: 38
+  spacing: 100
   selector: {fileID: 2137023758}
 --- !u!4 &1218674962
 Transform:
