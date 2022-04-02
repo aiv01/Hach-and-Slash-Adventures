@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Rewired;
+using System.IO;
 
 public enum MenuOption {
     newgame,
@@ -43,10 +44,10 @@ public class MenuController : MonoBehaviour
 
     public void LoadGameDialogYes()
     {
-        if (PlayerPrefs.HasKey("SavedLevel"))
+        if (File.Exists(@"Data/PlayerData.json"))
         {
-            levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            SceneManager.LoadScene(levelToLoad);
+            DataManagement.needsLoading = true;
+            SceneManager.LoadScene(newGameLevel);
         }
         else
         {

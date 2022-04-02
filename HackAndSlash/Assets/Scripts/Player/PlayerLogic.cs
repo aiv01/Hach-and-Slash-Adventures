@@ -304,4 +304,11 @@ public class PlayerLogic : MonoBehaviour
             DataManagement.Load();
         }
     }
+
+    private void LateUpdate() {
+        if (DataManagement.needsLoading) {
+            DataManagement.Load();
+            DataManagement.needsLoading = false;
+        }
+    }
 }
