@@ -20,6 +20,7 @@ public class Spawner : MonoBehaviour
     }
 
     private void Update() {
+        Debug.Log(DataManagement.enemyKilled);
         if(enemySpawned < enemiesToSpawn) {
             Spawn();
         }
