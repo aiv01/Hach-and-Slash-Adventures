@@ -17,6 +17,8 @@ MonoBehaviour:
   baseDexterity: 2
   baseIntelligence: 1
   className: Warrior
+  classToken: {fileID: -2244372958374070579, guid: 4e42315822ad74d4f860c523ca056b2a,
+    type: 3}
   weaponRestriction: 0
   incrementVigor: 3
   incrementStrength: 2

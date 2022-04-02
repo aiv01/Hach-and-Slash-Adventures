@@ -65,7 +65,6 @@ public static class DataManagement
     public static void Load() {
         string jsonData = File.ReadAllText(playerPath);
         Debug.Log(jsonData);
-        PlayerData playerData = new PlayerData();
         //Load stats
         JsonUtility.FromJsonOverwrite(jsonData, PlayerLogic.Instance.playerStats);
         PlayerLogic.Instance.playerStats.CalculateStats();

@@ -6,6 +6,7 @@ using UnityEngine;
 public class ClassData : StatData
 {
     public string className;
+    public Sprite classToken;
     public WeaponType weaponRestriction;
     public int incrementVigor;
     public int incrementStrength;

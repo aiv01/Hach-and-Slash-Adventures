@@ -17,6 +17,8 @@ MonoBehaviour:
   baseDexterity: 4
   baseIntelligence: 2
   className: Ranger
+  classToken: {fileID: -3092250374728212646, guid: 4e42315822ad74d4f860c523ca056b2a,
+    type: 3}
   weaponRestriction: 1
   incrementVigor: 2
   incrementStrength: 1

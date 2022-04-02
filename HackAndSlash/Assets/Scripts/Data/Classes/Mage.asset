@@ -17,6 +17,8 @@ MonoBehaviour:
   baseDexterity: 2
   baseIntelligence: 4
   className: Mage
+  classToken: {fileID: -5494658801920236637, guid: 4e42315822ad74d4f860c523ca056b2a,
+    type: 3}
   weaponRestriction: 2
   incrementVigor: 1
   incrementStrength: 1
