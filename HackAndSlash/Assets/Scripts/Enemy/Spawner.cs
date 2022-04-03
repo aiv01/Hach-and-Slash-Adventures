@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
     [Range(1, 25)] [SerializeField] private int level = 1;
     [SerializeField] private GameObject wallToDisable;
     [Range(0, 100)] [SerializeField] private int spitterRarity;
+    public AudioSource battleArena;
 
     private void Awake() {
         em = GameObject.Find("EnemyManager").GetComponent<EnemyManager>();
@@ -21,6 +22,7 @@ public class Spawner : MonoBehaviour
 
     private void Update() {
         Debug.Log(DataManagement.enemyKilled);
+        battleArena.enabled = true;
         if(enemySpawned < enemiesToSpawn) {
             Spawn();
         }
@@ -28,6 +30,7 @@ public class Spawner : MonoBehaviour
             DataManagement.enemyKilled = 0;
             wallToDisable.SetActive(false);
             gameObject.SetActive(false);
+            battleArena.enabled = false;
         }
     }
     private void OnDrawGizmos() {
