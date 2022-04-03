@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 199b94a349a32604e883c9b7cbbb5b22,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 897cfef3d6d8eb2469cf947ab89dd8bf,
     type: 2}
 --- !u!196 &4
@@ -30136,7 +30137,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 081a9780e27474342bafa6d6998664cc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31192,7 +31193,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 081a9780e27474342bafa6d6998664cc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -32339,7 +32340,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772926, y: 1}
+    m_SensorSize: {x: 1.9136213, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -36866,7 +36867,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772926, y: 1}
+    m_SensorSize: {x: 1.9136213, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -40318,16 +40319,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4919730835519617984, guid: 678ac7685ec44544ea27e365535a0d69,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4919730835519617984, guid: 678ac7685ec44544ea27e365535a0d69,
-        type: 3}
-      propertyPath: openMenuKey
-      value: MainMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 4919730835519617988, guid: 678ac7685ec44544ea27e365535a0d69,
         type: 3}
       propertyPath: m_Pivot.x
