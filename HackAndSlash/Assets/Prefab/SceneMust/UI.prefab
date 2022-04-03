@@ -404,7 +404,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11540434}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7142472561248841371}
+        m_TargetAssemblyTypeName: ClassSelectionBehavior, Assembly-CSharp
+        m_MethodName: ChooseClass
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &13586370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2504,7 @@ GameObject:
   - component: {fileID: 754978976}
   - component: {fileID: 754978978}
   - component: {fileID: 754978977}
+  - component: {fileID: 7142472561248841371}
   m_Layer: 5
   m_Name: ClassSelection
   m_TagString: Untagged
@@ -2560,6 +2573,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7142472561248841371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754978975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3bd74f4ee70d746ae681bff0ab1885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warriorSetup:
+    classStats: {fileID: 11400000, guid: a96a8f9b946b94046b01369b59530f3c, type: 2}
+    startingWeapon: {fileID: 11400000, guid: 7168372d847a4ac47b0df147a87a7fc8, type: 2}
+  rangerSetup:
+    classStats: {fileID: 11400000, guid: b621a314f01ac344fb325d0cb1d6ce1d, type: 2}
+    startingWeapon: {fileID: 11400000, guid: ca0e0b334be05cd48b3f09e7449d99c3, type: 2}
+  mageSetup:
+    classStats: {fileID: 11400000, guid: 1328409bd4bb8cd42b3f9647f20ee9ec, type: 2}
+    startingWeapon: {fileID: 11400000, guid: dadb7f74b955acd4aa83b798569d0e98, type: 2}
+  warriorImage: {fileID: 1111234255}
+  rangerImage: {fileID: 11540434}
+  mageImage: {fileID: 1367780544}
 --- !u!1 &807988696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,7 +3661,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1111234255}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7142472561248841371}
+        m_TargetAssemblyTypeName: ClassSelectionBehavior, Assembly-CSharp
+        m_MethodName: ChooseClass
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1119366244
 GameObject:
   m_ObjectHideFlags: 0
@@ -4623,7 +4672,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1367780544}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7142472561248841371}
+        m_TargetAssemblyTypeName: ClassSelectionBehavior, Assembly-CSharp
+        m_MethodName: ChooseClass
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1382813427
 GameObject:
   m_ObjectHideFlags: 0
