@@ -31233,7 +31233,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7794677, y: 1}
+    m_SensorSize: {x: 1.9119601, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -35628,7 +35628,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7794677, y: 1}
+    m_SensorSize: {x: 1.9119601, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -39769,6 +39769,11 @@ PrefabInstance:
       objectReference: {fileID: 907615144}
     - target: {fileID: 1899220760905387881, guid: 42236645adeb2924894bf194bbb1342c,
         type: 3}
+      propertyPath: classSelection
+      value: 
+      objectReference: {fileID: 1899220760943418200}
+    - target: {fileID: 1899220760905387881, guid: 42236645adeb2924894bf194bbb1342c,
+        type: 3}
       propertyPath: skills.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -39949,6 +39954,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42236645adeb2924894bf194bbb1342c, type: 3}
+--- !u!114 &1899220760943418200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 754978977, guid: 42236645adeb2924894bf194bbb1342c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1899220760943418199}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4919730835607442136
 PrefabInstance:
   m_ObjectHideFlags: 0
