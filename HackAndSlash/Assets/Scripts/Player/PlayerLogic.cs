@@ -77,8 +77,7 @@ public class PlayerLogic : MonoBehaviour
         instance = this;
         input = ReInput.players.GetPlayer(0);
         playerStats = GetComponent<CharacterStats>();
-        playerStats.InitializeCharacter();
-        UnlockSkill();
+        Initialize();
     }
     public void LevelUp() {
         //Get class and increment level
@@ -264,6 +263,11 @@ public class PlayerLogic : MonoBehaviour
             }
             
         }
+    }
+
+    public void Initialize() {
+        playerStats.InitializeCharacter();
+        UnlockSkill();
     }
 
     //Debug stuff

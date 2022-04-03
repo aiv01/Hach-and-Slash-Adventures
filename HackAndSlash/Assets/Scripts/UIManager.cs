@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public Image[] skills;
     [SerializeField] private float spacing;
     private Vector3 selectorOriginalPosition;
+    [SerializeField] private Image classSelection;
 
     private void Awake() {
         selectorOriginalPosition = selector.rectTransform.localPosition;
@@ -23,6 +24,10 @@ public class UIManager : MonoBehaviour
         UpdatePlayerStatus();
         CheckAvaiableSkill();
         CheckSelectorPosition();
+        if (DataManagement.newGame) {
+            classSelection.gameObject.SetActive(true);
+            DataManagement.newGame = false;
+        }
     }
 
     public void UpdatePlayerStatus()
