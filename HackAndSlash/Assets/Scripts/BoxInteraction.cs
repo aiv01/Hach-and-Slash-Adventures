@@ -15,6 +15,7 @@ public class BoxInteraction : MonoBehaviour
     public static float defaultLifeTimer = 10;
     private float lifeTimer = 0;
     [SerializeField] private string chestFlag;
+    public AudioSource boxSoundOpen;
 
     // Update is called once per frame
     private void OnEnable() {
@@ -50,6 +51,7 @@ public class BoxInteraction : MonoBehaviour
                         weaponRb = weaponsInstance.GetComponent<Rigidbody>();
                         weaponRb.AddForce(Random.Range(-50, 50), 300f, -30f);
                         instanceWeapons = true;
+                        boxSoundOpen.Play();
                     }
                 }
                 else if (isOpen == false)
