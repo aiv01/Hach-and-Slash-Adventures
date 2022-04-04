@@ -15,8 +15,8 @@ MonoBehaviour:
   skillName: Chain lightning
   type: 0
   damageType: 1
-  damageMultiplier: 0
+  damageMultiplier: 0.7
   knockbackMultiplier: 0
-  manaCost: 40
+  manaCost: 45
   animationTrigger: Magic
   description: Cast a powerful lightning that spreads towards close enemies
