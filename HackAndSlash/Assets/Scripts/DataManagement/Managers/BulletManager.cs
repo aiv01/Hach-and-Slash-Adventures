@@ -10,6 +10,7 @@ public enum ProjectileType {
     creatura,
     firebolt,
     fireball,
+    lightning,
     last
 }
 public class BulletManager : MonoBehaviour
@@ -23,6 +24,7 @@ public class BulletManager : MonoBehaviour
     [SerializeField] private Projectile originalCreaturaBullet;
     [SerializeField] private Projectile originalFireboltBullet;
     [SerializeField] private Projectile originalFireballBullet;
+    [SerializeField] private Projectile originalLightningBullet;
 
     void Awake()
     {
@@ -73,6 +75,12 @@ public class BulletManager : MonoBehaviour
                     case ProjectileType.fireball:
                         bullets[j, i] = Instantiate(originalFireballBullet);
                         bullets[j, i].name = "Fireball_" + i;
+                        bullets[j, i].transform.parent = gameObject.transform;
+                        bullets[j, i].gameObject.SetActive(false);
+                        break;
+                    case ProjectileType.lightning:
+                        bullets[j, i] = Instantiate(originalLightningBullet);
+                        bullets[j, i].name = "Lightning_" + i;
                         bullets[j, i].transform.parent = gameObject.transform;
                         bullets[j, i].gameObject.SetActive(false);
                         break;
