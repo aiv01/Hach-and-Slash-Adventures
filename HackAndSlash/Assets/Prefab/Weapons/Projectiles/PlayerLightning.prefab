@@ -288,6 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 5
   angle: 45
+  speed: 60
 --- !u!1 &6083503905695240068
 GameObject:
   m_ObjectHideFlags: 0
