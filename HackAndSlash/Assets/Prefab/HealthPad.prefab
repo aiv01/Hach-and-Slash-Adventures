@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 3605322467269638219}
   - component: {fileID: 3605322467268508299}
   - component: {fileID: 3605322467290662830}
-  - component: {fileID: 3605322467290662833}
+  - component: {fileID: 7100769302615568202}
   m_Layer: 0
   m_Name: PressurePadInner
   m_TagString: Untagged
@@ -177,7 +177,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.881149, y: 1.3247008, z: 1.8811388}
   m_Center: {x: -0.000024437904, y: 0.69978666, z: 0.000013232231}
---- !u!114 &3605322467290662833
+--- !u!114 &7100769302615568202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
