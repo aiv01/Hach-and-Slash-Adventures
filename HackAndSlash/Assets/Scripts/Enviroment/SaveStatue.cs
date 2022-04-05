@@ -20,6 +20,7 @@ public class SaveStatue : MonoBehaviour
             if (PlayerLogic.Instance.isInteracting) {
                 DataManagement.Save();
                 TextMeshPro instance = Instantiate<TextMeshPro>(popup);
+                instance.transform.position = transform.position;
                 instance.text = "Game saved";
             }
         }
