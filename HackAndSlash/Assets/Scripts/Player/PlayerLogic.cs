@@ -288,25 +288,25 @@ public class PlayerLogic : MonoBehaviour
         //    "Current Weapon: " + playerStats.equippedWeapon.weaponName + "\n" +
         //    "Current Skill: " + (currentSkill != null ? currentSkill.skill.skillName : "None") + "\n"
         //    );
-        //if (GUI.Button(new Rect(600, 0, 100, 20), "Initialize")) {
-        //    playerStats.InitializeCharacter();
-        //}
-        //if (GUI.Button(new Rect(600, 20, 100, 20), "Level up")) {
-        //    if (playerStats.level < maxLevel) {
-        //        LevelUp();
-        //    }
-        //}
-        //for (int i = 0; i < weapons.Length; i++) {
-        //    if (GUI.Button(new Rect(700, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
-        //        playerStats.equippedWeapon = weapons[i];
-        //    }
-        //}
-        //if (GUI.Button(new Rect(850, 0, 100, 20), "Save")) {
-        //    DataManagement.Save();
-        //}
-        //if (GUI.Button(new Rect(850, 20, 100, 20), "Load")) {
-        //    DataManagement.Load();
-        //}
+        if (GUI.Button(new Rect(600, 0, 100, 20), "Initialize")) {
+            playerStats.InitializeCharacter();
+        }
+        if (GUI.Button(new Rect(600, 20, 100, 20), "Level up")) {
+            if (playerStats.level < maxLevel) {
+                LevelUp();
+            }
+        }
+        for (int i = 0; i < weapons.Length; i++) {
+            if (GUI.Button(new Rect(700, 0 + (i * 20), 150, 20), weapons[i].weaponName)) {
+                playerStats.equippedWeapon = weapons[i];
+            }
+        }
+        if (GUI.Button(new Rect(850, 0, 100, 20), "Save")) {
+            DataManagement.Save();
+        }
+        if (GUI.Button(new Rect(850, 20, 100, 20), "Load")) {
+            DataManagement.Load();
+        }
     }
 
     private void LateUpdate() {

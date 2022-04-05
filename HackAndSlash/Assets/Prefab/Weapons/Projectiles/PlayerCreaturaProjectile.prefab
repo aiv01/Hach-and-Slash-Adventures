@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fa06db67cf23848bff5612ae939e55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piercing: 0
+  piercing: 1
   hitParticle: {fileID: 3588204940648030775, guid: bf8ef06a44c483945aeddb640fd90555,
     type: 3}
   timeToDespawn: 2
