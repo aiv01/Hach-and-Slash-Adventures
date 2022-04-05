@@ -10,7 +10,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI vigor, strength, dexterity, intelligence;
     public TextMeshProUGUI defence, mdefence, damage, manaRegen;
     public TextMeshProUGUI weaponName, weaponDamage, weaponKnockback;
+    public TextMeshProUGUI skillName, skillType, skillCost, skillDesc;
     public Image selector;
+    public Image skill;
     public Image[] skills;
     [SerializeField] private float spacing;
     private Vector3 selectorOriginalPosition;
@@ -22,6 +24,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         UpdatePlayerStatus();
+        UpdateSkillDescription();
         CheckAvaiableSkill();
         CheckSelectorPosition();
         if (DataManagement.newGame) {
@@ -55,6 +58,32 @@ public class UIManager : MonoBehaviour
                 skills[i].color = Color.white;
             }
         }
+    }
+
+    private void UpdateSkillDescription() {
+        if (PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId] == null) {
+            skill.gameObject.SetActive(false); 
+            return;
+        }
+        skill.gameObject.SetActive(true);
+        skillName.text = PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId].skill.skillName;
+        skillType.text = PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId].skill.damageType == DamageType.physical ? "<color=#FF0000>Physical</color>" : "<color=#0000FF>Magical</color>";
+        skillCost.text = PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId].skill.manaCost.ToString();
+        skillDesc.text = PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId].skill.description;
+
+        //Calculate damage
+        int damage;
+        if(PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId].skill.damageType == DamageType.magical) {
+            damage = Mathf.FloorToInt(
+                (PlayerLogic.Instance.playerStats.damage + PlayerLogic.Instance.playerStats.intelligence) * 
+                PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId].skill.damageMultiplier);
+
+        }
+        else {
+            damage = Mathf.FloorToInt(PlayerLogic.Instance.playerStats.damage * 
+                PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId].skill.damageMultiplier);
+        }
+        skillDesc.text = skillDesc.text.Replace("<damage>", damage.ToString());
     }
 
     private void CheckSelectorPosition() {
