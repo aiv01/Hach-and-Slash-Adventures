@@ -15,6 +15,8 @@ public class EnemyAIShoot : MonoBehaviour
     private BulletManager br;
     [SerializeField] private Transform shootPoint;
     [SerializeField] private float shootSpeed;
+    private AudioSource audioSource;
+    public AudioClip attackAudio;
 
 
     // Start is called before the first frame update
@@ -25,6 +27,7 @@ public class EnemyAIShoot : MonoBehaviour
         enemyNavMesh = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         logic = GetComponent<EnemyLogic>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -82,4 +85,11 @@ public class EnemyAIShoot : MonoBehaviour
         instance.Shoot(logic.enemyStats, transform.forward, shootSpeed);
         instance.gameObject.SetActive(true);
     }
+
+    public void AttackStart()
+    {
+        audioSource.clip = attackAudio;
+        audioSource.Play();
+    }
+
 }

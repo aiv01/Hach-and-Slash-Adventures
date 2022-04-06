@@ -73,12 +73,18 @@ public class PlayerLogic : MonoBehaviour
     public PlayerPanel playerPanel;
     public GameObject gameOverPanel;
 
+    private AudioSource audioSource;
+    public AudioClip attackSword;
+    public AudioClip skillSword;
+
     private void Awake() {
         instance = this;
         input = ReInput.players.GetPlayer(0);
         playerStats = GetComponent<CharacterStats>();
+        audioSource = GetComponent<AudioSource>();
         Initialize();
     }
+
     public void LevelUp() {
         //Get class and increment level
         ClassData currentClass = (ClassData)playerStats.stats;
@@ -229,6 +235,9 @@ public class PlayerLogic : MonoBehaviour
     //Attack and Skill Management
     public void SkillStart() {
         currentSkill.OnSkillStart();
+
+        audioSource.clip = skillSword;
+        audioSource.Play();
     }
     public void SkillEnd() {
         currentSkill.OnSkillEnd();
@@ -236,6 +245,9 @@ public class PlayerLogic : MonoBehaviour
     }
     public void AttackStart() {
         playerStats.equippedWeapon.baseAttack.OnAttackStart();
+
+        audioSource.clip = attackSword;
+        audioSource.Play();
     }
     public void AttackEnd() {
         playerStats.equippedWeapon.baseAttack.OnAttackEnd();

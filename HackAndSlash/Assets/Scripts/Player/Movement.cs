@@ -12,6 +12,14 @@ public class Movement : MonoBehaviour
     [SerializeField] private CapsuleCollider capsuleCollider;
     [SerializeField] private Ray mouseRay;
 
+    private AudioSource audioSource;
+    public AudioClip footStep;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void Move(Vector3 velocity) {
         if (CanMove(velocity.normalized)) {
             animator.SetFloat(speedParameter, velocity.magnitude);
@@ -56,6 +64,12 @@ public class Movement : MonoBehaviour
 
     public void Attack() {
         animator.SetTrigger("Attack");
+    }
+
+    public void PlayStep()
+    {
+        audioSource.clip = footStep;
+        audioSource.Play();
     }
 
     private void OnTriggerEnter(Collider other)
