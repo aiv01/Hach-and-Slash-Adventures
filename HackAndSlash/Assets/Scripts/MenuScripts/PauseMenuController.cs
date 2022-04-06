@@ -51,7 +51,7 @@ public class PauseMenuController : MonoBehaviour
 
     void MenuUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || input.GetButtonDown(openMenuKey))
+        if (input.GetButtonDown(openMenuKey))
         {
             if (GameIsPaused)
             {
@@ -94,10 +94,8 @@ public class PauseMenuController : MonoBehaviour
         if (!hasChangedSelection)
         {
             currentSelection -= (int)input.GetAxisRaw(skillChangeAxis);
-            Debug.Log((int)input.GetAxisRaw(skillChangeAxis));
             hasChangedSelection = true;
             currentSelection = currentSelection >= (int)PauseMenuOption.last ? (int)PauseMenuOption.Resume : currentSelection < 0 ? (int)PauseMenuOption.Quit : currentSelection;
-            Debug.Log(currentSelection);
         }
         if (input.GetAxisRaw(skillChangeAxis) == 0)
         {

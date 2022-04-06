@@ -7,13 +7,20 @@ public class EventArenaFight : MonoBehaviour
 {
     public event EventHandler OnPlayerEnterTrigger;
     public GameObject wallBattle;
+    [SerializeField] private string key;
+    private void Awake() {
+        DataManagement.SetKey(key, false);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player inside Trigger");
-            OnPlayerEnterTrigger?.Invoke(this, EventArgs.Empty);
-            wallBattle.SetActive(true);
+            if (!DataManagement.GetKey(key)) {
+                Debug.Log("Player inside Trigger");
+                OnPlayerEnterTrigger?.Invoke(this, EventArgs.Empty);
+                wallBattle.SetActive(true);
+                DataManagement.SetKey(key, true);
+            }
         }
     }
 }

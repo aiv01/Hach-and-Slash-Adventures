@@ -20,4 +20,4 @@ MonoBehaviour:
   usingDex: 0
   canStagger: 1
   baseDamage: 1
-  knockback: 1
+  knockback: 2
