@@ -15,7 +15,7 @@ MonoBehaviour:
   baseVigor: 1
   baseStrength: 1
   baseDexterity: 1
-  baseIntelligence: 0
+  baseIntelligence: 3
   enemyName: Spitter
   type: 0
   exp: 7

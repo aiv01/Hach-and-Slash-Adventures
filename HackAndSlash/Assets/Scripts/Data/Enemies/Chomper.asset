@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c32fc310d1634a9a9f6cf05425081, type: 3}
   m_Name: Chomper
   m_EditorClassIdentifier: 
-  baseVigor: 1
+  baseVigor: 2
   baseStrength: 2
   baseDexterity: 1
   baseIntelligence: 0
