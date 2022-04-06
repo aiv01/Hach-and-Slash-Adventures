@@ -45,3 +45,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 0c66557470a6c604b8c570d04e0e59fc, type: 2}
   character: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: 82a66f5d6bc124ba295cbf45801a1340, type: 3}
+  - {fileID: 8300000, guid: cfb4d85fb20d24d8f86ba8a66b6949c5, type: 3}
+  - {fileID: 8300000, guid: 73ab6aeef95a14fd68d6a2a1e3580985, type: 3}
+  - {fileID: 8300000, guid: 2ff9b64b4649c4db386ff548f8482b99, type: 3}
+  - {fileID: 8300000, guid: f4aca0f5c835c4aa09676682fd8407a5, type: 3}
+  - {fileID: 8300000, guid: 197b1dc21c43f4a98997416dd28bbac9, type: 3}
+  - {fileID: 8300000, guid: 89c3c7ad6899d447e85b6884372e39ea, type: 3}
+  - {fileID: 8300000, guid: 4f880d30534b048e581a72dde58dee42, type: 3}
+  - {fileID: 8300000, guid: feec6c03954724dd7ba91a0bc8625513, type: 3}
+  - {fileID: 8300000, guid: 79c0312136fb542c0b54701457a0f58b, type: 3}
+  - {fileID: 8300000, guid: cebccea2e19ed4073950fa63e686ad80, type: 3}
+  - {fileID: 8300000, guid: ba67858afc7b94cc5b99b00ac473ee6f, type: 3}

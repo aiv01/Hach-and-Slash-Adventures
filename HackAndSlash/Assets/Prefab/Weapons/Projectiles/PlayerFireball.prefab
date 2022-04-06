@@ -4877,7 +4877,7 @@ MonoBehaviour:
   piercing: 1
   hitParticle: {fileID: 0}
   timeToDespawn: 1
-  shakeStrength: 1
+  shakeStrength: 3
   canGoThrough: Player
 --- !u!114 &5092694310749582908
 MonoBehaviour:

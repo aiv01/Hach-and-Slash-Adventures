@@ -99,7 +99,11 @@ MonoBehaviour:
   playerInDetectionRange: 0
   attackStateName: Attack
   playerTarget: {fileID: 0}
-  attackAudio: {fileID: 8300000, guid: 7d0afb4083ad64053bdeb009ee5f557f, type: 3}
+  attackAudio:
+  - {fileID: 8300000, guid: bf7ffafeb00554918bb2c3d15fc2a029, type: 3}
+  - {fileID: 8300000, guid: b55626a1eb2774761adab017aeb7d3c1, type: 3}
+  - {fileID: 8300000, guid: 1fa4b2feb447e47e7934ccad24547d2c, type: 3}
+  - {fileID: 8300000, guid: 7d0afb4083ad64053bdeb009ee5f557f, type: 3}
 --- !u!114 &2125137218
 MonoBehaviour:
   m_ObjectHideFlags: 0

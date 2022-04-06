@@ -111,7 +111,7 @@ MonoBehaviour:
   hitParticle: {fileID: 3588204940648030775, guid: 48991bfb6b451f44ca02bcaa60517b16,
     type: 3}
   timeToDespawn: 2
-  shakeStrength: 1
+  shakeStrength: 2
   canGoThrough: Enemy
 --- !u!114 &5092694310749582908
 MonoBehaviour:

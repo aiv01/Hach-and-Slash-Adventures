@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Ray mouseRay;
 
     private AudioSource audioSource;
-    public AudioClip footStep;
+    public AudioClip[] footSteps;
 
     private void Awake()
     {
@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
 
     public void PlayStep()
     {
-        audioSource.clip = footStep;
+        audioSource.clip = footSteps[Random.Range(0, footSteps.Length)];
         audioSource.Play();
     }
 

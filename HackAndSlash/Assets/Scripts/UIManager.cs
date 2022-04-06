@@ -51,6 +51,9 @@ public class UIManager : MonoBehaviour
     private void CheckAvaiableSkill() {
         ClassData currentClass = (ClassData)characterStats.stats;
         for (int i = 0; i < currentClass.skills.Length; i++) {
+            if(PlayerLogic.Instance.playerStats.skills[i] != null) {
+                skills[i].sprite = PlayerLogic.Instance.playerStats.skills[i].skill.skillSprite;
+            }
             if (currentClass.unlockLevelSkill[i] > characterStats.level) {
                 skills[i].color = Color.gray;
             }

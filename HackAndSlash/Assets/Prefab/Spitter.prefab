@@ -3550,7 +3550,12 @@ MonoBehaviour:
   playerTarget: {fileID: 0}
   shootPoint: {fileID: 8712075080744778463}
   shootSpeed: 12
-  attackAudio: {fileID: 8300000, guid: 1fa4b2feb447e47e7934ccad24547d2c, type: 3}
+  attackAudio:
+  - {fileID: 8300000, guid: 803a9890fea85427abf9ad72ea208ffb, type: 3}
+  - {fileID: 8300000, guid: 8cfb4b7233855451baaf3ed1dc487d21, type: 3}
+  - {fileID: 8300000, guid: eecb7d3158a0c42c7ba366aaf60a3a0c, type: 3}
+  - {fileID: 8300000, guid: c7b0262d0fa4e43fd84a71b76cb238cd, type: 3}
+  - {fileID: 8300000, guid: 077732bb49dcb4b1186157036c85c9b5, type: 3}
 --- !u!82 &3976370202438269633
 AudioSource:
   m_ObjectHideFlags: 0

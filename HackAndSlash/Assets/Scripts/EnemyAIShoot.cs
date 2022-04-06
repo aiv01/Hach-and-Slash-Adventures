@@ -16,7 +16,7 @@ public class EnemyAIShoot : MonoBehaviour
     [SerializeField] private Transform shootPoint;
     [SerializeField] private float shootSpeed;
     private AudioSource audioSource;
-    public AudioClip attackAudio;
+    public AudioClip[] attackAudio;
 
 
     // Start is called before the first frame update
@@ -88,7 +88,7 @@ public class EnemyAIShoot : MonoBehaviour
 
     public void AttackStart()
     {
-        audioSource.clip = attackAudio;
+        audioSource.clip = attackAudio[Random.Range(0, attackAudio.Length)];
         audioSource.Play();
     }
 
