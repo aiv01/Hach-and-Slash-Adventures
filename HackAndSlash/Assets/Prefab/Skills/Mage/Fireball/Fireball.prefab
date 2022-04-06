@@ -45,6 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 5f51f3939e435984899fdadc07ee77f7, type: 2}
   character: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: 16592a474aee2455abf0b4722bc2d328, type: 3}
+  - {fileID: 8300000, guid: 49d0a9fcf5f5743c487432c9a5b15998, type: 3}
+  - {fileID: 8300000, guid: c0986a0af48c64529ac1a45d2ac27f7a, type: 3}
   shootSpeed: 5
   shootFrom: {fileID: 0}
   projectileType: 6
