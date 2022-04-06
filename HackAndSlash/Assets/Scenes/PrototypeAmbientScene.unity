@@ -25341,6 +25341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLine: {fileID: 908250994}
+  key: 
 --- !u!65 &702479741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39037,6 +39038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLine: {fileID: 1152905829}
+  key: MainDoorOpen
 --- !u!1 &1156862585
 GameObject:
   m_ObjectHideFlags: 0
