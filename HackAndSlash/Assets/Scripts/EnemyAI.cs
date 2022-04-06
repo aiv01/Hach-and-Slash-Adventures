@@ -12,6 +12,9 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent enemyNavMesh;
     EnemyLogic logic;
     Animator anim;
+    private AudioSource audioSource;
+    public AudioClip attackAudio;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -20,6 +23,7 @@ public class EnemyAI : MonoBehaviour
         enemyNavMesh = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         logic = GetComponent<EnemyLogic>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -73,5 +77,11 @@ public class EnemyAI : MonoBehaviour
         logic.enemyStats.isHit = false;
         enemyNavMesh.speed = 0f;
         anim.SetTrigger("Hit");
+    }
+
+    public void AttackStart()
+    {
+        audioSource.clip = attackAudio;
+        audioSource.Play();
     }
 }
