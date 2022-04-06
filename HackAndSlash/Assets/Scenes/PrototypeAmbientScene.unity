@@ -22306,7 +22306,7 @@ PrefabInstance:
     - target: {fileID: 4482356324216270667, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
         type: 3}
       propertyPath: onDamageDealt.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7862000269296617952, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
         type: 3}
