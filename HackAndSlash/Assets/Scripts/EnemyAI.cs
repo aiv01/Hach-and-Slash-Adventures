@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     EnemyLogic logic;
     Animator anim;
     private AudioSource audioSource;
-    public AudioClip attackAudio;
+    public AudioClip[] attackAudio;
 
 
     // Start is called before the first frame update
@@ -81,7 +81,7 @@ public class EnemyAI : MonoBehaviour
 
     public void AttackStart()
     {
-        audioSource.clip = attackAudio;
+        audioSource.clip = attackAudio[Random.Range(0, attackAudio.Length)];
         audioSource.Play();
     }
 }
