@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WeaponDrop : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class WeaponDrop : MonoBehaviour
     [SerializeField] private WeaponData weapon;
     [SerializeField] private float playerDistanceToEquip;
     [SerializeField] private WeaponDrop originalDrop;
+    [SerializeField] private TextMeshPro popup;
 
     //References
     private MeshFilter mf;
@@ -59,6 +61,11 @@ public class WeaponDrop : MonoBehaviour
                     InstancePlayerWeapon();
                     PlayerLogic.Instance.playerStats.equippedWeapon = weapon;
                     Destroy(gameObject);
+                }
+                else {
+                    TextMeshPro instance = Instantiate<TextMeshPro>(popup);
+                    instance.transform.position = transform.position;
+                    instance.text = "Can't equip";
                 }
             }
         }

@@ -155,3 +155,4 @@ MonoBehaviour:
   playerDistanceToEquip: 2
   originalDrop: {fileID: -5667860337335617598, guid: a5022a0ad90371f4383946ca85085cc3,
     type: 3}
+  popup: {fileID: 5218429044591639832, guid: dac3de0e3a5d2414ea071b9f1d0b4e0d, type: 3}
