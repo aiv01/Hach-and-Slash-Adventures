@@ -19,4 +19,5 @@ MonoBehaviour:
   knockbackMultiplier: 1
   manaCost: 15
   animationTrigger: Heavy
-  description: Make a heavy blow that deals more damage.
+  description: Make a heavy blow that deals <color=#FF0000><b><damage></b></color>
+    physical damage.

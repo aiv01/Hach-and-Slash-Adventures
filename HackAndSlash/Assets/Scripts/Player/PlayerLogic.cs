@@ -252,16 +252,14 @@ public class PlayerLogic : MonoBehaviour
     private void UseSkillWithNum(int num) {
         if (!isUsingSkill) {
             currentSkillId = num;
-            if(currentSkill != null) {
-                if(playerStats.mana >= currentSkill.skill.manaCost) {
-                    isUsingSkill = true;
-                    playerStats.skills[currentSkillId].Skill();
-                }
-                else {
-                    Debug.Log("Not enough mana");
-                }
+            if (playerStats.skills[currentSkillId] == null) return;
+            if(playerStats.mana >= currentSkill.skill.manaCost) {
+                isUsingSkill = true;
+                playerStats.skills[currentSkillId].Skill();
             }
-            
+            else {
+                Debug.Log("Not enough mana");
+            }
         }
     }
 

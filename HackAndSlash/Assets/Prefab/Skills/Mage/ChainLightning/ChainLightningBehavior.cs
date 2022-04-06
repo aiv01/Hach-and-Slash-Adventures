@@ -6,6 +6,7 @@ public class ChainLightningBehavior : MonoBehaviour
 {
     [SerializeField] private float distance;
     [SerializeField] private float angle;
+    [SerializeField] private float speed;
     private CharacterStats stats;
     private BulletManager bm;
     private Rigidbody rb;
@@ -38,7 +39,7 @@ public class ChainLightningBehavior : MonoBehaviour
                     instance.transform.position = transform.position;
                     instance.Shoot(stats, (
                         new Vector3(enemy.transform.position.x, 0, enemy.transform.position.z) - 
-                        new Vector3(transform.position.x, 0, transform.position.z)).normalized, 60);
+                        new Vector3(transform.position.x, 0, transform.position.z)).normalized, speed);
                     instance.gameObject.SetActive(true);
                 }
             }

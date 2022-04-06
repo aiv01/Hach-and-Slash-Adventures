@@ -19,4 +19,5 @@ MonoBehaviour:
   knockbackMultiplier: 0
   manaCost: 5
   animationTrigger: Magic
-  description: Shoot a bolt of fire
+  description: Shoot a bolt of fire that deals <color=#0000FF><b><damage></b></color>
+    magical damage.

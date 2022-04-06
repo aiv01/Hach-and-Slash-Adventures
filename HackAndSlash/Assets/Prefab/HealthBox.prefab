@@ -513,5 +513,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons: {fileID: 1020402529050435243, guid: a5022a0ad90371f4383946ca85085cc3, type: 3}
+  chest: {fileID: 0}
   weaponsCreate: {fileID: 6614999412362051995}
   anim: {fileID: 6614999411804984772}
+  chestFlag: 
+  boxSoundOpen: {fileID: 0}

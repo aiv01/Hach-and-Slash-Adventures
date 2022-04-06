@@ -35,6 +35,9 @@ public class PauseMenuController : MonoBehaviour
         originalSelectorPosition = selector.rectTransform.position;
     }
 
+    private void OnEnable() {
+        Resume();
+    }
     // Update is called once per frame
     void Update()
     {

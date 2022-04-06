@@ -19,4 +19,5 @@ MonoBehaviour:
   knockbackMultiplier: 0
   manaCost: 45
   animationTrigger: Magic
-  description: Cast a powerful lightning that spreads towards close enemies
+  description: Cast a powerful lightning that spreads towards close enemies, dealing
+    <color=#0000FF><b><damage></b></color> magical damage.

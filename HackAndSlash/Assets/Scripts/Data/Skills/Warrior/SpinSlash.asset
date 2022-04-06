@@ -19,4 +19,5 @@ MonoBehaviour:
   knockbackMultiplier: 0.5
   manaCost: 5
   animationTrigger: Spin
-  description: Hit all enemies around you.
+  description: Hit all enemies around you, dealing <color=#FF0000><b><damage></b></color>
+    physical damage.
