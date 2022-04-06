@@ -9,6 +9,7 @@ public enum PauseMenuOption
 {
     Resume,
     Menu,
+    MenuController,
     Quit,
     last
 }
