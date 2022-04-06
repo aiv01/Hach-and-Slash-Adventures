@@ -45,3 +45,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 0c66557470a6c604b8c570d04e0e59fc, type: 2}
   character: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: e392c24220f584716a9da9b4a5ed54db, type: 3}
+  - {fileID: 8300000, guid: 294825915c0374b9884335dd1ffff953, type: 3}
+  - {fileID: 8300000, guid: 8af4f5d15d2da4f56ae3070a34a82f2c, type: 3}
+  - {fileID: 8300000, guid: c83ef219161064d6882639af40078271, type: 3}
+  - {fileID: 8300000, guid: b4494ce358dce4db2807c6b92a1d658e, type: 3}
+  - {fileID: 8300000, guid: 2075d457b35f8495f88792bd1e0eebef, type: 3}
+  - {fileID: 8300000, guid: af3e053e9a3424f0dbba112c292b81dc, type: 3}
+  - {fileID: 8300000, guid: 8cee9f6a4026841a785cc80de69fe886, type: 3}
+  - {fileID: 8300000, guid: aa78330fa764b48e5a0eb1a97404d91f, type: 3}
+  - {fileID: 8300000, guid: 47e6675b2434c425c9c3a02c0ce32b10, type: 3}

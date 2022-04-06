@@ -74,8 +74,6 @@ public class PlayerLogic : MonoBehaviour
     public GameObject gameOverPanel;
 
     private AudioSource audioSource;
-    public AudioClip attackSword;
-    public AudioClip skillSword;
 
     private void Awake() {
         instance = this;
@@ -236,7 +234,7 @@ public class PlayerLogic : MonoBehaviour
     public void SkillStart() {
         currentSkill.OnSkillStart();
 
-        audioSource.clip = skillSword;
+        audioSource.clip = currentSkill.audio[Random.Range(0, currentSkill.audio.Length)];
         audioSource.Play();
     }
     public void SkillEnd() {
@@ -246,7 +244,7 @@ public class PlayerLogic : MonoBehaviour
     public void AttackStart() {
         playerStats.equippedWeapon.baseAttack.OnAttackStart();
 
-        audioSource.clip = attackSword;
+        audioSource.clip = playerStats.equippedWeapon.baseAttack.audio[Random.Range(0, playerStats.equippedWeapon.baseAttack.audio.Length)];
         audioSource.Play();
     }
     public void AttackEnd() {
