@@ -50,3 +50,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3828bfbe7aad24a97bb417e5a09e7010, type: 3}
   - {fileID: 8300000, guid: f712204a9d8cc471baa601bfcc1f4ac8, type: 3}
   - {fileID: 8300000, guid: 6df0ed3c6ff574925a56a0b002d40e66, type: 3}
+  particles: {fileID: 4873505647752539321, guid: 3659e549138193a429a71b648a9b785c,
+    type: 3}
