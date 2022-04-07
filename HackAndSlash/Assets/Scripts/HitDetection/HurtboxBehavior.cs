@@ -18,8 +18,7 @@ public class HurtboxBehavior : MonoBehaviour
             Debug.Log("hit");
             CharacterStats otherStats = other.GetComponentInParent<CharacterStats>();
             CreateDamageText(otherStats.DealDamage(GetComponentInParent<CharacterStats>(), otherStats.equippedWeapon.damageType).ToString());
-            audioSource.clip = hitAudio[Random.Range(0, hitAudio.Length)];
-            audioSource.Play();
+            audioSource.PlayOneShot(hitAudio[Random.Range(0, hitAudio.Length)]);
         }
     }
 
