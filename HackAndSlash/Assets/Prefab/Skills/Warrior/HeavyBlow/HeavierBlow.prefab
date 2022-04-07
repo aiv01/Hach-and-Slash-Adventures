@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4057198097605675852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8959090004892184766}
+  - component: {fileID: 3618693298752218042}
+  m_Layer: 0
+  m_Name: HeavierBlow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8959090004892184766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057198097605675852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3618693298752218042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057198097605675852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea638689533c80f49b904f8be4897e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill: {fileID: 11400000, guid: 79a0ccff71d2e1b488da2c8335341443, type: 2}
+  character: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: 82a66f5d6bc124ba295cbf45801a1340, type: 3}
+  - {fileID: 8300000, guid: cfb4d85fb20d24d8f86ba8a66b6949c5, type: 3}
+  - {fileID: 8300000, guid: 73ab6aeef95a14fd68d6a2a1e3580985, type: 3}
+  - {fileID: 8300000, guid: 2ff9b64b4649c4db386ff548f8482b99, type: 3}
+  - {fileID: 8300000, guid: f4aca0f5c835c4aa09676682fd8407a5, type: 3}
+  - {fileID: 8300000, guid: 197b1dc21c43f4a98997416dd28bbac9, type: 3}
+  - {fileID: 8300000, guid: 89c3c7ad6899d447e85b6884372e39ea, type: 3}
+  - {fileID: 8300000, guid: 4f880d30534b048e581a72dde58dee42, type: 3}
+  - {fileID: 8300000, guid: feec6c03954724dd7ba91a0bc8625513, type: 3}
+  - {fileID: 8300000, guid: 79c0312136fb542c0b54701457a0f58b, type: 3}
+  - {fileID: 8300000, guid: cebccea2e19ed4073950fa63e686ad80, type: 3}
+  - {fileID: 8300000, guid: ba67858afc7b94cc5b99b00ac473ee6f, type: 3}
