@@ -87,6 +87,7 @@ public class UIManager : MonoBehaviour
                 PlayerLogic.Instance.playerStats.skills[PlayerLogic.Instance.CurrentSkillId].skill.damageMultiplier);
         }
         skillDesc.text = skillDesc.text.Replace("<damage>", damage.ToString());
+        skillDesc.text = skillDesc.text.Replace("<vigor>", PlayerLogic.Instance.playerStats.vigor.ToString());
     }
 
     private void CheckSelectorPosition() {
