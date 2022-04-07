@@ -23,6 +23,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private float spacing;
     private Vector3 originalSelectorPosition;
     [SerializeField] private Image selector;
+    [SerializeField] private Image loading;
     private bool hasChangedSelection;
     private string skillChangeAxis = "VerticalMovement";
 
@@ -40,7 +41,8 @@ public class MenuController : MonoBehaviour
     public void NewGameDialogYes()
     {
         DataManagement.newGame = true;
-        SceneManager.LoadScene(newGameLevel);
+        loading.gameObject.SetActive(true);
+        StartCoroutine(LoadScene(newGameLevel));
     }
 
     public void LoadGameDialogYes()
@@ -48,7 +50,8 @@ public class MenuController : MonoBehaviour
         if (File.Exists(@"Data/PlayerData.json"))
         {
             DataManagement.needsLoading = true;
-            SceneManager.LoadScene(newGameLevel);
+            loading.gameObject.SetActive(true);
+            StartCoroutine(LoadScene(newGameLevel));
         }
         else
         {
@@ -89,5 +92,15 @@ public class MenuController : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private IEnumerator LoadScene(string scene) {
+        AsyncOperation sceneLoad = SceneManager.LoadSceneAsync(scene);
+        sceneLoad.allowSceneActivation = false;
+        while(sceneLoad.progress < 0.9f) {
+            yield return null;
+        }
+        sceneLoad.allowSceneActivation = true;
+        yield return null;
     }
 }
