@@ -2102,7 +2102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newGameLevel: PrototypeAmbientScene
   noSavedGameDialog: {fileID: 1417838451}
-  spacing: 35
+  spacing: 100
   selector: {fileID: 2137023758}
   loading: {fileID: 1632627650}
 --- !u!4 &1218674962
