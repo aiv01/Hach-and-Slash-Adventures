@@ -281,6 +281,7 @@ public class PlayerLogic : MonoBehaviour
     //Debug stuff
     private void OnGUI()
     {
+#if UNITY_EDITOR
         //GUI.Label(new Rect(0, 40, 1920, 1080),
         //    "Level: " + playerStats.level + "\n" +
         //    "HP: " + playerStats.hp + "/" + playerStats.MaxHp + "\n" +
@@ -315,6 +316,7 @@ public class PlayerLogic : MonoBehaviour
         if (GUI.Button(new Rect(850, 20, 100, 20), "Load")) {
             DataManagement.Load();
         }
+#endif
     }
 
     private void LateUpdate() {

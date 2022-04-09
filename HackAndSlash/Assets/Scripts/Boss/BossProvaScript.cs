@@ -46,6 +46,7 @@ public class BossProvaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HP_Min = stats.hp;
         HP_bar.fillAmount = HP_Min / HP_Max;
         if (HP_Min > 0)
         {

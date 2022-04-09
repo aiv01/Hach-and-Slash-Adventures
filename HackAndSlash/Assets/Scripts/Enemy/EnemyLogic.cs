@@ -86,6 +86,7 @@ public class EnemyLogic : MonoBehaviour {
         dead = false;
         anim.speed = 1;
         for (int i = 0; i < disableOnDeath.Length; i++) {
+            if (disableOnDeath[i].layer == LayerMask.NameToLayer("Hitbox")) continue;
             disableOnDeath[i].SetActive(true);
         }
         mr.materials = originalMaterials;

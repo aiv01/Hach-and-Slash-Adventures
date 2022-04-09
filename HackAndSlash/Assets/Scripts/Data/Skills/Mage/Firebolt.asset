@@ -17,7 +17,7 @@ MonoBehaviour:
   damageType: 1
   skillSprite: {fileID: 7247128643372070690, guid: 56a727543fdef9a418b41c3953106591,
     type: 3}
-  damageMultiplier: 1.1
+  damageMultiplier: 1.4
   knockbackMultiplier: 0
   manaCost: 5
   animationTrigger: Magic

@@ -1088,16 +1088,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 799707706}
     m_Modifications:
-    - target: {fileID: 3855614605428051170, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: stopAnimation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3855614605428051170, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: disappearSpeed
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 7609404493386263569, guid: 063f49976ca9166459f80219a1d00f04,
         type: 3}
       propertyPath: HP_bar
