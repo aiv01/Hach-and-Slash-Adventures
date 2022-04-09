@@ -62,10 +62,6 @@ public class Movement : MonoBehaviour
             moveLayers);
     }
 
-    public void Attack() {
-        animator.SetTrigger("Attack");
-    }
-
     public void PlayStep()
     {
         audioSource.clip = footSteps[Random.Range(0, footSteps.Length)];
@@ -77,6 +73,14 @@ public class Movement : MonoBehaviour
         if(other.gameObject.tag == "Hit1")
         {
             print("Colpito");
+        }
+    }
+    private void Update() {
+        if (!CanMove(transform.forward)) {
+            animator.applyRootMotion = false;
+        }
+        else {
+            animator.applyRootMotion = true;
         }
     }
 }
