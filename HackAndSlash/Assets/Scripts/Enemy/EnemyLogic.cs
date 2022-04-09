@@ -13,11 +13,12 @@ public class EnemyLogic : MonoBehaviour {
     [Header("References")]
     public CharacterStats enemyStats;
     [SerializeField] private GameObject[] disableOnDeath;
-    [SerializeField] private Animator anim;
-    [SerializeField] private SkinnedMeshRenderer mr;
+    private Animator anim;
+    private SkinnedMeshRenderer mr;
     [SerializeField] private Material dissolveMaterial;
     private Material[] originalMaterials;
     [SerializeField] private float disappearSpeed;
+    [SerializeField] private bool stopAnimation;
     private float disappearingTime;
     private MaterialPropertyBlock dissolveProperties;
 
@@ -71,10 +72,13 @@ public class EnemyLogic : MonoBehaviour {
         for (int i = 0; i < disableOnDeath.Length; i++) {
             disableOnDeath[i].SetActive(false);
         }
-        Material[] mats = new Material[] { dissolveMaterial, dissolveMaterial };
+        Material[] mats = new Material[mr.materials.Length];
+        for (int i = 0; i < mats.Length; i++) {
+            mats[i] = dissolveMaterial;
+        }
         mr.materials = mats;
         disappearingTime = 0;
-        anim.speed = 0;
+        if(stopAnimation) anim.speed = 0;
         dead = true;
     }
 

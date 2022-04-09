@@ -3487,6 +3487,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   enemyStats: {fileID: 0}
+  disableOnDeath:
+  - {fileID: 2178417786466975849}
+  - {fileID: 1416130532498751146}
+  - {fileID: 1743298991710208772}
+  - {fileID: 5810664596445755332}
+  dissolveMaterial: {fileID: 2100000, guid: 9f94e72f987d3de468a077868b6d08fc, type: 2}
+  disappearSpeed: 0.5
+  stopAnimation: 1
 --- !u!114 &571912969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3816,6 +3824,12 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b0f55fb2fae9744939a1dea66f139c79, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9134453ccf6f7b41ab442503c1f355a, type: 3}
+--- !u!1 &2178417786466975849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 102566210266126963, guid: e9134453ccf6f7b41ab442503c1f355a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2258317734152444442}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2178417786466975854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 102566210266126964, guid: e9134453ccf6f7b41ab442503c1f355a,

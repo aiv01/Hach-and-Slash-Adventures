@@ -500,18 +500,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b35b558ff6f69e44abca8c9232432b0, type: 3}
---- !u!114 &644640123 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-    type: 3}
-  m_PrefabInstance: {fileID: 1368597869}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74ffb9a4250be4c41ada4a6558a09d70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &705837110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1100,6 +1088,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 799707706}
     m_Modifications:
+    - target: {fileID: 3855614605428051170, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: stopAnimation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3855614605428051170, guid: 063f49976ca9166459f80219a1d00f04,
+        type: 3}
+      propertyPath: disappearSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7609404493386263569, guid: 063f49976ca9166459f80219a1d00f04,
         type: 3}
       propertyPath: HP_bar
@@ -1110,11 +1108,6 @@ PrefabInstance:
       propertyPath: HP_Boss
       value: 
       objectReference: {fileID: 1753039052}
-    - target: {fileID: 7609404493386263569, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: rangoBoss
-      value: 
-      objectReference: {fileID: 644640123}
     - target: {fileID: 7609404493386263570, guid: 063f49976ca9166459f80219a1d00f04,
         type: 3}
       propertyPath: m_Name
