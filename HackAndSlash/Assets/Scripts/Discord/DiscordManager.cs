@@ -14,12 +14,26 @@ public class DiscordManager : MonoBehaviour
     private string mageToken = "magetoken";
     private string menuScene = "MenuMainScene";
     private string gameScene = "PrototypeAmbientScene";
-    private void Start() {
+    private ActivityManager activityManager;
+    private ApplicationManager applicationManager;
+    private Activity activity;
+    private void Awake() {
+        DontDestroyOnLoad(this);
         discord = new Discord.Discord(clientID, (ulong)CreateFlags.Default);
+        applicationManager = discord.GetApplicationManager();
+        activityManager = discord.GetActivityManager();
+        activityManager.ClearActivity((result) => {
+            if (result == Result.Ok) {
+                Debug.Log("Working");
+            }
+            else {
+                Debug.Log("No");
+            }
+        });
     }
 
-    private void Update() {
-        if(SceneManager.GetActiveScene().name == menuScene) {
+    private void FixedUpdate() {
+        if (SceneManager.GetActiveScene().name == menuScene) {
             MainMenuManager();
         }
         else if(SceneManager.GetActiveScene().name == gameScene){
@@ -29,9 +43,11 @@ public class DiscordManager : MonoBehaviour
     }
     
     private void MainMenuManager() {
-        ActivityManager activityManager = discord.GetActivityManager();
-        Activity activity = new Activity {
+        activity = new Activity {
             State = "In main menu",
+            Assets = {
+                LargeImage = ellenAvatar
+            }
         };
         activityManager.UpdateActivity(activity, (res) => {
             if (res == Result.Ok) {
@@ -46,10 +62,25 @@ public class DiscordManager : MonoBehaviour
 
     private void GameManager() {
         ClassData classData = (ClassData)PlayerLogic.Instance.playerStats.stats;
-        ActivityManager activityManager = discord.GetActivityManager();
-        Activity activity = new Activity {
+        string image = null;
+        if(classData.className == "Warrior") {
+            image = warriorToken;
+        }else if(classData.className == "Ranger") {
+            image = rangerToken;
+        }else if(classData.className == "Mage") {
+            image = mageToken;
+        }
+        activity = new Activity {
             Details = "Wandering in the Hall",
-            State = "As a level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className
+            State = "As a level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className,
+            Assets = {
+                LargeImage = ellenAvatar,
+                SmallImage = image,
+                SmallText = "Level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className
+            },
+            Timestamps = {
+                Start = 0
+            }
         };
         activityManager.UpdateActivity(activity, (res) => {
             if (res == Result.Ok) {
@@ -60,5 +91,9 @@ public class DiscordManager : MonoBehaviour
             }
         }
         );
+    }
+
+    private void OnApplicationQuit() {
+        discord.Dispose();
     }
 }
