@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Chain lightning
   type: 0
   damageType: 1
-  skillSprite: {fileID: 7339442919730524528, guid: 56a727543fdef9a418b41c3953106591,
+  skillSprite: {fileID: 426631132249203908, guid: a9b9d77fc51acd94cb7f4b460edb74b1,
     type: 3}
   damageMultiplier: 0.7
   knockbackMultiplier: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Second Wind
   type: 1
   damageType: 0
-  skillSprite: {fileID: 787987948892368423, guid: 56a727543fdef9a418b41c3953106591,
+  skillSprite: {fileID: -8609973278846354255, guid: a9b9d77fc51acd94cb7f4b460edb74b1,
     type: 3}
   damageMultiplier: 0
   knockbackMultiplier: 0
