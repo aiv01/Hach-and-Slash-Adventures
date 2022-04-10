@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6861832339671106334
 Transform:
   m_ObjectHideFlags: 0
@@ -109,8 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piercing: 0
-  hitParticle: {fileID: 3588204940648030775, guid: 9b42a97ff1314e44e9c9ea3e3c4c1c85,
-    type: 3}
+  hitParticle: {fileID: 0}
   timeToDespawn: 2
   shakeStrength: 5
   canGoThrough: Enemy
@@ -159,6 +158,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackingSpeed: 0.8
+  despawnParticle: {fileID: 3588204940648030775, guid: c3c24ec8a7616434bb3bec7b870a2261,
+    type: 3}
+  despawnAudio:
+  - {fileID: 8300000, guid: 407b0b57a2c044dbd976c7f17cd08f77, type: 3}
+  - {fileID: 8300000, guid: f98ed3bdb65044f0eaf7eb0938c6d1a6, type: 3}
+  - {fileID: 8300000, guid: ee2e6c24b73f74d19a3c1713f0719e9e, type: 3}
+  - {fileID: 8300000, guid: fe1071cfa027243449bca01d191a0f4d, type: 3}
+  - {fileID: 8300000, guid: 31a0bec9de84845bd989b0e6010e31c4, type: 3}
+  - {fileID: 8300000, guid: 5a1edb1343e0b411c971d0791a837c44, type: 3}
+  - {fileID: 8300000, guid: 0b2b7b10450844946855842157fea171, type: 3}
+  - {fileID: 8300000, guid: eda29dc4e01704aaa997198079ae1582, type: 3}
 --- !u!1 &6375551754485630953
 GameObject:
   m_ObjectHideFlags: 0
