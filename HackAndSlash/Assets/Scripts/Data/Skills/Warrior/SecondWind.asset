@@ -19,7 +19,7 @@ MonoBehaviour:
     type: 3}
   damageMultiplier: 0
   knockbackMultiplier: 0
-  manaCost: 30
+  manaCost: 25
   animationTrigger: Recover
   description: Focus your inner energy to recover <color=#00FF00><b><vigor></b></color>
     health.
