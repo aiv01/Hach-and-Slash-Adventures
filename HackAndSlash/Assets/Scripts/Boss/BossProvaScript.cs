@@ -153,8 +153,8 @@ public class BossProvaScript : MonoBehaviour
     {
         Projectile instance = bm.GetBullet(ProjectileType.boss);
         instance.transform.position = pointShoot.transform.position;
-        instance.Shoot(stats, transform.forward, shootSpeed);
         instance.gameObject.SetActive(true);
+        instance.Shoot(stats, transform.forward, shootSpeed);
     }
 
     public void BoossLive()

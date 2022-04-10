@@ -1405,62 +1405,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 39762977}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: meleeAudio.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: rangedAudio.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: meleeAudio.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2362c805266014a18bf40ae1cc97e241, type: 3}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: meleeAudio.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 922567880fdcd4e729fa04328c7b6c4a, type: 3}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: meleeAudio.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 571f32646f5b643afa09a3e8f3146b39, type: 3}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: meleeAudio.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 58e6a23571d264cdfbb0a611a0b05cca, type: 3}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: meleeAudio.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: d0ad6fddead8642d5be37cc3b7f599ce, type: 3}
-    - target: {fileID: 7609404494250552513, guid: 063f49976ca9166459f80219a1d00f04,
-        type: 3}
-      propertyPath: rangedAudio.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 42424f62cd3f24f839a0a6c7d07a13ae, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063f49976ca9166459f80219a1d00f04, type: 3}
 --- !u!4 &39762976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7609404493386263574, guid: 063f49976ca9166459f80219a1d00f04,
-    type: 3}
-  m_PrefabInstance: {fileID: 39762975}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &39762977 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7594522160785271242, guid: 063f49976ca9166459f80219a1d00f04,
     type: 3}
   m_PrefabInstance: {fileID: 39762975}
   m_PrefabAsset: {fileID: 0}
@@ -55202,58 +55151,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec73832e19fd40c43bfa8094bc8ab6e9, type: 3}
---- !u!1 &1674031706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7609404493386263570, guid: 063f49976ca9166459f80219a1d00f04,
-    type: 3}
-  m_PrefabInstance: {fileID: 39762975}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1674031713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674031706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 713fb18fb45e0e74bacc11663db8189c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 39762977}
-  step:
-  - {fileID: 8300000, guid: e7a1b19979fab4bf89f037c365af7143, type: 3}
-  - {fileID: 8300000, guid: c3f0080a56fe34042807a7bd4a5ad9b9, type: 3}
-  - {fileID: 8300000, guid: afc966389fd2e4a44a35b9c29dd1c22c, type: 3}
-  - {fileID: 8300000, guid: 79df23599727a4c958105e6342c03ec8, type: 3}
-  - {fileID: 8300000, guid: f9de0adb275114598b0c2422cc44d868, type: 3}
-  - {fileID: 8300000, guid: dec06ed3f9b0b403ca9a0adda8d61bf3, type: 3}
-  - {fileID: 8300000, guid: 82f0840154e3a4ec3a839da9bc122c74, type: 3}
-  - {fileID: 8300000, guid: e886d73d763d044079d8fc67d9a0e1a2, type: 3}
-  - {fileID: 8300000, guid: b915e6bb8ee9546908848f8d0eda0421, type: 3}
-  - {fileID: 8300000, guid: 94d01e6a618d04e3197f8b389ed90e86, type: 3}
-  - {fileID: 8300000, guid: f7e31c8f442b64013bcdfac71b05270e, type: 3}
-  - {fileID: 8300000, guid: 4e86bc03df4824343b094f25b8122ce8, type: 3}
-  - {fileID: 8300000, guid: fe6b9ea7075cf442a949151879b4c303, type: 3}
-  - {fileID: 8300000, guid: aa99dc31c321e40248e1b3aa5039a751, type: 3}
-  - {fileID: 8300000, guid: 3fffacdf1856d4d65814b5a216ff166a, type: 3}
-  - {fileID: 8300000, guid: 48e2b880efe944481bb0a00e09ad36f7, type: 3}
-  melee1:
-  - {fileID: 8300000, guid: 2362c805266014a18bf40ae1cc97e241, type: 3}
-  - {fileID: 8300000, guid: 922567880fdcd4e729fa04328c7b6c4a, type: 3}
-  - {fileID: 8300000, guid: 571f32646f5b643afa09a3e8f3146b39, type: 3}
-  - {fileID: 8300000, guid: 58e6a23571d264cdfbb0a611a0b05cca, type: 3}
-  - {fileID: 8300000, guid: d0ad6fddead8642d5be37cc3b7f599ce, type: 3}
-  melee2:
-  - {fileID: 8300000, guid: bf5c58df7aad84cbcb0a2e91ac8b625e, type: 3}
-  - {fileID: 8300000, guid: 3828bfbe7aad24a97bb417e5a09e7010, type: 3}
-  - {fileID: 8300000, guid: f712204a9d8cc471baa601bfcc1f4ac8, type: 3}
-  - {fileID: 8300000, guid: 6df0ed3c6ff574925a56a0b002d40e66, type: 3}
-  ranged:
-  - {fileID: 8300000, guid: 42424f62cd3f24f839a0a6c7d07a13ae, type: 3}
-  death:
-  - {fileID: 8300000, guid: c10409933ad6940119daf61c408307c2, type: 3}
-  - {fileID: 8300000, guid: 4c1969ff6af0d49beb4d946b89700a31, type: 3}
 --- !u!1001 &1675473128
 PrefabInstance:
   m_ObjectHideFlags: 0
