@@ -2788,7 +2788,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Galaxy \nAdventures"
+  m_Text: 'Hall of
+
+    Champions'
 --- !u!222 &1613898241
 CanvasRenderer:
   m_ObjectHideFlags: 0
