@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillBasicSkillAttack : SkillLogic {
-    private Animator anim;
+    protected Animator anim;
     public override void Skill() {
         character = PlayerLogic.Instance.playerStats;
         anim = PlayerLogic.Instance.GetComponent<Animator>();

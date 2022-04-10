@@ -19,7 +19,7 @@ MonoBehaviour:
     type: 3}
   damageMultiplier: 0.9
   knockbackMultiplier: 0
-  manaCost: 50
-  animationTrigger: Piercing
-  description: Shoot a barrage of projectiles that deals <color=#FF0000><b><damage></b></color>
-    physical damage each.
+  manaCost: 10
+  animationTrigger: Barrage
+  description: Rapidly shoot 5 projectiles that deals <color=#FF0000><b><damage></b></color>
+    physical damage each. Each projectile consumes mana.

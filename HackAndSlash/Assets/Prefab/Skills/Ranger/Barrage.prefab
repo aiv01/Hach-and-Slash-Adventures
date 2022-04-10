@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4057198097605675852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8959090004892184766}
+  - component: {fileID: 1462833002173943229}
+  m_Layer: 0
+  m_Name: Barrage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8959090004892184766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057198097605675852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1462833002173943229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057198097605675852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d1ade93928281488cdf484f4a1de12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill: {fileID: 11400000, guid: d3130bba6df51e442ba6bd1bd4b05879, type: 2}
+  character: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: 401db7b243be8420d9b7cc6e4ccfd2c9, type: 3}
+  - {fileID: 8300000, guid: dae2a4f422ba74eb08cbef1dbd922884, type: 3}
+  - {fileID: 8300000, guid: c49b6198a3a2b4596bf93f0a37561793, type: 3}
+  - {fileID: 8300000, guid: 60c8890c93a77451c9ca33ec63e1bbf4, type: 3}
+  - {fileID: 8300000, guid: 84929eac1a0f541b79e2d2a104118522, type: 3}
+  - {fileID: 8300000, guid: 7575b748586d14b1e8b792be5304c1e3, type: 3}
+  - {fileID: 8300000, guid: 8daee948bba2d46d3b44b5bce81698e6, type: 3}
+  - {fileID: 8300000, guid: 3d6364aca818245b3b570a23b79ad226, type: 3}
+  - {fileID: 8300000, guid: d9add775350184a7ab41db9c258b7706, type: 3}
+  - {fileID: 8300000, guid: f5d4b5ee2865e4e9b85ec4ab4da82c04, type: 3}
+  shootSpeed: 35
+  shootFrom: {fileID: 0}
+  projectileType: 0
+  projectiles: 5
+  waitTime: 0.05
