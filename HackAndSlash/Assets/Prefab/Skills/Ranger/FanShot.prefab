@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4057198097605675852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8959090004892184766}
+  - component: {fileID: -9084264091083253736}
+  m_Layer: 0
+  m_Name: FanShot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8959090004892184766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057198097605675852}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-9084264091083253736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057198097605675852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7782d87965828459e96fbe98fef59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skill: {fileID: 11400000, guid: 970aea48205b6a74b8b10f04b464fc7d, type: 2}
+  character: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: 401db7b243be8420d9b7cc6e4ccfd2c9, type: 3}
+  - {fileID: 8300000, guid: dae2a4f422ba74eb08cbef1dbd922884, type: 3}
+  - {fileID: 8300000, guid: c49b6198a3a2b4596bf93f0a37561793, type: 3}
+  - {fileID: 8300000, guid: 60c8890c93a77451c9ca33ec63e1bbf4, type: 3}
+  - {fileID: 8300000, guid: 84929eac1a0f541b79e2d2a104118522, type: 3}
+  - {fileID: 8300000, guid: 7575b748586d14b1e8b792be5304c1e3, type: 3}
+  - {fileID: 8300000, guid: 8daee948bba2d46d3b44b5bce81698e6, type: 3}
+  - {fileID: 8300000, guid: 3d6364aca818245b3b570a23b79ad226, type: 3}
+  - {fileID: 8300000, guid: d9add775350184a7ab41db9c258b7706, type: 3}
+  - {fileID: 8300000, guid: f5d4b5ee2865e4e9b85ec4ab4da82c04, type: 3}
+  shootSpeed: 35
+  shootArc: 45
+  shootFrom: {fileID: 0}
+  projectileType: 0
+  bulletToShoot: 10

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9b548e9a9cd5e41afe1660f4e6b762, type: 3}
   m_Name: AreaShot
   m_EditorClassIdentifier: 
-  skillName: Piercing Shot
+  skillName: Fan Shot
   type: 0
   damageType: 0
   skillSprite: {fileID: 8833201262336938822, guid: a9b9d77fc51acd94cb7f4b460edb74b1,
     type: 3}
-  damageMultiplier: 0.7
+  damageMultiplier: 0.3
   knockbackMultiplier: 0
   manaCost: 35
-  animationTrigger: Piercing
-  description: Shoot projectiles around you that deals <color=#FF0000><b><damage></b></color>
-    physical damage each.
+  animationTrigger: Fan
+  description: Shoot projectiles in a fan in front of you, each dealing <color=#FF0000><b><damage></b></color>
+    physical damage.
