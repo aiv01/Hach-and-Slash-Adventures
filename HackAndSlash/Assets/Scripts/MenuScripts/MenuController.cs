@@ -20,8 +20,7 @@ public class MenuController : MonoBehaviour
     private string levelToLoad;
     [SerializeField] private GameObject noSavedGameDialog = null;
     private MenuOption currentSelection = MenuOption.newgame;
-    [SerializeField] private float spacing;
-    private Vector3 originalSelectorPosition;
+    [SerializeField] private Transform[] selectorPositions;
     [SerializeField] private Image selector;
     [SerializeField] private Image loading;
     private bool hasChangedSelection;
@@ -29,14 +28,11 @@ public class MenuController : MonoBehaviour
 
     private void Awake() {
         input = ReInput.players.GetPlayer(0);
-        originalSelectorPosition = selector.rectTransform.position;
     }
     private void Update() {
         ManageInput();
-        selector.rectTransform.position = new Vector3(
-            originalSelectorPosition.x, 
-            originalSelectorPosition.y - spacing * (int)currentSelection, 
-            originalSelectorPosition.z);
+        selector.rectTransform.parent = selectorPositions[(int)currentSelection];
+        selector.rectTransform.localPosition = Vector3.zero;
     }
     public void NewGameDialogYes()
     {

@@ -25,8 +25,7 @@ public class PauseMenuController : MonoBehaviour
     private Player input;
     [SerializeField] private string openMenuKey;
     private PauseMenuOption currentSelection = PauseMenuOption.Resume;
-    [SerializeField] private float spacing;
-    private Vector3 originalSelectorPosition;
+    [SerializeField] private Transform[] selectorPositions;
     [SerializeField] private Image selector;
     private bool hasChangedSelection;
     private string skillChangeAxis = "VerticalMovement";
@@ -36,7 +35,6 @@ public class PauseMenuController : MonoBehaviour
     void Awake()
     {
         input = ReInput.players.GetPlayer(0);
-        originalSelectorPosition = selector.rectTransform.position;
     }
 
     private void OnEnable() {
@@ -46,10 +44,8 @@ public class PauseMenuController : MonoBehaviour
     void Update()
     {
         ManageInput();
-        selector.rectTransform.position = new Vector3(
-            originalSelectorPosition.x,
-            originalSelectorPosition.y - spacing * (int)currentSelection,
-            originalSelectorPosition.z);
+        selector.rectTransform.parent = selectorPositions[(int)currentSelection];
+        selector.rectTransform.localPosition = Vector3.zero;
         MenuUpdate();
     }
 
