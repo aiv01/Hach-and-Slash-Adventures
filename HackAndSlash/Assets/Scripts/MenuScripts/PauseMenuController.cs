@@ -18,8 +18,10 @@ public enum PauseMenuOption
 public class PauseMenuController : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public static bool MenuControllerIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject pauseMenuControllerUI;
     private Player input;
     [SerializeField] private string openMenuKey;
     private PauseMenuOption currentSelection = PauseMenuOption.Resume;
@@ -63,6 +65,14 @@ public class PauseMenuController : MonoBehaviour
             {
                 Pause();
             }
+            if (MenuControllerIsPaused)
+            {
+                MenuController();
+            }
+            else
+            {
+                MenuControllerExit();
+            }
         }
 
     }
@@ -79,6 +89,20 @@ public class PauseMenuController : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    public void MenuController()
+    {
+        pauseMenuControllerUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
+    public void MenuControllerExit()
+    {
+        pauseMenuControllerUI.SetActive(false);
+        Time.timeScale = 0f;
+        GameIsPaused = false;
     }
 
     public void LoadMenu()
