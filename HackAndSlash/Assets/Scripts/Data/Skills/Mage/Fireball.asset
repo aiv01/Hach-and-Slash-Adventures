@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Fireball
   type: 0
   damageType: 1
-  skillSprite: {fileID: -7128870388000165283, guid: a9b9d77fc51acd94cb7f4b460edb74b1,
+  skillSprite: {fileID: 6467680837039536584, guid: a9b9d77fc51acd94cb7f4b460edb74b1,
     type: 3}
   damageMultiplier: 0.8
   knockbackMultiplier: 0
