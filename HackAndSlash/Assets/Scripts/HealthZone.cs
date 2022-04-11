@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class HealthZone : MonoBehaviour
 {
+    float charge;
+    public float hpPerSecond = 1;
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && PlayerLogic.Instance.playerStats.hp < 1)
+        if (other.gameObject.tag == "Player")
         {
-            StartCoroutine("Heal");
+            charge = 0;
         }
+
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            StopCoroutine("Heal");
+            charge += hpPerSecond * Time.deltaTime;
+            if(charge >= 1)
+            {
+                PlayerLogic.Instance.playerStats.hp = Mathf.Clamp(PlayerLogic.Instance.playerStats.hp + 1, 0, PlayerLogic.Instance.playerStats.MaxHp);
+                charge -= 1;
+            }
+            
         }
-    }
-
-    IEnumerator Heal()
-    {
-        for(float currentHealth = PlayerLogic.Instance.playerStats.hp; currentHealth <= 1; currentHealth += 0.05f)
-        {
-            PlayerLogic.Instance.playerStats.hp = (int)currentHealth;
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-        PlayerLogic.Instance.playerStats.hp = 1;
     }
 }

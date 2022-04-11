@@ -64,8 +64,7 @@ public class Movement : MonoBehaviour
 
     public void PlayStep()
     {
-        audioSource.clip = footSteps[Random.Range(0, footSteps.Length)];
-        audioSource.Play();
+        audioSource.PlayOneShot(footSteps[Random.Range(0, footSteps.Length)]);
     }
 
     private void OnTriggerEnter(Collider other)
