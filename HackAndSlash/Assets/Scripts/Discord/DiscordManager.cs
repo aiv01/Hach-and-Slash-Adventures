@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Discord;
 
 public class DiscordManager : MonoBehaviour
@@ -70,16 +71,17 @@ public class DiscordManager : MonoBehaviour
         }else if(classData.className == "Mage") {
             image = mageToken;
         }
+        string state = "As a level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className;
+        if (classData.className == "Empty") {
+            state = "Finding out their archetype";
+        }
         activity = new Activity {
             Details = "Wandering in the Hall",
-            State = "As a level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className,
+            State = state,
             Assets = {
                 LargeImage = ellenAvatar,
                 SmallImage = image,
                 SmallText = "Level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className
-            },
-            Timestamps = {
-                Start = 0
             }
         };
         activityManager.UpdateActivity(activity, (res) => {

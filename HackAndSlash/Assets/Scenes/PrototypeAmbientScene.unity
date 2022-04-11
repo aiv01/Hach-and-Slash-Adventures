@@ -22035,7 +22035,7 @@ PrefabInstance:
         type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 11400000, guid: a96a8f9b946b94046b01369b59530f3c,
+      objectReference: {fileID: 11400000, guid: e5e4ce4d118d51c4a888b1ba217434b4,
         type: 2}
     - target: {fileID: 4482356324216270667, guid: 1d91f75a7eaa85447ae44f5d597b1ade,
         type: 3}

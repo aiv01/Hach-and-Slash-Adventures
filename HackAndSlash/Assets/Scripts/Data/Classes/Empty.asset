@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db4c0fcc5edd214886a4f6a2f4f821e, type: 3}
+  m_Name: Empty
+  m_EditorClassIdentifier: 
+  baseVigor: 1
+  baseStrength: 1
+  baseDexterity: 1
+  baseIntelligence: 1
+  className: Empty
+  classToken: {fileID: -2244372958374070579, guid: 4e42315822ad74d4f860c523ca056b2a,
+    type: 3}
+  weaponRestriction: 0
+  incrementVigor: 0
+  incrementStrength: 0
+  incrementDexterity: 0
+  incrementIntelligence: 0
+  unlockLevelSkill: 00000000020000000400000006000000
+  skills:
+  - {fileID: 3197066906837977733, guid: c10499fb0ed7def4f85668fdf3859dea, type: 3}
+  - {fileID: 3197066906837977733, guid: c10499fb0ed7def4f85668fdf3859dea, type: 3}
+  - {fileID: 3197066906837977733, guid: c10499fb0ed7def4f85668fdf3859dea, type: 3}
+  - {fileID: 3197066906837977733, guid: c10499fb0ed7def4f85668fdf3859dea, type: 3}
