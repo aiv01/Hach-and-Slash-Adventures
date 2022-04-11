@@ -68403,7 +68403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 567917084, guid: 42236645adeb2924894bf194bbb1342c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 631103223, guid: 42236645adeb2924894bf194bbb1342c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -68788,6 +68788,10 @@ PrefabInstance:
     - target: {fileID: 1623209832, guid: 42236645adeb2924894bf194bbb1342c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623209833, guid: 42236645adeb2924894bf194bbb1342c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1672635022, guid: 42236645adeb2924894bf194bbb1342c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -69224,6 +69228,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 809639131, guid: 678ac7685ec44544ea27e365535a0d69, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d77579c4264ef76459ebc06d1f24ac2b,
+        type: 3}
     - target: {fileID: 3160179307845297173, guid: 678ac7685ec44544ea27e365535a0d69,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -69239,6 +69248,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CullTransparentMesh
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919730835519617986, guid: 678ac7685ec44544ea27e365535a0d69,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919730835519617986, guid: 678ac7685ec44544ea27e365535a0d69,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919730835519617986, guid: 678ac7685ec44544ea27e365535a0d69,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4919730835519617988, guid: 678ac7685ec44544ea27e365535a0d69,
         type: 3}
@@ -69363,6 +69387,21 @@ PrefabInstance:
     - target: {fileID: 8398588795347343408, guid: 678ac7685ec44544ea27e365535a0d69,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943288885823596126, guid: 678ac7685ec44544ea27e365535a0d69,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943288885823596126, guid: 678ac7685ec44544ea27e365535a0d69,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943288885823596126, guid: 678ac7685ec44544ea27e365535a0d69,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

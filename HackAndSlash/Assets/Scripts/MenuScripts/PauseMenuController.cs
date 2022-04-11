@@ -22,12 +22,13 @@ public class PauseMenuController : MonoBehaviour
     public GameObject pauseMenuUI;
     private Player input;
     [SerializeField] private string openMenuKey;
-    private int currentSelection = (int)PauseMenuOption.Resume;
+    private PauseMenuOption currentSelection = PauseMenuOption.Resume;
     [SerializeField] private float spacing;
     private Vector3 originalSelectorPosition;
     [SerializeField] private Image selector;
     private bool hasChangedSelection;
     private string skillChangeAxis = "VerticalMovement";
+    private string confirmButton = "Confirm";
 
 
     void Awake()
@@ -45,7 +46,7 @@ public class PauseMenuController : MonoBehaviour
         ManageInput();
         selector.rectTransform.position = new Vector3(
             originalSelectorPosition.x,
-            originalSelectorPosition.y - spacing * currentSelection,
+            originalSelectorPosition.y - spacing * (int)currentSelection,
             originalSelectorPosition.z);
         MenuUpdate();
     }
@@ -96,11 +97,30 @@ public class PauseMenuController : MonoBehaviour
         {
             currentSelection -= (int)input.GetAxisRaw(skillChangeAxis);
             hasChangedSelection = true;
-            currentSelection = currentSelection >= (int)PauseMenuOption.last ? (int)PauseMenuOption.Resume : currentSelection < 0 ? (int)PauseMenuOption.Quit : currentSelection;
+            currentSelection = currentSelection >= PauseMenuOption.last ? PauseMenuOption.Resume : currentSelection < 0 ? PauseMenuOption.Quit : currentSelection;
         }
         if (input.GetAxisRaw(skillChangeAxis) == 0)
         {
             hasChangedSelection = false;
+        }
+        if (input.GetButtonDown(confirmButton)) {
+            switch (currentSelection) {
+                case PauseMenuOption.Resume:
+                    Resume();
+                    break;
+                case PauseMenuOption.Menu:
+                    LoadMenu();
+                    break;
+                case PauseMenuOption.MenuController:
+                    break;
+                case PauseMenuOption.Quit:
+                    QuitGame();
+                    break;
+                case PauseMenuOption.last:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
