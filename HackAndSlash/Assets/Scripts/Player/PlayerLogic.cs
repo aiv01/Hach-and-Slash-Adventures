@@ -234,8 +234,7 @@ public class PlayerLogic : MonoBehaviour
     public void SkillStart() {
         currentSkill.OnSkillStart();
 
-        audioSource.clip = currentSkill.audio[Random.Range(0, currentSkill.audio.Length)];
-        audioSource.Play();
+        audioSource.PlayOneShot(currentSkill.audio[Random.Range(0, currentSkill.audio.Length - 1)]);
     }
     public void SkillEnd() {
         currentSkill.OnSkillEnd();
@@ -244,8 +243,7 @@ public class PlayerLogic : MonoBehaviour
     public void AttackStart() {
         playerStats.equippedWeapon.baseAttack.OnAttackStart();
 
-        audioSource.clip = playerStats.equippedWeapon.baseAttack.audio[Random.Range(0, playerStats.equippedWeapon.baseAttack.audio.Length)];
-        audioSource.Play();
+        audioSource.PlayOneShot(playerStats.equippedWeapon.baseAttack.audio[Random.Range(0, playerStats.equippedWeapon.baseAttack.audio.Length - 1)]);
     }
     public void AttackEnd() {
         playerStats.equippedWeapon.baseAttack.OnAttackEnd();

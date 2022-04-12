@@ -12,13 +12,8 @@ public class Movement : MonoBehaviour
     [SerializeField] private CapsuleCollider capsuleCollider;
     [SerializeField] private Ray mouseRay;
 
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
     public AudioClip[] footSteps;
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
 
     public void Move(Vector3 velocity) {
         if (CanMove(velocity.normalized)) {
