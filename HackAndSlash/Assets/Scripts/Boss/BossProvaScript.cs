@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BossProvaScript : MonoBehaviour
@@ -172,5 +173,10 @@ public class BossProvaScript : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, 15);
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 }
