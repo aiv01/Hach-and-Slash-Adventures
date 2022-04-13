@@ -64,6 +64,11 @@ public class BossProvaScript : MonoBehaviour
         }
     }
 
+    private void OnDisable() {
+        if (dead) {
+            SceneManager.LoadScene("TitleScene");
+        }
+    }
     public void Behavior_Boss()
     {
         if(Vector3.Distance(transform.position,target.transform.position) < 15)
@@ -173,10 +178,5 @@ public class BossProvaScript : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, 15);
-    }
-
-    public void DeadBoss()
-    {
-        SceneManager.LoadScene("TitleScene");
     }
 }
