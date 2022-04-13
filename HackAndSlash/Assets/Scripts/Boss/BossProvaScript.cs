@@ -174,9 +174,4 @@ public class BossProvaScript : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, 15);
     }
-
-    private void OnDisable()
-    {
-        SceneManager.LoadScene("TitleScene");
-    }
 }
