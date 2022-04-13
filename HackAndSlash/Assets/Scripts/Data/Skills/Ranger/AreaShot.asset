@@ -19,7 +19,7 @@ MonoBehaviour:
     type: 3}
   damageMultiplier: 0.3
   knockbackMultiplier: 0
-  manaCost: 35
+  manaCost: 20
   animationTrigger: Fan
   description: Shoot projectiles in a fan in front of you, each dealing <color=#FF0000><b><damage></b></color>
     physical damage.
