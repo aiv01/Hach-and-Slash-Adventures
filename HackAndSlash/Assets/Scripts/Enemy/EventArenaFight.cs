@@ -16,6 +16,7 @@ public class EventArenaFight : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if (!DataManagement.GetKey(key)) {
+                DataManagement.enemyKilled = 0;
                 Debug.Log("Player inside Trigger");
                 OnPlayerEnterTrigger?.Invoke(this, EventArgs.Empty);
                 wallBattle.SetActive(true);
