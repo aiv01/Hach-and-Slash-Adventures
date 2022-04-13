@@ -39,7 +39,7 @@ public class EnemyLogic : MonoBehaviour {
 
     private void BalanceToLevel() {
         EnemyData currentEnemy = (EnemyData)enemyStats.stats;
-        enemyStats.vigor += level - 1;
+        enemyStats.vigor += Mathf.CeilToInt((level * 0.5f) - 1);
         enemyStats.strength += level - 1;
         enemyStats.dexterity += level - 1;
         enemyStats.intelligence += level - 1;
