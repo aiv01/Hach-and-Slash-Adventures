@@ -14,18 +14,16 @@ public class SkillFanShot : SkillBasicSkillAttack {
         base.Skill();
         bm = GameObject.Find("BulletManager").GetComponent<BulletManager>();
         shootFrom = GameObject.Find("ShootPoint").transform;
+    }
+    public override void OnSkillStart() {
+        base.OnSkillStart();
         for (int i = Mathf.FloorToInt(bulletToShoot * -0.5f); i < Mathf.FloorToInt(bulletToShoot * 0.5f); i++) {
             Projectile instance = bm.GetBullet(projectileType);
             instance.gameObject.SetActive(true);
             instance.transform.position = shootFrom.position;
             instance.Shoot(character, character.transform.forward, shootSpeed);
             instance.GetComponent<Rigidbody>().velocity = Quaternion.AngleAxis((shootArc / bulletToShoot) * i, Vector3.up) * instance.GetComponent<Rigidbody>().velocity;
-
         }
-    }
-    public override void OnSkillStart() {
-        base.OnSkillStart();
-        //Do nothing
     }
 
     public override void OnSkillEnd() {

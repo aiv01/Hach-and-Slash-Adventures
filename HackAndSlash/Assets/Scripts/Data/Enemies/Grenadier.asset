@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c32fc310d1634a9a9f6cf05425081, type: 3}
   m_Name: Grenadier
   m_EditorClassIdentifier: 
-  baseVigor: 15
-  baseStrength: 15
+  baseVigor: 20
+  baseStrength: 25
   baseDexterity: 5
   baseIntelligence: 15
   enemyName: Grenadier
   type: 2
-  exp: 2000
+  exp: 10000
