@@ -14241,7 +14241,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.399718, y: -0.000000027317947, z: 0.000000011912524, w: 0.9166382}
+  m_LocalRotation: {x: 0.399718, y: 0.000000027317947, z: -0.000000011912524, w: 0.9166382}
   m_LocalPosition: {x: 0, y: 7, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -26873,7 +26873,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLine: {fileID: 908250994}
+  activatedTimeline: {fileID: 908250994}
   key: PortalOpen
+  trackIndex: 2
 --- !u!65 &702479741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33936,7 +33938,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 5db4d755a3a5ecf46ab5d03aef3179e3, type: 2}
   m_InitialState: 0
-  m_WrapMode: 2
+  m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -36878,7 +36880,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 4f3e1a4bda956ae4daf13914e4860ee9, type: 2}
   m_InitialState: 0
-  m_WrapMode: 2
+  m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -42408,7 +42410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLine: {fileID: 1152905829}
+  activatedTimeline: {fileID: 989900565}
   key: MainDoorOpen
+  trackIndex: 2
 --- !u!1001 &1154067555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48777,7 +48781,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7772436, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -62333,7 +62337,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7772436, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -69070,7 +69074,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7772436, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
