@@ -99,4 +99,9 @@ public class MenuController : MonoBehaviour
         sceneLoad.allowSceneActivation = true;
         yield return null;
     }
+
+    public void ChangeSelection(MenuOption option)
+    {
+        currentSelection = option;
+    }
 }
