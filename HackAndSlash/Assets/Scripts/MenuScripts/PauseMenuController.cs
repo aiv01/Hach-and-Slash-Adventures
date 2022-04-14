@@ -146,5 +146,9 @@ public class PauseMenuController : MonoBehaviour
             }
         }
     }
+    public void ChangeSelection(PauseMenuOption option)
+    {
+        currentSelection = option;
+    }
 
 }

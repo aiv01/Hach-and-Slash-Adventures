@@ -24116,6 +24116,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 632853764}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &633199162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4919730835519617984, guid: 678ac7685ec44544ea27e365535a0d69,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919730835607442136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356d6c8245c671a44913b934e6a65657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &634034886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28841,6 +28853,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 760828748}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &762197185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4919730837033400577, guid: 678ac7685ec44544ea27e365535a0d69,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919730835607442136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &762197188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762197185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2edd9dbc20a9548b21974345b43dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selection: 0
+  pauseMenuController: {fileID: 633199162}
 --- !u!1 &762676946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ee66908065bbfd749bae2cde22f0ad46,
@@ -35806,6 +35838,26 @@ Transform:
   m_Father: {fileID: 1306277240}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &968905920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3845443572159217255, guid: 678ac7685ec44544ea27e365535a0d69,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919730835607442136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &968905921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968905920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2edd9dbc20a9548b21974345b43dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selection: 2
+  pauseMenuController: {fileID: 633199162}
 --- !u!1001 &970230667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48777,7 +48829,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.778626, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -49375,6 +49427,26 @@ Transform:
   m_Father: {fileID: 1547617827}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1354334746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4919730835633740012, guid: 678ac7685ec44544ea27e365535a0d69,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919730835607442136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1354334749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354334746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2edd9dbc20a9548b21974345b43dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selection: 1
+  pauseMenuController: {fileID: 633199162}
 --- !u!1001 &1354582763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57322,6 +57394,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1559710865}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1560635448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4919730837485143287, guid: 678ac7685ec44544ea27e365535a0d69,
+    type: 3}
+  m_PrefabInstance: {fileID: 4919730835607442136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1560635449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560635448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2edd9dbc20a9548b21974345b43dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selection: 3
+  pauseMenuController: {fileID: 633199162}
 --- !u!1001 &1560688726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62333,7 +62425,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.778626, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -69070,7 +69162,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.778626, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
