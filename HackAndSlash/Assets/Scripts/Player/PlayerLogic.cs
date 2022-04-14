@@ -261,7 +261,7 @@ public class PlayerLogic : MonoBehaviour
         if (!isUsingSkill) {
             currentSkillId = num;
             if (playerStats.skills[currentSkillId] == null) return;
-            if(playerStats.mana >= currentSkill.skill.manaCost) {
+            if(playerStats.mana >= playerStats.skills[currentSkillId].skill.manaCost) {
                 isUsingSkill = true;
                 playerStats.skills[currentSkillId].Skill();
             }
