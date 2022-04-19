@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using TMPro;
 
 [RequireComponent(typeof(CharacterStats))]
 public class PlayerLogic : MonoBehaviour
@@ -46,6 +47,7 @@ public class PlayerLogic : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private RuntimeAnimatorController meleeAnimation;
     [SerializeField] private RuntimeAnimatorController rangedAnimation;
+    [SerializeField] private TextMeshPro popup;
 
     //Hit detection
     [Header("Hit detection")]
@@ -266,7 +268,9 @@ public class PlayerLogic : MonoBehaviour
                 playerStats.skills[currentSkillId].Skill();
             }
             else {
-                Debug.Log("Not enough mana");
+                TextMeshPro instance = Instantiate<TextMeshPro>(popup);
+                instance.transform.position = transform.position;
+                instance.text = "Not enough mana";
             }
         }
     }

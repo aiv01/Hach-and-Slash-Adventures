@@ -15,6 +15,7 @@ public class DiscordManager : MonoBehaviour
     private string mageToken = "magetoken";
     private string menuScene = "MenuMainScene";
     private string gameScene = "PrototypeAmbientScene";
+    private string creditsScene = "TitleScene";
     private ActivityManager activityManager;
     private ApplicationManager applicationManager;
     private Activity activity;
@@ -39,6 +40,8 @@ public class DiscordManager : MonoBehaviour
         }
         else if(SceneManager.GetActiveScene().name == gameScene){
             GameManager();
+        }else if(SceneManager.GetActiveScene().name == creditsScene) {
+            CreditsManager();
         }
         discord.RunCallbacks();
     }
@@ -63,14 +66,7 @@ public class DiscordManager : MonoBehaviour
 
     private void GameManager() {
         ClassData classData = (ClassData)PlayerLogic.Instance.playerStats.stats;
-        string image = null;
-        if(classData.className == "Warrior") {
-            image = warriorToken;
-        }else if(classData.className == "Ranger") {
-            image = rangerToken;
-        }else if(classData.className == "Mage") {
-            image = mageToken;
-        }
+        string image = GetClassImage(classData);
         string state = "As a level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className;
         if (classData.className == "Empty") {
             state = "Finding out their archetype";
@@ -93,6 +89,42 @@ public class DiscordManager : MonoBehaviour
             }
         }
         );
+    }
+
+    private void CreditsManager() {
+        ClassData classData = (ClassData)PlayerLogic.Instance.playerStats.stats;
+        string image = GetClassImage(classData);
+        string state = "As a level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className;
+        activity = new Activity {
+            Details = "Has become a Champion",
+            State = state,
+            Assets = {
+                LargeImage = ellenAvatar,
+                SmallImage = image,
+                SmallText = "Level " + PlayerLogic.Instance.playerStats.level.ToString() + " " + classData.className
+            }
+        };
+        activityManager.UpdateActivity(activity, (res) => {
+            if (res == Result.Ok) {
+                Debug.Log("Working");
+            }
+            else {
+                Debug.Log("No");
+            }
+        });
+    }
+
+    private string GetClassImage(ClassData classData) {
+        if (classData.className == "Warrior") {
+            return warriorToken;
+        }
+        else if (classData.className == "Ranger") {
+            return rangerToken;
+        }
+        else if (classData.className == "Mage") {
+            return mageToken;
+        }
+        return null;
     }
 
     private void OnApplicationQuit() {
